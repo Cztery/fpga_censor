@@ -1,8 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+#include <ctype.h>
 #include <string.h>
 
-unsigned int hash_word(char *word){
+
+bool BloomF[1024] = {false};
+
+
+unsigned int hash_word_1(char *word){
     int char_as_ascii;
     static unsigned long hash = 2137;
 
@@ -14,39 +20,63 @@ unsigned int hash_word(char *word){
     return (int)hash;
 }
 
-int main(){
-    char incoming_char;
-    char input_string[38];
-    char word_to_hash[15];
-    unsigned int hashed_word;
-    int index_in_word_to_hash = 0;
+int censor(char newchar, char* bufferOut) {
+    static char bufferIn[64] = {'\0'};
+    static int wordLen = 0;
+    int outputLen = 0;
 
-    for(int j=0; j<sizeof(word_to_hash)-1; j++){
-        word_to_hash[j] = ' ';
-    }
-    word_to_hash[sizeof(word_to_hash)-1] = '\0';
+    static unsigned int hash1;
+    static unsigned int hash2;
+    static unsigned int hash3;
 
-    snprintf(input_string, sizeof(input_string), "This is. a fucking first string of shit\0");
-    printf("Input string: %s\n", input_string);
-    
-    for(int i=0; i<sizeof(input_string); i++){
-        incoming_char = input_string[i];
-        if((incoming_char != ' ') && (incoming_char != '\0') && (incoming_char != '.')){
-            word_to_hash[index_in_word_to_hash] = incoming_char;
-            index_in_word_to_hash++;
-        } else{
-            index_in_word_to_hash = 0;
-            hashed_word = hash_word(&word_to_hash[0]);
+    if (isalpha(newchar)) {
+        // word continues
+        bufferIn[wordLen++] = newchar;
+        // hash2 = hashingFun2(newchar);
+        // hash3 = hashingFun3(newchar);
+    } else {
+        // end of the word
 
-            printf("Word: %s Hash: %d\n", word_to_hash, hashed_word);
-            for(int j=0; j<sizeof(word_to_hash); j++){
-                word_to_hash[j] = ' ';
+        // calculate hash
+        hash1 = hash_word_1(&bufferIn[0]);
+
+        // handle word
+        if(wordLen > 0){
+            if(BloomF[hash1]){          //&& BloomF[hash2] && BloomF[hash3]) {
+                printf("bad word detected: %s\n", bufferIn);
+                snprintf(bufferOut, wordLen, "****");
+            } else {
+                printf("either word is fine or not a word - passing to output: %s, len: %d\n", bufferIn, wordLen);
+                snprintf(bufferOut, wordLen, bufferIn);
             }
-            word_to_hash[sizeof(word_to_hash)-1] = '\0';
+            outputLen = wordLen;
+            wordLen = 0;
+            memset(&bufferIn[0], '\0', sizeof(bufferIn));
+
+        // handle nonalpha character
+        } else {
+            printf("dupsko");
+            outputLen = 1;
+            bufferOut++;
+            *bufferOut = newchar;
         }
     }
 
-    //hash_word(&word_to_hash[0]);
+    return outputLen;
+}
+
+int main(){
+    char input_string[40];
+    char output_string[100];
+    char* end_of_output_string = &output_string[0];
+    
+    snprintf(input_string, sizeof(input_string), "This is. a fucking. first string .of shit\0");
+    printf("Input string: %s\n", input_string);
+    
+    for(int i=0; i<sizeof(input_string); i++){
+        end_of_output_string += censor(input_string[i], end_of_output_string);
+    }
+    printf("Output: %s", output_string);
 
     return 0;
 }

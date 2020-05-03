@@ -33,7 +33,6 @@ int censor(char newchar, char* bufferOut) {
         // word continues
         bufferIn[wordLen++] = newchar;
         // hash2 = hashingFun2(newchar);
-        // hash3 = hashingFun3(newchar);
     } else {
         // end of the word
 
@@ -47,32 +46,39 @@ int censor(char newchar, char* bufferOut) {
                 snprintf(bufferOut, wordLen, "****");
             } else {
                 printf("either word is fine or not a word - passing to output: %s, len: %d\n", bufferIn, wordLen);
-                snprintf(bufferOut, wordLen, bufferIn);
+                snprintf(bufferOut, sizeof(bufferIn), bufferIn);
             }
             outputLen = wordLen;
+	    bufferOut += wordLen;
             wordLen = 0;
             memset(&bufferIn[0], '\0', sizeof(bufferIn));
-        } 
+	}
+        // handle nonalpha character
+        printf("dupsko\n");
+        *bufferOut = newchar;
         outputLen++;
         bufferOut++;
-        *bufferOut = newchar;
+        
     }
 
     return outputLen;
 }
 
 int main(){
-    char input_string[40];
+    char input_string[100];
     char output_string[100];
     char* end_of_output_string = &output_string[0];
-    
-    snprintf(input_string, sizeof(input_string), "This is a fucking. first string .of shit\0");
+    int written = 0;
+
+    snprintf(input_string, sizeof(input_string), "This is. a fucking. first string .of shit");
     printf("Input string: %s\n", input_string);
     
-    for(int i=0; i<sizeof(input_string)+1; i++){
-        end_of_output_string += censor(input_string[i], end_of_output_string);
+    for(int i=0; i<=strlen(input_string); i++){
+        written = censor(input_string[i], end_of_output_string);
+	printf("written %d\n", written);
+	end_of_output_string += written;
+    	printf("Output: %s\n", output_string);
     }
-    printf("Output: %s", output_string);
 
     return 0;
 }

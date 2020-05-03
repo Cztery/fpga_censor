@@ -52,14 +52,10 @@ int censor(char newchar, char* bufferOut) {
             outputLen = wordLen;
             wordLen = 0;
             memset(&bufferIn[0], '\0', sizeof(bufferIn));
-
-        // handle nonalpha character
-        } else {
-            printf("dupsko");
-            outputLen = 1;
-            bufferOut++;
-            *bufferOut = newchar;
-        }
+        } 
+        outputLen++;
+        bufferOut++;
+        *bufferOut = newchar;
     }
 
     return outputLen;
@@ -70,10 +66,10 @@ int main(){
     char output_string[100];
     char* end_of_output_string = &output_string[0];
     
-    snprintf(input_string, sizeof(input_string), "This is. a fucking. first string .of shit\0");
+    snprintf(input_string, sizeof(input_string), "This is a fucking. first string .of shit\0");
     printf("Input string: %s\n", input_string);
     
-    for(int i=0; i<sizeof(input_string); i++){
+    for(int i=0; i<sizeof(input_string)+1; i++){
         end_of_output_string += censor(input_string[i], end_of_output_string);
     }
     printf("Output: %s", output_string);

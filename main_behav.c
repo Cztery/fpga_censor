@@ -4,13 +4,14 @@
 #include <ctype.h>
 #include <string.h>
 
+#define MAX_2_CENSORE_WORD_LEN 20
 
 bool BloomF[1024] = {false};
 
 
 unsigned int hashing_algorithm_bernstein(char *word){
     int char_as_ascii;
-    static unsigned long hash = 2137;
+    unsigned long hash = 2137;
 
     while(char_as_ascii = *word++){
         hash = ((hash << 5) + hash) + char_as_ascii;
@@ -22,7 +23,7 @@ unsigned int hashing_algorithm_bernstein(char *word){
 
 unsigned int hashing_algorithm_rotating(char *word){
     int char_as_ascii;
-    static unsigned long hash = 7312;
+    unsigned long hash = 7312;
 
     while(char_as_ascii = *word++){
         hash = ((hash << 4) ^ (hash >> 28)) ^ char_as_ascii;
@@ -34,19 +35,19 @@ unsigned int hashing_algorithm_rotating(char *word){
 
 void string_tolower(char *src_string, char *dst_string){
 
-    while(*src_string++){ 
+    while(*src_string){
         *dst_string = tolower(*src_string);
-        *dst_string++;
+        src_string++;
+        dst_string++;
     }
-    *dst_string = '\n';
+    *dst_string = '\0';
 }
 
 void add_word_hash_to_bloom_table(char *word){
     unsigned int hash1, hash2;
-    char word_in_lowercase[60];
+    char word_in_lowercase[MAX_2_CENSORE_WORD_LEN];
 
     string_tolower(word, &word_in_lowercase[0]);
-
     hash1 = hashing_algorithm_bernstein(&word_in_lowercase[0]);
     hash2 = hashing_algorithm_rotating(&word_in_lowercase[0]);
 
@@ -54,8 +55,15 @@ void add_word_hash_to_bloom_table(char *word){
     BloomF[hash2] = 1;
 }
 
-int chech_word_hash_in_bloom_table(char *word){
-    // TODO
+int check_word_hash_in_bloom_table(char *word){
+    unsigned int hash1, hash2;
+    char word_in_lowercase[MAX_2_CENSORE_WORD_LEN];
+
+    string_tolower(&word[0], &word_in_lowercase[0]);
+    hash1 = hashing_algorithm_bernstein(&word_in_lowercase[0]);
+    hash2 = hashing_algorithm_rotating(&word_in_lowercase[0]);
+
+    return ((BloomF[hash1]) && (BloomF[hash2]));
 }
 
 int censor(char newchar, char* bufferOut) {
@@ -63,49 +71,36 @@ int censor(char newchar, char* bufferOut) {
     static int wordLen = 0;
     int outputLen = 0;
 
-    static unsigned int hash1;
-    static unsigned int hash2;
-    static unsigned int hash3;
-
     if (isalpha(newchar)) {
-        // word continues
         bufferIn[wordLen++] = newchar;
-        // hash2 = hashingFun2(newchar);
     } else {
-        // end of the word
-
-        hash1 = hashing_algorithm_bernstein(&bufferIn[0]);
-
-        // handle word
         if(wordLen > 0){
-            if(BloomF[hash1]){          //&& BloomF[hash2] && BloomF[hash3]) {
+            if((wordLen < MAX_2_CENSORE_WORD_LEN) && (check_word_hash_in_bloom_table(&bufferIn[0]))){
                 printf("Bad word detected: %s\n", bufferIn);
-                snprintf(bufferOut, wordLen, "****");
+                memset(&bufferOut[0], '*', wordLen);
             } else {
-                printf("The word is fine: %s, len: %d\n", bufferIn, wordLen);
+                printf("The word is fine: %s\n", bufferIn);
                 snprintf(bufferOut, sizeof(bufferIn), bufferIn);
             }
             outputLen = wordLen;
 	        bufferOut += wordLen;
             wordLen = 0;
             memset(&bufferIn[0], '\0', sizeof(bufferIn));
-	}
-        // handle nonalpha character
+	    }
         *bufferOut = newchar;
         outputLen++;
         bufferOut++;
-        
     }
 
     return outputLen;
 }
 
 int main(){
-    char words_to_be_censored[2][20];
+    char words_to_be_censored[2][MAX_2_CENSORE_WORD_LEN];
     char input_string[100];
     char output_string[100];
     char* end_of_output_string = &output_string[0];
-    int written = 0;
+    int written_chars = 0;
 
     snprintf(words_to_be_censored[0], sizeof(words_to_be_censored[0]), "krol");
     snprintf(words_to_be_censored[1], sizeof(words_to_be_censored[1]), "karolinie");
@@ -124,8 +119,8 @@ int main(){
     printf("\n\n");
 
     for(int i=0; i<=strlen(input_string); i++){
-        written = censor(input_string[i], end_of_output_string);
-	    end_of_output_string += written;
+        written_chars = censor(input_string[i], end_of_output_string);
+	    end_of_output_string += written_chars;
     }
     printf("Output: %s\n", output_string);
 

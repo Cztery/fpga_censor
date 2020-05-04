@@ -76,10 +76,10 @@ int censor(char newchar, char* bufferOut) {
     } else {
         if(wordLen > 0){
             if((wordLen < MAX_2_CENSORE_WORD_LEN) && (check_word_hash_in_bloom_table(&bufferIn[0]))){
-                printf("Bad word detected: %s\n", bufferIn);
+                //printf("Bad word detected: %s\n", bufferIn);
                 memset(&bufferOut[0], '*', wordLen);
             } else {
-                printf("The word is fine: %s\n", bufferIn);
+                //printf("The word is fine: %s\n", bufferIn);
                 snprintf(bufferOut, sizeof(bufferIn), bufferIn);
             }
             outputLen = wordLen;
@@ -110,13 +110,6 @@ int main(){
     
     add_word_hash_to_bloom_table(&words_to_be_censored[0][0]);
     add_word_hash_to_bloom_table(&words_to_be_censored[1][0]);
-
-    printf("\n'1' in BloomF table: \n");
-    for(int i=0; i<sizeof(BloomF); i++){
-        if(BloomF[i] == 1)
-            printf("at %d, ", i);
-    }
-    printf("\n\n");
 
     for(int i=0; i<=strlen(input_string); i++){
         written_chars = censor(input_string[i], end_of_output_string);

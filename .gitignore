@@ -1,6 +1,6 @@
 *.exe
-censor_core.sim/**/*
-censor_core.runs/**/*
-censor_core.cache/**/*
+censor_core/censor_core.sim/**/*
+censor_core/censor_core.runs/**/*
+censor_core/censor_core.cache/**/*
 vivado.jou
 *.log

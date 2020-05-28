@@ -21,8 +21,9 @@
 
 
 module mask_controller(
+    input [7:0] character,
     input is_bad_word,
-    input is_longer_than_bad,
-    output clock_hold
+    output in_ready,
+    output out_ready
     );
 endmodule

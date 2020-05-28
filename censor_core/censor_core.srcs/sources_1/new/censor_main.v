@@ -27,4 +27,37 @@ module censor_main(
     output out_ready,
     output [7:0] char_out
     );
+    
+    wire word_end;
+    wire hash_ready;
+    wire [9:0] hash1, hash2;
+    wire is_bad_word;
+    
+    is_alpha is_alpha(
+        .character(char_in),
+        .word_end(word_end)
+    );
+    
+    hashing hashing(
+        .character(char_in),
+        .word_end(word_end),
+        .hash1(hash1),
+        .hash2(hash2),
+        .hash_ready(hash_ready)
+    );
+    
+    bloom_table_control bloom_table_control(
+        .hash1(hash1),
+        .hash2(hash2),
+        .hash_ready(hash_ready),
+        .is_bad_word(is_bad_word)
+    );
+    
+    mask_controller mask_controller(
+        .character(char_in),
+        .is_bad_word(is_bad_word),
+        .in_ready(in_ready),
+        .out_ready(out_ready)
+    );
+    
 endmodule

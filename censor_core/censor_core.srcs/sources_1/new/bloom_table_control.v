@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 05/28/2020 08:55:35 PM
+// Create Date: 05/28/2020 10:17:45 PM
 // Design Name: 
-// Module Name: is_in_bloom_table
+// Module Name: bloom_table_control
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,21 +20,20 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module is_in_bloom_table(
-    input [9:0] hash1, hash2,
-    input [9:0] bloom_table,
-    input hash_ready,
-    output reg is_bad_word
+module bloom_table_control(
+        input [9:0] hash1, hash2,
+        input hash_ready,
+        output is_bad_word
     );
     
-    reg is_bad_word_next;
+    reg [1022:0] bloom_table;
     
-    always @* begin
-    
-    end
-    
-    always @(posedge hash_ready) begin
-        is_bad_word <= is_bad_word_next;
-    end
+    is_in_bloom_table is_in_bloom_table(
+        .hash1(hash1),
+        .hash2(hash2),
+        .bloom_table(bloom_table),
+        .hash_ready(hash_ready),
+        .is_bad_word(is_bad_word)
+    );
     
 endmodule

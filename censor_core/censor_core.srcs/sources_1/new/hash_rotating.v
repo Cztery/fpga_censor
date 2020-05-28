@@ -23,7 +23,18 @@
 module hash_rotating(
     input [7:0] letter,
     input word_end,
-    output [9:0] hash,
-    output hash_ready
+    output reg [9:0] hash,
+    output reg hash_ready
     );
+    
+    initial begin
+        hash <= 7312;
+        hash_ready <= 0;
+    end
+    
+    always @(posedge letter) begin  //TODO letter siê nie nadaje na posedge, bo nie musi miêc POS edge (dodaæ wejœcie clk?)
+        hash <= ((hash << 4) ^ (hash >> 28)) ^ letter;
+        hash_ready <= word_end;
+    end
+    
 endmodule

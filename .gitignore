@@ -1,1 +1,6 @@
 *.exe
+voyage-voyage.sim/**
+voyage-voyage.runs/**
+voyage-voyage.cache/**
+vivado.jou
+*.log

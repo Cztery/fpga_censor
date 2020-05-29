@@ -28,6 +28,7 @@ module censor_main(
     output [7:0] char_out
     );
     
+    // WIRES FOR CONNECTION BETWEEN MODULES //
     wire word_end;
     wire hash_ready;
     wire [9:0] hash1, hash2;

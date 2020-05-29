@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="841500000fs"></ZoomStartTime>
-      <ZoomEndTime time="971700001fs"></ZoomEndTime>
+      <ZoomStartTime time="750000000fs"></ZoomStartTime>
+      <ZoomEndTime time="1017105264fs"></ZoomEndTime>
       <Cursor1Time time="1000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="161"></NameColumnWidth>
+      <NameColumnWidth column_width="157"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="8" />
+   <WVObjectSize size="9" />
    <wvobject fp_name="/hashing_with_bloom_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -53,5 +53,9 @@
    <wvobject fp_name="/hashing_with_bloom_tb/is_bad_word" type="logic">
       <obj_property name="ElementShortName">is_bad_word</obj_property>
       <obj_property name="ObjectShortName">is_bad_word</obj_property>
+   </wvobject>
+   <wvobject fp_name="/hashing_with_bloom_tb/word_len" type="array">
+      <obj_property name="ElementShortName">word_len[4:0]</obj_property>
+      <obj_property name="ObjectShortName">word_len[4:0]</obj_property>
    </wvobject>
 </wave_config>

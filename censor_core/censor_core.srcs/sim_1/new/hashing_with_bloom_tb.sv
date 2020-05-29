@@ -28,8 +28,9 @@ module hashing_with_bloom_tb();
     logic hash_ready;
     logic [3:0] char_index;
     logic is_bad_word;
+    logic [4:0] word_len;
     
-    hashing hashing(.clk, .character, .hash1, .hash2, .hash_ready);
+    hashing hashing(.clk, .character, .hash1, .hash2, .word_len, .hash_ready);
     bloom_table_control bloom_table_control(.hash1, .hash2, .hash_ready, .is_bad_word);
     
     always begin

@@ -24,6 +24,7 @@ module hashing(
     input clk,
     input [7:0] character,
     output [9:0] hash1, hash2,
+    output [4:0] word_len,
     output reg hash_ready
     );
     
@@ -56,6 +57,12 @@ module hashing(
         .is_alpha(is_character_alpha),
         .hash(hash2),
         .hash_ready(hash_ready_rotating)
+    );
+    
+    word_length_counter word_length_counter(
+        .clk(clk),
+        .is_alpha(is_character_alpha),
+        .word_len(word_len)
     );
     
     always @* begin

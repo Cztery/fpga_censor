@@ -21,20 +21,34 @@
 
 
 module hash_bernstein(
+    input clk,
     input [7:0] letter,
-    input word_end,     //schemat wygl¹da inaczej, ale lepiej tutaj indykowaæ, ¿eby mieæ pewnoœæ, ¿e kompletny hash bêdzie sprawdzany przez kolejny modu³
+    input is_alpha,
     output reg [9:0] hash,
     output reg hash_ready
     );
     
-    initial begin
-        hash <= 2137;
-        hash_ready <= 0;
+    reg [9:0] hash_next=2137;
+    reg hash_ready_next=0;
+    
+    always @* begin
+        if (is_alpha) begin
+            if(hash_ready) begin
+                // jeœli hash_ready jest 1, to wartoœæ hash jest jeszcze poprzednia - nie by³o kiedy resetowaæ
+                hash_next = (((2137 << 5) * 2137) + letter) % 1024;
+            end else begin
+                hash_next = (((hash << 5) * hash) + letter) % 1024;
+            end
+            hash_ready_next = 0;
+        end else begin
+            hash_next = hash;
+            hash_ready_next = 1;
+        end
     end
     
-    always @(posedge letter) begin  //TODO letter siê nie nadaje na posedge, bo nie musi miêc POS edge (dodaæ wejœcie clk?)
-        hash <= ((hash << 5) * hash) + letter;
-        hash_ready <= word_end;
+    always @(posedge clk) begin
+        hash <= hash_next;
+        hash_ready <= hash_ready_next;
     end
     
 endmodule

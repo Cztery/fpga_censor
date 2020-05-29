@@ -21,20 +21,35 @@
 
 
 module hash_rotating(
+    input clk,
     input [7:0] letter,
-    input word_end,
+    input is_alpha,
     output reg [9:0] hash,
     output reg hash_ready
     );
     
-    initial begin
-        hash <= 7312;
-        hash_ready <= 0;
+    reg [9:0] hash_next=7312;
+    reg hash_ready_next=0;
+    
+    always @* begin
+        if (is_alpha) begin
+            if(hash_ready) begin
+                // jeœli hash_ready jest 1, to wartoœæ hash jest jeszcze poprzednia - nie by³o kiedy resetowaæ
+                hash_next = (((7312 << 4) ^ (7312 >> 6)) ^ letter) % 1024;
+            end else begin
+                hash_next = (((hash << 4) ^ (hash >> 6)) ^ letter) % 1024;
+            end
+            hash_ready_next = 0;
+        end else begin
+            hash_next = hash;
+            hash_ready_next = 1;
+        end
+        
     end
     
-    always @(posedge letter) begin  //TODO letter siê nie nadaje na posedge, bo nie musi miêc POS edge (dodaæ wejœcie clk?)
-        hash <= ((hash << 4) ^ (hash >> 28)) ^ letter;
-        hash_ready <= word_end;
+    always @(posedge clk) begin
+        hash <= hash_next;
+        hash_ready <= hash_ready_next;
     end
     
 endmodule

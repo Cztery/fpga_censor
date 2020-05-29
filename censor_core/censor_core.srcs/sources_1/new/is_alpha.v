@@ -19,9 +19,26 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+// LETTERS' CODES IN UTF-8 //
+`define A_code 8'h41
+`define Z_code 8'h5A
+`define a_code 8'h61
+`define z_code 8'h7A
 
 module is_alpha(
     input [7:0] character,
-    output word_end
+    output reg is_alpha
     );
+    
+    integer character_utf_value;
+        
+    always@* begin
+        if(((character >= `A_code) && (character <= `Z_code)) ||
+            ((character >= `a_code) && (character <= `z_code))) begin
+            is_alpha = 1;
+        end else begin
+            is_alpha = 0;
+        end
+    end
+    
 endmodule

@@ -19,9 +19,19 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`define A_to_a_diff 8'h20
+`define a_code      8'h61
 
 module character_to_lower(
     input [7:0] character,
-    output [7:0] character_lower
+    output reg [7:0] character_lower
     );
+    
+    always @* begin
+        if(character < `a_code)
+            character_lower = character + `A_to_a_diff;
+        else 
+            character_lower = character;
+    end
+    
 endmodule

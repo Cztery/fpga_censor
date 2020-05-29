@@ -21,8 +21,8 @@
 
 
 module hashing(
+    input clk,
     input [7:0] character,
-    input word_end,
     output [9:0] hash1, hash2,
     output reg hash_ready
     );
@@ -30,6 +30,12 @@ module hashing(
     wire [7:0] character_lower;
     reg hash_ready_next;
     wire hash_ready_bernstein, hash_ready_rotating;
+    wire is_character_alpha;
+    
+    is_alpha is_alpha(
+        .character(character),
+        .is_alpha(is_character_alpha)
+    );
     
     character_to_lower character_to_lower(
         .character(character),
@@ -37,15 +43,17 @@ module hashing(
     );
     
     hash_bernstein hash_bernstein(
+        .clk(clk),
         .letter(character_lower),
-        .word_end(word_end),
+        .is_alpha(is_character_alpha),
         .hash(hash1),
         .hash_ready(hash_ready_bernstein)
     );
     
     hash_rotating hash_rotating(
+        .clk(clk),
         .letter(character_lower),
-        .word_end(word_end),
+        .is_alpha(is_character_alpha),
         .hash(hash2),
         .hash_ready(hash_ready_rotating)
     );

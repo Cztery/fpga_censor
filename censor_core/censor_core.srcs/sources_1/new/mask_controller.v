@@ -21,6 +21,7 @@
 
 
 module mask_controller(
+    input clk,
     input [7:0] character,
     input is_bad_word,
     output in_ready,

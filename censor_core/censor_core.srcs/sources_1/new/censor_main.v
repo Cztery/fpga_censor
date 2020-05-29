@@ -33,14 +33,9 @@ module censor_main(
     wire [9:0] hash1, hash2;
     wire is_bad_word;
     
-    is_alpha is_alpha(
-        .character(char_in),
-        .word_end(word_end)
-    );
-    
     hashing hashing(
+        .clk(clk),
         .character(char_in),
-        .word_end(word_end),
         .hash1(hash1),
         .hash2(hash2),
         .hash_ready(hash_ready)
@@ -54,6 +49,7 @@ module censor_main(
     );
     
     mask_controller mask_controller(
+        .clk(clk),
         .character(char_in),
         .is_bad_word(is_bad_word),
         .in_ready(in_ready),

@@ -26,7 +26,12 @@ module bloom_table_control(
         output is_bad_word
     );
     
-    reg [1022:0] bloom_table;
+    reg [1023:0] bloom_table=1024'd0;   //od razu zerowana
+    
+    always @* begin
+        bloom_table = bloom_table | (1 << 609);
+        bloom_table = bloom_table | (1 << 484);
+    end
     
     is_in_bloom_table is_in_bloom_table(
         .hash1(hash1),

@@ -37,7 +37,7 @@ module char_shift_reg_tb();
     
     integer i = `length;
     always @(posedge clk) begin
-        if (i>0) begin
+        if (i>=0) begin
             in_char = reg_in[i];
             i = i - 1;
         end else begin

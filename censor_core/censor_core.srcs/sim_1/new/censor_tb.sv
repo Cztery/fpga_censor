@@ -24,6 +24,13 @@
 module censor_tb();
     logic clk;
     reg [7:0] string_in [`STRING_LEN:0];
+    logic [7:0] char_in;
+    logic shift_enable;
+    logic out_ready;
+    logic [7:0] char_out;
+    
+    censor_main censor_DUT(.clk, .char_in, .shift_enable,
+ .out_ready, .char_out);
     
     logic [20:0] char_index;
     
@@ -43,7 +50,11 @@ module censor_tb();
         else    
             char_index += 1;
             
-        $display("%c", string_in[`STRING_LEN - char_index]);
+        $display("%d", string_in[`STRING_LEN - char_index]);
+        
+        if(shift_enable) begin
+            char_in = string_in[`STRING_LEN - char_index];
+        end
     end
     
 endmodule

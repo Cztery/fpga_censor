@@ -35,12 +35,21 @@ module censor_main(
     wire hash_ready;
     wire [9:0] hash1, hash2;
     wire is_bad_word;
+    wire [4:0] word_len;    //max 31
+    wire [7:0] char_buff2sel;
+    
+    input_char_shift_reg #(`input_buf_len) input_char_buffer(
+        .clk(clk),
+        .in_char(char_in),
+        .out_char(char_buff2sel)
+    );
     
     hashing hashing(
         .clk(clk),
         .character(char_in),
         .hash1(hash1),
         .hash2(hash2),
+        .word_len(word_len),
         .hash_ready(hash_ready)
     );
     
@@ -56,25 +65,26 @@ module censor_main(
         .is_alpha(is_new_char_alpha)
     );
     
-    mask_controller mask_controller(
-        .clk(clk),
-        .is_alpha(is_new_char_alpha),
-        .is_bad_word(is_bad_word),
-        .shift_enable(shift_enable),
-        .out_ready(out_ready),
-        .mask_in(mask_in)
-    );
-    
-    input_char_shift_reg #(`input_buf_len) input_char_buffer(
-        .clk(clk),
-        .in_char(char_in),
-        .out_char(char_out)
-    );
-    
     control_mask_bit_shift_reg #(`input_buf_len) censure_mask_register(
         .clk(clk),
         .in_bit(mask_in),
         .out_bit(mask_out)
+    );
+    
+    mask_controller mask_controller(
+        .clk(clk),
+        .is_alpha(is_new_char_alpha),
+        .is_bad_word(is_bad_word),
+        .word_len(word_len),
+        .shift_enable(shift_enable),
+        .mask(mask_in)
+    );
+    
+    out_char_select out_char_select(
+        .clk(clk),
+        .char_in(char_buff2sel),
+        .mask_bit(mask_out),
+        .char_out(char_out)
     );
     
 endmodule

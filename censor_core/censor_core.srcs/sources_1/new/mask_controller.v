@@ -24,21 +24,22 @@ module mask_controller(
     input clk,
     input is_alpha,
     input is_bad_word,
-    output shift_enable,
-    output mask_in
+    input [4:0] word_len,
+    output reg shift_enable,
+    output reg mask
     );
     
-    integer word_len = 0;
-    assign shift_ready = !(is_bad_word && !is_alpha && word_len>0);
-    assign mask_in = (is_bad_word && !is_alpha && word_len>0);
+    reg mask_next;
+    reg shift_enable_next;
     
-    always @(posedge clk) begin
-        if(is_alpha)
-            word_len = word_len + 1;
-        else
-            word_len = 0;
-            
+    always @* begin
+        shift_enable_next = !(is_bad_word && !is_alpha && word_len>0);
+        mask_next = (is_bad_word && !is_alpha && word_len>0);
     end
     
+    always @(posedge clk) begin
+        shift_enable <= shift_enable_next;
+        mask <= mask_next; 
+    end
     
 endmodule

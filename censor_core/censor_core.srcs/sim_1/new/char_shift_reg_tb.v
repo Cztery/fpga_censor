@@ -21,14 +21,15 @@
 `define length 5
 
 module char_shift_reg_tb();
-    logic clk;
+    logic clk, enable;
     reg [7:0] reg_in [0:`length];
     reg [7:0] in_char, out_char;
-    input_char_shift_reg #(.REG_LEN(`length)) reg_DUT(.clk, .in_char, .out_char);
+    input_char_shift_reg #(.REG_LEN(`length)) reg_DUT(.clk, .enable, .in_char, .out_char);
 
     always begin
         #5 clk = 1; 
         #5 clk = 0;
+        enable = 1;
     end
     
     initial begin

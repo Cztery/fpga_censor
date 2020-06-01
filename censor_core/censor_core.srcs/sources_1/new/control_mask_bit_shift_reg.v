@@ -21,7 +21,7 @@
 
 module control_mask_bit_shift_reg
     #(parameter REG_LEN = 15)
-    (input clk, reset,
+    (input clk, enable, reset,
     input in_bit,
     output out_bit);
     
@@ -31,8 +31,10 @@ module control_mask_bit_shift_reg
     assign out_bit = mask_bits[REG_LEN];
     
     always @(posedge clk) begin
-        mask_bits = mask_bits >> 1;
-        mask_bits[0] = in_bit;
+        if(enable) begin
+            mask_bits = mask_bits >> 1;
+            mask_bits[0] = in_bit;
+        end
     end
     
 endmodule

@@ -21,14 +21,15 @@
 `define length 15
 
 module mask_shift_reg_tb();
-    logic clk;
+    logic clk, enable;
     reg [0:`length] reg_in;
     reg in_bit, out_bit;
-    control_mask_bit_shift_reg #(.REG_LEN(`length)) reg_DUT(.clk, .in_bit, .out_bit);
+    control_mask_bit_shift_reg #(.REG_LEN(`length)) reg_DUT(.clk, .enable, .in_bit, .out_bit);
 
     always begin
         #5 clk = 1; 
         #5 clk = 0;
+        enable = 1;
     end
     
     initial begin

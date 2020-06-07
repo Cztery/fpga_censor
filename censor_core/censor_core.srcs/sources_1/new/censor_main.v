@@ -24,7 +24,7 @@ module censor_main(
     input clk,
     input [7:0] char_in,
     output shift_enable,
-    output out_ready,
+    output reg out_ready,
     output [7:0] char_out
     );
     
@@ -40,6 +40,7 @@ module censor_main(
     
     input_char_shift_reg #(`input_buf_len) input_char_buffer(
         .clk(clk),
+        .enable(shift_enable),
         .in_char(char_in),
         .out_char(char_buff2sel)
     );
@@ -87,4 +88,17 @@ module censor_main(
         .char_out(char_out)
     );
     
+    
+    reg out_ready_next;
+    always @* begin
+        if(char_out != 0 && shift_enable) begin
+            out_ready_next = 1;
+        end else begin
+            out_ready_next = 0;
+        end
+    end
+    
+    always @(posedge clk) begin
+        out_ready = out_ready_next;
+    end
 endmodule

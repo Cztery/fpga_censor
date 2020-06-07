@@ -45,15 +45,18 @@ module censor_tb();
     end
     
     always @(posedge clk) begin
-        if (char_index == `STRING_LEN)
-            char_index = 0;
-        else    
-            char_index += 1;
-            
-        $display("%d", string_in[`STRING_LEN - char_index]);
-        
         if(shift_enable) begin
+            
+            if (char_index == `STRING_LEN)
+                char_index = 0;
+            else    
+                char_index += 1;
+                
             char_in = string_in[`STRING_LEN - char_index];
+                        
+            $display("c_in:  %d", string_in[`STRING_LEN - char_index]);
+            $display("c_out:        %d", char_out);
+        
         end
     end
     

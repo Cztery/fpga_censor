@@ -32,9 +32,20 @@ module mask_controller(
     reg mask_next;
     reg shift_enable_next;
     
+    integer word_len_local;
+    
     always @* begin
-        shift_enable_next = !(is_bad_word && !is_alpha && word_len>0);
-        mask_next = (is_bad_word && !is_alpha && word_len>0);
+        // assign the incoming word len to local variable if mask register is not being set at the moment
+        if (shift_enable) 
+            word_len_local = word_len;
+        else
+            word_len_local = word_len_local - 1;
+  
+        // hold shifting new characters until proper mask is set
+        shift_enable_next = !(is_bad_word && !is_alpha && word_len_local>0);
+        
+        // insert a number of 1s to the mask register if last word needs to be censored
+        mask_next = (is_bad_word && !is_alpha && word_len_local>0);
     end
     
     always @(posedge clk) begin

@@ -37,15 +37,17 @@ module mask_controller
     reg out_bit_next;
     
     always @(posedge is_bad_word) begin
-        for (i = word_len; i > 0; i = i - 1) begin
-            mask_bits[i + 1] = 1;
+        for (i = REG_LEN; i > 0; i = i - 1) begin
+            if (i <= word_len)
+                mask_bits[i + 2] <= 1;
         end
     end
-    
+
+
     always @(posedge clk) begin
-        mask_bits[0] = 0;
-        mask_bits = (mask_bits << 1);
-        mask_out = mask_bits[REG_LEN];
+        mask_bits[0] <= 0;
+        mask_bits <= (mask_bits << 1);
+        mask_out <= mask_bits[REG_LEN];
     end
     
 endmodule

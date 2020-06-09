@@ -53,8 +53,8 @@ module censor_tb();
             
         char_in = string_in[`STRING_LEN - char_index];
                     
-        $display("c_in:  %d", string_in[`STRING_LEN - char_index]);
-        $display("c_out:        %d", char_out);
+        //$display("c_in:  %d", string_in[`STRING_LEN - char_index]);
+        //$display("c_out:        %d", char_out);
     end
     
 endmodule

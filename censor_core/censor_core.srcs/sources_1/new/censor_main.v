@@ -23,13 +23,12 @@
 module censor_main(
     input clk,
     input [7:0] char_in,
-    output shift_enable,
     output reg out_ready,
     output [7:0] char_out
     );
     
     // WIRES FOR CONNECTION BETWEEN MODULES //
-    wire mask_in, mask_out;
+    wire mask_out;
     wire is_new_char_alpha;
     wire word_end;
     wire hash_ready;
@@ -40,7 +39,6 @@ module censor_main(
     
     input_char_shift_reg #(`input_buf_len) input_char_buffer(
         .clk(clk),
-        .enable(shift_enable),
         .in_char(char_in),
         .out_char(char_buff2sel)
     );
@@ -65,19 +63,12 @@ module censor_main(
         .character(char_in),
         .is_alpha(is_new_char_alpha)
     );
-    
-    //control_mask_bit_shift_reg #(`input_buf_len) censure_mask_register(
-    //    .clk(clk),
-    //    .in_bit(mask_in),
-    //    .out_bit(mask_out)
-    //);
-    
+
     mask_controller #(`input_buf_len) mask_controller(
         .clk(clk),
         .is_alpha(is_new_char_alpha),
         .is_bad_word(is_bad_word),
         .word_len(word_len),
-        .shift_enable(shift_enable),
         .mask_out(mask_out)
     );
     
@@ -91,7 +82,7 @@ module censor_main(
     
     reg out_ready_next;
     always @* begin
-        if(char_out != 0 && shift_enable) begin
+        if(char_out != 0) begin
             out_ready_next = 1;
         end else begin
             out_ready_next = 0;

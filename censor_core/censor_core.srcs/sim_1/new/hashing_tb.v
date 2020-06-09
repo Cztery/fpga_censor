@@ -36,10 +36,14 @@ module hashing_tb();
     end
     
     initial begin
-        string_in[0] = 8'h41; //A
-        string_in[1] = 8'h6C; //l
-        string_in[2] = 8'h61; //a
-        string_in[3] = 8'h2E; //.
+        //string_in[0] = 8'h41; //A
+        //string_in[1] = 8'h6C; //l
+        //string_in[2] = 8'h61; //a
+        //string_in[3] = 8'h2E; //.
+        string_in[0] = 8'd116;
+        string_in[1] = 8'd104;
+        string_in[2] = 8'd101;
+        string_in[3] = 8'd32;
         char_index = 0;
     end
     

@@ -26,7 +26,6 @@ module mask_controller
     input is_alpha,
     input is_bad_word,
     input [4:0] word_len,
-    output shift_enable,
     output reg mask_out
     );
 
@@ -36,8 +35,6 @@ module mask_controller
 
     reg [REG_LEN:0] mask_bits = 0;
     reg out_bit_next;
-    
-    assign shift_enable = 1;
     
     always @(posedge is_bad_word) begin
         for (i = word_len; i > 0; i = i - 1) begin

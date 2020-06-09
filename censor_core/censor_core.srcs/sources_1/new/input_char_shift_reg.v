@@ -22,7 +22,6 @@
 
 module input_char_shift_reg(
     input clk,
-    input enable,
     input [7:0] in_char,
     output [7:0] out_char
     );
@@ -33,12 +32,10 @@ module input_char_shift_reg(
     integer i = REG_LEN;
     
     always @(posedge clk) begin
-        if (enable) begin
-            for (i = REG_LEN; i > 0; i = i - 1) begin
-                char_buffer[i] = char_buffer[i-1];
-            end
-            char_buffer [0] = in_char;
+        for (i = REG_LEN; i > 0; i = i - 1) begin
+            char_buffer[i] = char_buffer[i-1];
         end
+        char_buffer [0] = in_char;
     end
     
 endmodule

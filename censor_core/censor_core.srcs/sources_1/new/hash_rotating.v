@@ -34,14 +34,14 @@ module hash_rotating(
     always @* begin
         if (is_alpha) begin
             if(hash_ready) begin
-                // jeœli hash_ready jest 1, to wartoœæ hash jest jeszcze poprzednia - nie by³o kiedy resetowaæ
+                // jeï¿½li hash_ready jest 1, to wartoï¿½ï¿½ hash jest jeszcze poprzednia - nie byï¿½o kiedy resetowaï¿½
                 hash_next = (((7312 << 4) ^ (7312 >> 6)) ^ letter) % 1024;
             end else begin
                 hash_next = (((hash << 4) ^ (hash >> 6)) ^ letter) % 1024;
             end
             hash_ready_next = 0;
         end else begin
-            hash_next = hash;
+            hash_next = hash;//hash;
             hash_ready_next = 1;
         end
         

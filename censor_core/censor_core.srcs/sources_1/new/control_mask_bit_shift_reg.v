@@ -21,26 +21,19 @@
 
 module control_mask_bit_shift_reg
     #(parameter REG_LEN = 15)
-    (input clk, reset,
+    (input clk,
     input in_bit,
     output reg out_bit);
     
-    reg [0:REG_LEN] mask_bits;
+    reg [REG_LEN-2:0] mask_bits = 0;
     reg out_bit_next;
     
-    integer i = 0;
-   // assign out_bit = mask_bits[REG_LEN];
+    
     
     always @* begin
-        if(reset) begin
-            for(i = 1; i <= REG_LEN; i = i + 1) begin
-                mask_bits[i] = 0;
-            end
-        end else begin
-            mask_bits = mask_bits >> 1;
-            out_bit_next = mask_bits[REG_LEN];
-        end
-        
+        mask_bits[0] = in_bit;
+        mask_bits = (mask_bits << 1);
+        out_bit_next = mask_bits[REG_LEN-2];
     end
     
     always @(posedge clk) begin

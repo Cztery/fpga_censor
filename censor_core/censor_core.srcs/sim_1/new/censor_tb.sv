@@ -40,7 +40,7 @@ module censor_tb();
     end
     
     initial begin
-        string_in = "What - the heck";
+        string_in = "What - the heck?";
         char_index = 0;
     end
     

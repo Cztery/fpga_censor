@@ -34,19 +34,19 @@ module hash_bernstein(
     always @* begin
         if (is_alpha) begin
             if(hash_ready) begin
-                // jeœli hash_ready jest 1, to wartoœæ hash jest jeszcze poprzednia - nie by³o kiedy resetowaæ
+                // jeï¿½li hash_ready jest 1, to wartoï¿½ï¿½ hash jest jeszcze poprzednia - nie byï¿½o kiedy resetowaï¿½
                 hash_next = (((2137 << 5) * 2137) + letter) % 1024;
             end else begin
                 hash_next = (((hash << 5) * hash) + letter) % 1024;
             end
             hash_ready_next = 0;
         end else begin
-            hash_next = hash;
+            hash_next = hash;//hash;
             hash_ready_next = 1;
         end
     end
     
-    always @(posedge clk) begin
+    always @(negedge clk) begin // a attempt to speed up the hash_read
         hash <= hash_next;
         hash_ready <= hash_ready_next;
     end

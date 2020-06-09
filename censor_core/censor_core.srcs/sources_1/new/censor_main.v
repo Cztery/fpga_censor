@@ -98,7 +98,7 @@ module censor_main(
         end
     end
     
-    always @(posedge clk) begin
+    always @(negedge clk) begin // an attempt to meke the signal a bit ahead of clock...
         out_ready = out_ready_next;
     end
 endmodule

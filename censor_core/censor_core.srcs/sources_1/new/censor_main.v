@@ -66,19 +66,19 @@ module censor_main(
         .is_alpha(is_new_char_alpha)
     );
     
-    control_mask_bit_shift_reg #(`input_buf_len) censure_mask_register(
-        .clk(clk),
-        .in_bit(mask_in),
-        .out_bit(mask_out)
-    );
+    //control_mask_bit_shift_reg #(`input_buf_len) censure_mask_register(
+    //    .clk(clk),
+    //    .in_bit(mask_in),
+    //    .out_bit(mask_out)
+    //);
     
-    mask_controller mask_controller(
+    mask_controller #(`input_buf_len) mask_controller(
         .clk(clk),
         .is_alpha(is_new_char_alpha),
         .is_bad_word(is_bad_word),
         .word_len(word_len),
         .shift_enable(shift_enable),
-        .mask(mask_in)
+        .mask_out(mask_out)
     );
     
     out_char_select out_char_select(

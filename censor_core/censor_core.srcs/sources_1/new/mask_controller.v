@@ -20,45 +20,40 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mask_controller(
+module mask_controller
+    #(parameter REG_LEN = 15) (
     input clk,
     input is_alpha,
     input is_bad_word,
     input [4:0] word_len,
     output shift_enable,
-    output reg mask
+    output reg mask_out
     );
+
     
     reg mask_next;
-    reg shift_enable_next;
-    reg setting_mask_in_progress = 0;
-    
-    integer word_len_local;
-    assign shift_enable = !(setting_mask_in_progress);
+    integer word_len_local, i;
 
+    reg [REG_LEN:0] mask_bits = 0;
+    reg out_bit_next;
+    
+    assign shift_enable = 1;
     
     always @* begin
-        // assign the incoming word len to local variable if mask register is not being set at the moment
-        if (!setting_mask_in_progress) 
+        if (is_bad_word) begin
             word_len_local = word_len;
-        else
-            word_len_local = word_len_local - 1;
-        
-        if (is_bad_word)
-            setting_mask_in_progress = 1;
-        if (word_len_local < 0)
-            setting_mask_in_progress = 0;
+            for (i = word_len; i > 0; i = i - 1) begin
+                mask_bits[i + 4] = 1;
+            end
+        end
+        mask_bits[0] = 0;
+        mask_bits = (mask_bits << 1);
+        out_bit_next = mask_bits[REG_LEN];
 
-        // hold shifting new characters until proper mask is set
-        shift_enable_next = !(is_bad_word && word_len>0);
-        
-        // insert a number of 1s to the mask register if last word needs to be censored
-        mask_next = setting_mask_in_progress;
     end
     
     always @(posedge clk) begin
-        //shift_enable <= shift_enable_next;
-        mask <= mask_next; 
+        mask_out <= out_bit_next;
     end
     
 endmodule

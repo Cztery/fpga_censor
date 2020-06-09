@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="812656440fs"></ZoomStartTime>
-      <ZoomEndTime time="1037468712fs"></ZoomEndTime>
-      <Cursor1Time time="827473000fs"></Cursor1Time>
+      <ZoomStartTime time="29773531337fs"></ZoomStartTime>
+      <ZoomEndTime time="30045293733fs"></ZoomEndTime>
+      <Cursor1Time time="29885252000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="125"></NameColumnWidth>
+      <NameColumnWidth column_width="121"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="24" />
+   <WVObjectSize size="15" />
    <wvobject type="logic" fp_name="/censor_tb/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -64,14 +64,6 @@
       <obj_property name="ElementShortName">shift_enable</obj_property>
       <obj_property name="ObjectShortName">shift_enable</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/mask_controller/mask">
-      <obj_property name="ElementShortName">mask</obj_property>
-      <obj_property name="ObjectShortName">mask</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/mask_controller/shift_enable_next">
-      <obj_property name="ElementShortName">shift_enable_next</obj_property>
-      <obj_property name="ObjectShortName">shift_enable_next</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/censor_tb/censor_DUT/mask_controller/word_len">
       <obj_property name="ElementShortName">word_len[4:0]</obj_property>
       <obj_property name="ObjectShortName">word_len[4:0]</obj_property>
@@ -84,41 +76,13 @@
       <obj_property name="ElementShortName">is_alpha</obj_property>
       <obj_property name="ObjectShortName">is_alpha</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/mask_out">
-      <obj_property name="ElementShortName">mask_out</obj_property>
-      <obj_property name="ObjectShortName">mask_out</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/mask_controller/setting_mask_in_progress">
-      <obj_property name="ElementShortName">setting_mask_in_progress</obj_property>
-      <obj_property name="ObjectShortName">setting_mask_in_progress</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/censure_mask_register/clk">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/censure_mask_register/in_bit">
-      <obj_property name="ElementShortName">in_bit</obj_property>
-      <obj_property name="ObjectShortName">in_bit</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/censure_mask_register/out_bit">
-      <obj_property name="ElementShortName">out_bit</obj_property>
-      <obj_property name="ObjectShortName">out_bit</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/censor_tb/censor_DUT/censure_mask_register/mask_bits">
-      <obj_property name="ElementShortName">mask_bits[15:0]</obj_property>
-      <obj_property name="ObjectShortName">mask_bits[15:0]</obj_property>
+   <wvobject type="array" fp_name="/censor_tb/censor_DUT/mask_controller/mask_bits">
+      <obj_property name="ElementShortName">mask_bits[13:0]</obj_property>
+      <obj_property name="ObjectShortName">mask_bits[13:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/censure_mask_register/out_bit_next">
-      <obj_property name="ElementShortName">out_bit_next</obj_property>
-      <obj_property name="ObjectShortName">out_bit_next</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/censor_tb/censor_DUT/censure_mask_register/i">
-      <obj_property name="ElementShortName">i[31:0]</obj_property>
-      <obj_property name="ObjectShortName">i[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/censor_tb/censor_DUT/censure_mask_register/REG_LEN">
-      <obj_property name="ElementShortName">REG_LEN[31:0]</obj_property>
-      <obj_property name="ObjectShortName">REG_LEN[31:0]</obj_property>
+   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/mask_controller/mask_out">
+      <obj_property name="ElementShortName">mask_out</obj_property>
+      <obj_property name="ObjectShortName">mask_out</obj_property>
    </wvobject>
 </wave_config>

@@ -28,8 +28,7 @@ module control_mask_bit_shift_reg
     reg [REG_LEN-2:0] mask_bits = 0;
     reg out_bit_next;
     
-    
-    
+ 
     always @* begin
         mask_bits[0] = in_bit;
         mask_bits = (mask_bits << 1);

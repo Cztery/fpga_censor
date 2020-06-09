@@ -46,7 +46,7 @@ module hash_bernstein(
         end
     end
     
-    always @(negedge clk) begin // a attempt to speed up the hash_read
+    always @(posedge clk) begin
         hash <= hash_next;
         hash_ready <= hash_ready_next;
     end

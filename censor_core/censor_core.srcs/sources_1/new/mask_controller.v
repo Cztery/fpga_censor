@@ -32,28 +32,23 @@ module mask_controller
 
     
     reg mask_next;
-    integer word_len_local, i;
+    integer i;
 
     reg [REG_LEN:0] mask_bits = 0;
     reg out_bit_next;
     
     assign shift_enable = 1;
     
-    always @* begin
-        if (is_bad_word) begin
-            word_len_local = word_len;
-            for (i = word_len; i > 0; i = i - 1) begin
-                mask_bits[i + 4] = 1;
-            end
+    always @(posedge is_bad_word) begin
+        for (i = word_len; i > 0; i = i - 1) begin
+            mask_bits[i + 1] = 1;
         end
-        mask_bits[0] = 0;
-        mask_bits = (mask_bits << 1);
-        out_bit_next = mask_bits[REG_LEN];
-
     end
     
     always @(posedge clk) begin
-        mask_out <= out_bit_next;
+        mask_bits[0] = 0;
+        mask_bits = (mask_bits << 1);
+        mask_out = mask_bits[REG_LEN];
     end
     
 endmodule

@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-`define STRING_LEN 14  
+`define STRING_LEN 28  
 
 module censor_tb();
     logic clk;
@@ -41,7 +41,7 @@ module censor_tb();
     end
     
     initial begin
-        string_in = "What - the heck?";
+        string_in = "What - the heck? I dont know.";
         char_index = 0;
     end
     

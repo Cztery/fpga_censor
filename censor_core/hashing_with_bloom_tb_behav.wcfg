@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="29773531337fs"></ZoomStartTime>
-      <ZoomEndTime time="30045293733fs"></ZoomEndTime>
-      <Cursor1Time time="29885252000fs"></Cursor1Time>
+      <ZoomStartTime time="9664583333fs"></ZoomStartTime>
+      <ZoomEndTime time="10067083334fs"></ZoomEndTime>
+      <Cursor1Time time="9675583000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="121"></NameColumnWidth>
+      <NameColumnWidth column_width="109"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="15" />
+   <WVObjectSize size="11" />
    <wvobject type="logic" fp_name="/censor_tb/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -34,55 +34,39 @@
       <obj_property name="ObjectShortName">char_out[7:0]</obj_property>
       <obj_property name="Radix">ASCIIRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/bloom_table_control/is_in_bloom_table/is_bad_word">
-      <obj_property name="ElementShortName">is_bad_word</obj_property>
-      <obj_property name="ObjectShortName">is_bad_word</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/bloom_table_control/is_in_bloom_table/is_bad_word">
-      <obj_property name="ElementShortName">is_bad_word</obj_property>
-      <obj_property name="ObjectShortName">is_bad_word</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/censor_tb/censor_DUT/bloom_table_control/is_in_bloom_table/hash1">
-      <obj_property name="ElementShortName">hash1[9:0]</obj_property>
-      <obj_property name="ObjectShortName">hash1[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/censor_tb/censor_DUT/bloom_table_control/is_in_bloom_table/hash2">
-      <obj_property name="ElementShortName">hash2[9:0]</obj_property>
-      <obj_property name="ObjectShortName">hash2[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/bloom_table_control/is_in_bloom_table/is_bad_word_next">
-      <obj_property name="ElementShortName">is_bad_word_next</obj_property>
-      <obj_property name="ObjectShortName">is_bad_word_next</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/bloom_table_control/is_in_bloom_table/hash_ready">
-      <obj_property name="ElementShortName">hash_ready</obj_property>
-      <obj_property name="ObjectShortName">hash_ready</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/censor_tb/shift_enable">
-      <obj_property name="ElementShortName">shift_enable</obj_property>
-      <obj_property name="ObjectShortName">shift_enable</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/censor_tb/censor_DUT/mask_controller/word_len">
       <obj_property name="ElementShortName">word_len[4:0]</obj_property>
       <obj_property name="ObjectShortName">word_len[4:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/censor_tb/censor_DUT/mask_controller/word_len_local">
-      <obj_property name="ElementShortName">word_len_local[31:0]</obj_property>
-      <obj_property name="ObjectShortName">word_len_local[31:0]</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/censor_tb/censor_DUT/mask_controller/is_alpha">
       <obj_property name="ElementShortName">is_alpha</obj_property>
       <obj_property name="ObjectShortName">is_alpha</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/censor_tb/censor_DUT/mask_controller/mask_bits">
-      <obj_property name="ElementShortName">mask_bits[13:0]</obj_property>
-      <obj_property name="ObjectShortName">mask_bits[13:0]</obj_property>
+      <obj_property name="ElementShortName">mask_bits[15:0]</obj_property>
+      <obj_property name="ObjectShortName">mask_bits[15:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/censor_tb/censor_DUT/mask_controller/mask_out">
       <obj_property name="ElementShortName">mask_out</obj_property>
       <obj_property name="ObjectShortName">mask_out</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/censor_tb/censor_DUT/hashing/hash_bernstein/hash">
+      <obj_property name="ElementShortName">hash[9:0]</obj_property>
+      <obj_property name="ObjectShortName">hash[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/censor_tb/censor_DUT/hashing/hash_rotating/hash">
+      <obj_property name="ElementShortName">hash[9:0]</obj_property>
+      <obj_property name="ObjectShortName">hash[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/is_bad_word">
+      <obj_property name="ElementShortName">is_bad_word</obj_property>
+      <obj_property name="ObjectShortName">is_bad_word</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/bloom_table_control/hash_ready">
+      <obj_property name="ElementShortName">hash_ready</obj_property>
+      <obj_property name="ObjectShortName">hash_ready</obj_property>
    </wvobject>
 </wave_config>

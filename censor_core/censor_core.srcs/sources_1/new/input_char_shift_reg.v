@@ -22,9 +22,11 @@
 
 module input_char_shift_reg(
     input clk,
+    input in_ready,
     input [7:0] in_char,
     output [7:0] out_char
     );
+    
     parameter REG_LEN = 15;
     
     reg [7:0] char_buffer [0:REG_LEN];
@@ -35,7 +37,11 @@ module input_char_shift_reg(
         for (i = REG_LEN; i > 0; i = i - 1) begin
             char_buffer[i] = char_buffer[i-1];
         end
-        char_buffer [0] = in_char;
+        if(in_ready) begin
+            char_buffer[0] = in_char;
+        end else begin
+            char_buffer[0] = 8'h0;
+        end
     end
     
 endmodule

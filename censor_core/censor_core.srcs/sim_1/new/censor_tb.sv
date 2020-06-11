@@ -19,16 +19,18 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-`define STRING_LEN 28  
+`define STRING_LEN 29  
 
 module censor_tb();
     logic clk;
     reg [7:0] string_in [`STRING_LEN:0];
+    logic in_ready;
     logic [7:0] char_in;
     logic out_ready;
     logic [7:0] char_out;
     
     censor_main censor_DUT(.clk,
+                           .in_ready,
                            .char_in,
                            .out_ready,
                            .char_out);
@@ -43,18 +45,22 @@ module censor_tb();
     initial begin
         string_in = "What - the heck? I dont know.";
         char_index = 0;
+        in_ready = 1;
+        $write("string out:\n");
     end
     
+    
     always @(posedge clk) begin
-        if (char_index == `STRING_LEN)
+        if (char_index == `STRING_LEN) begin
+            in_ready = !in_ready;
             char_index = 0;
-        else    
+        end else
             char_index += 1;
             
         char_in = string_in[`STRING_LEN - char_index];
-                    
-        //$display("c_in:  %d", string_in[`STRING_LEN - char_index]);
-        //$display("c_out:        %d", char_out);
+        
+        if(out_ready)
+            $write("%c", char_out);
     end
     
 endmodule

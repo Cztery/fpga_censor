@@ -28,6 +28,10 @@ module bloom_table_control(
     
     reg [1023:0] bloom_table = (1 << 101) | (1 << 165) | (1 << 244) | (1 << 471); // inicjalizacja dla 'the' i 'dont'
     
+    initial begin
+        is_bad_word = 0;
+    end
+    
     always @* begin
         if(hash_ready)
             is_bad_word = bloom_table[hash1] & bloom_table[hash2];

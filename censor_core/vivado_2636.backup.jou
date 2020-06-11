@@ -1,0 +1,98 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Mon Jun  1 15:24:35 2020
+# Process ID: 2636
+# Current directory: D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13480 D:\Dokumenty\AGH\SDUP\Projekt\fpga_censor\censor_core\censor_core.xpr
+# Log file: D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/vivado.log
+# Journal file: D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/hashing_tb_behav.wcfg
+open_wave_config D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/hashing_with_bloom_tb_behav.wcfg
+source char_shift_reg_tb.tcl
+relaunch_sim
+close_sim
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/censor_tb.sv w ]
+add_files -fileset sim_1 D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/censor_tb.sv
+update_compile_order -fileset sim_1
+set_property is_enabled false [get_files  D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/char_shift_reg_tb.v]
+update_compile_order -fileset sim_1
+set_property is_enabled false [get_files  D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/hashing_with_bloom_tb.sv]
+set_property is_enabled false [get_files  D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/mask_shift_reg_tb.v]
+set_property top censor_tb [get_filesets sim_1]
+launch_simulation
+open_wave_config D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/hashing_tb_behav.wcfg
+open_wave_config D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/hashing_with_bloom_tb_behav.wcfg
+source censor_tb.tcl
+close_sim
+launch_simulation
+open_wave_config D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/hashing_tb_behav.wcfg
+open_wave_config D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/hashing_with_bloom_tb_behav.wcfg
+source censor_tb.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+set_property is_enabled true [get_files  {D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/char_shift_reg_tb.v D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/hashing_tb.v D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/hashing_with_bloom_tb.sv D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/mask_shift_reg_tb.v}]
+update_compile_order -fileset sim_1
+set_property is_enabled false [get_files  {D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/hashing_tb.v D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/char_shift_reg_tb.v D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/hashing_with_bloom_tb.sv}]
+set_property is_enabled false [get_files  D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sources_1/new/censor_main.v]
+set_property is_enabled false [get_files  D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/censor_tb.sv]
+update_compile_order -fileset sim_1
+set_property top mask_shift_reg_tb [get_filesets sim_1]
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+open_wave_config D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/hashing_tb_behav.wcfg
+open_wave_config D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/hashing_with_bloom_tb_behav.wcfg
+source mask_shift_reg_tb.tcl
+relaunch_sim
+close [ open D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sources_1/new/out_char_select.v w ]
+add_files D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sources_1/new/out_char_select.v
+update_compile_order -fileset sources_1
+set_property is_enabled true [get_files  D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sources_1/new/censor_main.v]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_sim
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/hashing_tb_behav.wcfg
+open_wave_config D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/hashing_with_bloom_tb_behav.wcfg
+source mask_shift_reg_tb.tcl
+set_property is_enabled true [get_files  {D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/censor_tb.sv D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/char_shift_reg_tb.v D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/hashing_tb.v D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/hashing_with_bloom_tb.sv}]
+update_compile_order -fileset sim_1
+close_sim
+set_property is_enabled false [get_files  D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/mask_shift_reg_tb.v]
+update_compile_order -fileset sim_1
+set_property top censor_tb [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/hashing_tb_behav.wcfg
+open_wave_config D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/hashing_with_bloom_tb_behav.wcfg
+source censor_tb.tcl
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/hashing_tb_behav.wcfg
+open_wave_config D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/hashing_with_bloom_tb_behav.wcfg
+source censor_tb.tcl
+current_wave_config {hashing_with_bloom_tb_behav.wcfg}
+add_wave {{/censor_tb/clk}} {{/censor_tb/string_in}} {{/censor_tb/char_in}} {{/censor_tb/shift_enable}} {{/censor_tb/out_ready}} {{/censor_tb/char_out}} {{/censor_tb/char_index}} 
+add_wave {{/censor_tb}} 
+relaunch_sim
+set_property is_enabled false [get_files  {D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/hashing_with_bloom_tb.sv D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/char_shift_reg_tb.v D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_core/censor_core.srcs/sim_1/new/hashing_tb.v}]
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+run all
+run 10 us
+relaunch_sim
+relaunch_sim
+close_sim

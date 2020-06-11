@@ -18,12 +18,13 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-`define input_buf_len 15
+`define input_buf_len 15    //we assume 15 as maximum bad word length
 
 module censor_main(
     input clk,
+    input in_ready,     //works also as not-rest
     input [7:0] char_in,
-    output reg out_ready,
+    output out_ready,
     output [7:0] char_out
     );
     
@@ -39,12 +40,14 @@ module censor_main(
     
     input_char_shift_reg #(`input_buf_len) input_char_buffer(
         .clk(clk),
+        .in_ready(in_ready),
         .in_char(char_in),
         .out_char(char_buff2sel)
     );
     
     hashing hashing(
         .clk(clk),
+        .nrst(in_ready),
         .character(char_in),
         .hash1(hash1),
         .hash2(hash2),
@@ -76,20 +79,8 @@ module censor_main(
         .clk(clk),
         .char_in(char_buff2sel),
         .mask_bit(mask_out),
-        .char_out(char_out)
+        .char_out(char_out),
+        .out_ready(out_ready)
     );
     
-    
-    reg out_ready_next;
-    always @* begin
-        if(char_out != 0) begin
-            out_ready_next = 1;
-        end else begin
-            out_ready_next = 0;
-        end
-    end
-    
-    always @(negedge clk) begin // an attempt to meke the signal a bit ahead of clock...
-        out_ready = out_ready_next;
-    end
 endmodule

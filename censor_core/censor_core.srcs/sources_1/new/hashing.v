@@ -22,6 +22,7 @@
 
 module hashing(
     input clk,
+    input nrst,
     input [7:0] character,
     output [9:0] hash1, hash2,
     output [4:0] word_len,
@@ -45,6 +46,7 @@ module hashing(
     
     hash_bernstein hash_bernstein(
         .clk(clk),
+        .nrst(nrst),
         .letter(character_lower),
         .is_alpha(is_character_alpha),
         .hash(hash1),
@@ -53,6 +55,7 @@ module hashing(
     
     hash_rotating hash_rotating(
         .clk(clk),
+        .nrst(nrst),
         .letter(character_lower),
         .is_alpha(is_character_alpha),
         .hash(hash2),
@@ -61,6 +64,7 @@ module hashing(
     
     word_length_counter word_length_counter(
         .clk(clk),
+        .nrst(nrst),
         .is_alpha(is_character_alpha),
         .word_len(word_len)
     );

@@ -22,6 +22,7 @@
 
 module hash_rotating(
     input clk,
+    input nrst,
     input [7:0] letter,
     input is_alpha,
     output reg [9:0] hash,
@@ -32,19 +33,23 @@ module hash_rotating(
     reg hash_ready_next=0;
     
     always @* begin
-        if (is_alpha) begin
-            if(hash_ready) begin
-                // je�li hash_ready jest 1, to warto�� hash jest jeszcze poprzednia - nie by�o kiedy resetowa�
-                hash_next = (((7312 << 4) ^ (7312 >> 6)) ^ letter) % 1024;
-            end else begin
-                hash_next = (((hash << 4) ^ (hash >> 6)) ^ letter) % 1024;
-            end
-            hash_ready_next = 0;
-        end else begin
-            hash_next = hash;//hash;
+        if(!nrst) begin
+            hash_next = hash;
             hash_ready_next = 1;
+        end else begin
+            if (is_alpha) begin
+                if(hash_ready) begin
+                    // jesli hash_ready jest 1, to wartosc hash jest jeszcze poprzednia - nie bylo kiedy resetowac
+                    hash_next = (((7312 << 4) ^ (7312 >> 6)) ^ letter) % 1024;
+                end else begin
+                    hash_next = (((hash << 4) ^ (hash >> 6)) ^ letter) % 1024;
+                end
+                hash_ready_next = 0;
+            end else begin
+                hash_next = hash;//hash;
+                hash_ready_next = 1;
+            end
         end
-        
     end
     
     always @(posedge clk) begin

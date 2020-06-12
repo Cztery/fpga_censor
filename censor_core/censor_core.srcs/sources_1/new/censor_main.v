@@ -69,7 +69,6 @@ module censor_main(
 
     mask_controller #(`input_buf_len) mask_controller(
         .clk(clk),
-        .is_alpha(is_new_char_alpha),
         .is_bad_word(is_bad_word),
         .word_len(word_len),
         .mask_out(mask_out)

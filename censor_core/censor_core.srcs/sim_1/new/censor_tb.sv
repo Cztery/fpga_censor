@@ -28,6 +28,7 @@ module censor_tb();
     logic [7:0] char_in;
     logic out_ready;
     logic [7:0] char_out;
+    integer i;
     
     censor_main censor_DUT(.clk,
                            .in_ready,
@@ -46,7 +47,11 @@ module censor_tb();
         string_in = "What - the heck? I dont know.";
         char_index = 0;
         in_ready = 1;
-        $write("string out:\n");
+        $display("\nWords treated as bad words: 'the', 'dont'");
+        $display("string in:");
+        for (i=`STRING_LEN-1; i>=0; i=i-1)
+            $write("%s", string_in[i]);
+        $write("\nstring out:\n");
     end
     
     

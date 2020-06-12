@@ -23,7 +23,6 @@
 module mask_controller
     #(parameter REG_LEN = 15) (
     input clk,
-    input is_alpha,
     input is_bad_word,
     input [4:0] word_len,
     output reg mask_out

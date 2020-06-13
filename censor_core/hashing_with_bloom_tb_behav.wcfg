@@ -11,79 +11,79 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="868680000fs"></ZoomStartTime>
-      <ZoomEndTime time="1402680001fs"></ZoomEndTime>
-      <Cursor1Time time="525000000fs"></Cursor1Time>
+      <ZoomStartTime time="19661250000fs"></ZoomStartTime>
+      <ZoomEndTime time="20067750001fs"></ZoomEndTime>
+      <Cursor1Time time="19866250000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="105"></NameColumnWidth>
+      <NameColumnWidth column_width="101"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="13" />
-   <wvobject fp_name="/censor_tb/clk" type="logic">
+   <wvobject type="logic" fp_name="/censor_tb/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
       <obj_property name="CustomSignalColor">#FFFF00</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/censor_tb/in_ready" type="logic">
+   <wvobject type="logic" fp_name="/censor_tb/in_ready">
       <obj_property name="ElementShortName">in_ready</obj_property>
       <obj_property name="ObjectShortName">in_ready</obj_property>
       <obj_property name="CustomSignalColor">#FFA500</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/censor_tb/char_in" type="array">
+   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/mask_controller/nrst">
+      <obj_property name="ElementShortName">nrst</obj_property>
+      <obj_property name="ObjectShortName">nrst</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/censor_tb/char_in">
       <obj_property name="ElementShortName">char_in[7:0]</obj_property>
       <obj_property name="ObjectShortName">char_in[7:0]</obj_property>
       <obj_property name="Radix">ASCIIRADIX</obj_property>
       <obj_property name="CustomSignalColor">#FFA500</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/censor_tb/char_out" type="array">
+   <wvobject type="array" fp_name="/censor_tb/char_out">
       <obj_property name="ElementShortName">char_out[7:0]</obj_property>
       <obj_property name="ObjectShortName">char_out[7:0]</obj_property>
       <obj_property name="Radix">ASCIIRADIX</obj_property>
       <obj_property name="CustomSignalColor">#FFA500</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/censor_tb/out_ready" type="logic">
+   <wvobject type="logic" fp_name="/censor_tb/out_ready">
       <obj_property name="ElementShortName">out_ready</obj_property>
       <obj_property name="ObjectShortName">out_ready</obj_property>
       <obj_property name="CustomSignalColor">#FFA500</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/censor_tb/censor_DUT/mask_controller/word_len" type="array">
+   <wvobject type="array" fp_name="/censor_tb/censor_DUT/mask_controller/word_len">
       <obj_property name="ElementShortName">word_len[4:0]</obj_property>
       <obj_property name="ObjectShortName">word_len[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/censor_tb/censor_DUT/mask_controller/is_alpha" type="logic">
-      <obj_property name="ElementShortName">is_alpha</obj_property>
-      <obj_property name="ObjectShortName">is_alpha</obj_property>
-   </wvobject>
-   <wvobject fp_name="/censor_tb/censor_DUT/mask_controller/mask_bits" type="array">
+   <wvobject type="array" fp_name="/censor_tb/censor_DUT/mask_controller/mask_bits">
       <obj_property name="ElementShortName">mask_bits[15:0]</obj_property>
       <obj_property name="ObjectShortName">mask_bits[15:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/censor_tb/censor_DUT/mask_controller/mask_out" type="logic">
+   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/mask_controller/mask_out">
       <obj_property name="ElementShortName">mask_out</obj_property>
       <obj_property name="ObjectShortName">mask_out</obj_property>
    </wvobject>
-   <wvobject fp_name="/censor_tb/censor_DUT/hashing/hash_bernstein/hash" type="array">
+   <wvobject type="array" fp_name="/censor_tb/censor_DUT/hashing/hash_bernstein/hash">
       <obj_property name="ElementShortName">hash[9:0]</obj_property>
       <obj_property name="ObjectShortName">hash[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/censor_tb/censor_DUT/hashing/hash_rotating/hash" type="array">
+   <wvobject type="array" fp_name="/censor_tb/censor_DUT/hashing/hash_rotating/hash">
       <obj_property name="ElementShortName">hash[9:0]</obj_property>
       <obj_property name="ObjectShortName">hash[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/censor_tb/censor_DUT/is_bad_word" type="logic">
+   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/is_bad_word">
       <obj_property name="ElementShortName">is_bad_word</obj_property>
       <obj_property name="ObjectShortName">is_bad_word</obj_property>
    </wvobject>
-   <wvobject fp_name="/censor_tb/censor_DUT/bloom_table_control/hash_ready" type="logic">
+   <wvobject type="logic" fp_name="/censor_tb/censor_DUT/bloom_table_control/hash_ready">
       <obj_property name="ElementShortName">hash_ready</obj_property>
       <obj_property name="ObjectShortName">hash_ready</obj_property>
    </wvobject>

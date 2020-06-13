@@ -29,21 +29,23 @@ module mask_controller
     );
 
     
-    reg mask_next;
+    reg already_set = 0;
     integer i;
 
     reg [REG_LEN:0] mask_bits = 0;
-    reg out_bit_next;
     
-    always @(posedge is_bad_word) begin
-        for (i = REG_LEN; i > 0 && i <= REG_LEN; i = i - 1) begin
-            if (i <= word_len)
-                mask_bits[i + 2] <= 1;
+    always @* begin
+        if(is_bad_word && !already_set) begin
+            for (i = REG_LEN; i > 0 && i <= REG_LEN; i = i - 1) begin
+                if (i <= word_len)
+                    mask_bits[i + 2] = 1;
+            end
+            already_set = 1;
         end
     end
 
-
     always @(posedge clk) begin
+        already_set = 0;
         mask_bits[0] <= 0;
         mask_bits <= (mask_bits << 1);
         mask_out <= mask_bits[REG_LEN];

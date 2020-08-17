@@ -1,0 +1,1005 @@
+SYSTEMY DEDYKOWANE W UKŁADACH PROGRAMOWALNYCH
+Projekt - Syntezowalny model HDL procesora
+
+TEMAT: CENSOR
+
+ZESPÓŁ:
+Marcin Kurkowski
+Piotr Ziębiński
+Damian Bargieł
+
+
+
+
+########## WYCIĄG Z KONSOLI SYMULACJI ##########
+
+Words treated as bad words: 'the', 'dont'
+string in:
+What - the heck? I dont know.
+string out:
+What - *** heck? I **** know.
+
+
+########## RAPORT Z SYNTEZY ##########
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Sat Jun 13 15:55:46 2020
+| Host         : cztery-lenovo running 64-bit Manjaro Linux
+| Command      : report_utilization -file censor_main_utilization_synth.rpt -pb censor_main_utilization_synth.pb
+| Design       : censor_main
+| Device       : 7k70tfbv676-1
+| Design State : Synthesized
+-----------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Slice Logic
+1.1 Summary of Registers by Type
+2. Memory
+3. DSP
+4. IO and GT Specific
+5. Clocking
+6. Specific Feature
+7. Primitives
+8. Black Boxes
+9. Instantiated Netlists
+
+1. Slice Logic
+--------------
+
++----------------------------+------+-------+-----------+-------+
+|          Site Type         | Used | Fixed | Available | Util% |
++----------------------------+------+-------+-----------+-------+
+| Slice LUTs*                |   67 |     0 |     41000 |  0.16 |
+|   LUT as Logic             |   59 |     0 |     41000 |  0.14 |
+|   LUT as Memory            |    8 |     0 |     13400 |  0.06 |
+|     LUT as Distributed RAM |    0 |     0 |           |       |
+|     LUT as Shift Register  |    8 |     0 |           |       |
+| Slice Registers            |   81 |     0 |     82000 |  0.10 |
+|   Register as Flip Flop    |   67 |     0 |     82000 |  0.08 |
+|   Register as Latch        |   14 |     0 |     82000 |  0.02 |
+| F7 Muxes                   |    0 |     0 |     20500 |  0.00 |
+| F8 Muxes                   |    0 |     0 |     10250 |  0.00 |
++----------------------------+------+-------+-----------+-------+
+* Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
+
+
+1.1 Summary of Registers by Type
+--------------------------------
+
++-------+--------------+-------------+--------------+
+| Total | Clock Enable | Synchronous | Asynchronous |
++-------+--------------+-------------+--------------+
+| 0     |            _ |           - |            - |
+| 0     |            _ |           - |          Set |
+| 0     |            _ |           - |        Reset |
+| 0     |            _ |         Set |            - |
+| 0     |            _ |       Reset |            - |
+| 0     |          Yes |           - |            - |
+| 0     |          Yes |           - |          Set |
+| 14    |          Yes |           - |        Reset |
+| 1     |          Yes |         Set |            - |
+| 66    |          Yes |       Reset |            - |
++-------+--------------+-------------+--------------+
+
+
+2. Memory
+---------
+
++----------------+------+-------+-----------+-------+
+|    Site Type   | Used | Fixed | Available | Util% |
++----------------+------+-------+-----------+-------+
+| Block RAM Tile |    0 |     0 |       135 |  0.00 |
+|   RAMB36/FIFO* |    0 |     0 |       135 |  0.00 |
+|   RAMB18       |    0 |     0 |       270 |  0.00 |
++----------------+------+-------+-----------+-------+
+* Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
+
+
+3. DSP
+------
+
++----------------+------+-------+-----------+-------+
+|    Site Type   | Used | Fixed | Available | Util% |
++----------------+------+-------+-----------+-------+
+| DSPs           |    1 |     0 |       240 |  0.42 |
+|   DSP48E1 only |    1 |       |           |       |
++----------------+------+-------+-----------+-------+
+
+
+4. IO and GT Specific
+---------------------
+
++-----------------------------+------+-------+-----------+-------+
+|          Site Type          | Used | Fixed | Available | Util% |
++-----------------------------+------+-------+-----------+-------+
+| Bonded IOB                  |   19 |     0 |       300 |  6.33 |
+| Bonded IPADs                |    0 |     0 |        26 |  0.00 |
+| Bonded OPADs                |    0 |     0 |        16 |  0.00 |
+| PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
+| PHASER_REF                  |    0 |     0 |         6 |  0.00 |
+| OUT_FIFO                    |    0 |     0 |        24 |  0.00 |
+| IN_FIFO                     |    0 |     0 |        24 |  0.00 |
+| IDELAYCTRL                  |    0 |     0 |         6 |  0.00 |
+| IBUFDS                      |    0 |     0 |       288 |  0.00 |
+| GTXE2_COMMON                |    0 |     0 |         2 |  0.00 |
+| GTXE2_CHANNEL               |    0 |     0 |         8 |  0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |        24 |  0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |        24 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       300 |  0.00 |
+| ODELAYE2/ODELAYE2_FINEDELAY |    0 |     0 |       100 |  0.00 |
+| IBUFDS_GTE2                 |    0 |     0 |         4 |  0.00 |
+| ILOGIC                      |    0 |     0 |       300 |  0.00 |
+| OLOGIC                      |    0 |     0 |       300 |  0.00 |
++-----------------------------+------+-------+-----------+-------+
+
+
+5. Clocking
+-----------
+
++------------+------+-------+-----------+-------+
+|  Site Type | Used | Fixed | Available | Util% |
++------------+------+-------+-----------+-------+
+| BUFGCTRL   |    1 |     0 |        32 |  3.13 |
+| BUFIO      |    0 |     0 |        24 |  0.00 |
+| MMCME2_ADV |    0 |     0 |         6 |  0.00 |
+| PLLE2_ADV  |    0 |     0 |         6 |  0.00 |
+| BUFMRCE    |    0 |     0 |        12 |  0.00 |
+| BUFHCE     |    0 |     0 |        96 |  0.00 |
+| BUFR       |    0 |     0 |        24 |  0.00 |
++------------+------+-------+-----------+-------+
+
+
+6. Specific Feature
+-------------------
+
++-------------+------+-------+-----------+-------+
+|  Site Type  | Used | Fixed | Available | Util% |
++-------------+------+-------+-----------+-------+
+| BSCANE2     |    0 |     0 |         4 |  0.00 |
+| CAPTUREE2   |    0 |     0 |         1 |  0.00 |
+| DNA_PORT    |    0 |     0 |         1 |  0.00 |
+| EFUSE_USR   |    0 |     0 |         1 |  0.00 |
+| FRAME_ECCE2 |    0 |     0 |         1 |  0.00 |
+| ICAPE2      |    0 |     0 |         2 |  0.00 |
+| PCIE_2_1    |    0 |     0 |         1 |  0.00 |
+| STARTUPE2   |    0 |     0 |         1 |  0.00 |
+| XADC        |    0 |     0 |         1 |  0.00 |
++-------------+------+-------+-----------+-------+
+
+
+7. Primitives
+-------------
+
++----------+------+---------------------+
+| Ref Name | Used | Functional Category |
++----------+------+---------------------+
+| FDRE     |   66 |        Flop & Latch |
+| LUT5     |   23 |                 LUT |
+| LUT3     |   15 |                 LUT |
+| LUT6     |   14 |                 LUT |
+| LDCE     |   14 |        Flop & Latch |
+| LUT2     |   13 |                 LUT |
+| LUT4     |   11 |                 LUT |
+| IBUF     |   10 |                  IO |
+| OBUF     |    9 |                  IO |
+| SRL16E   |    8 |  Distributed Memory |
+| LUT1     |    3 |                 LUT |
+| FDSE     |    1 |        Flop & Latch |
+| DSP48E1  |    1 |    Block Arithmetic |
+| BUFG     |    1 |               Clock |
++----------+------+---------------------+
+
+
+8. Black Boxes
+--------------
+
++----------+------+
+| Ref Name | Used |
++----------+------+
+
+
+9. Instantiated Netlists
+------------------------
+
++----------+------+
+| Ref Name | Used |
++----------+------+
+
+########## KOD VERILOG ##########
+
+##### CENSOR_TB #####
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 06/01/2020 03:28:23 PM
+// Design Name: 
+// Module Name: censor_tb
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+`define STRING_LEN 29  
+
+module censor_tb();
+    logic clk;
+    reg [7:0] string_in [`STRING_LEN:0];
+    logic in_ready;
+    logic [7:0] char_in;
+    logic out_ready;
+    logic [7:0] char_out;
+    integer i;
+    
+    censor_main censor_DUT(.clk,
+                           .in_ready,
+                           .char_in,
+                           .out_ready,
+                           .char_out);
+    
+    logic [20:0] char_index;
+    
+    always begin
+        #5 clk = 1; 
+        #5 clk = 0;
+    end
+    
+    initial begin
+        string_in = "What - the heck? I dont know.";
+        char_index = 0;
+        in_ready = 1;
+        $display("\nWords treated as bad words: 'the', 'dont'");
+        $display("string in:");
+        for (i=`STRING_LEN-1; i>=0; i=i-1)
+            $write("%s", string_in[i]);
+        $write("\nstring out:\n");
+    end
+    
+    
+    always @(posedge clk) begin
+        if (char_index == `STRING_LEN) begin
+            in_ready = !in_ready;
+            char_index = 0;
+        end else
+            char_index += 1;
+            
+        char_in = string_in[`STRING_LEN - char_index];
+        
+        if(out_ready)
+            $write("%c", char_out);
+    end
+    
+endmodule
+
+
+
+
+##### CENSOR_MAIN #####
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 05/28/2020 08:55:35 PM
+// Design Name: 
+// Module Name: censor_main
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+`define input_buf_len 15    //we assume 15 as maximum bad word length
+
+module censor_main(
+    input clk,
+    input in_ready,     //works also as not-rest
+    input [7:0] char_in,
+    output out_ready,
+    output [7:0] char_out
+    );
+    
+    // WIRES FOR CONNECTION BETWEEN MODULES //
+    wire mask_out;
+    wire is_new_char_alpha;
+    wire word_end;
+    wire hash_ready;
+    wire [9:0] hash1, hash2;
+    wire is_bad_word;
+    wire [4:0] word_len;    //max 31
+    wire [7:0] char_buff2sel;
+    
+    input_char_shift_reg #(`input_buf_len) input_char_buffer(
+        .clk(clk),
+        .in_ready(in_ready),
+        .in_char(char_in),
+        .out_char(char_buff2sel)
+    );
+    
+    hashing hashing(
+        .clk(clk),
+        .nrst(in_ready),
+        .character(char_in),
+        .hash1(hash1),
+        .hash2(hash2),
+        .word_len(word_len),
+        .hash_ready(hash_ready)
+    );
+    
+    bloom_table_control bloom_table_control(
+        .hash1(hash1),
+        .hash2(hash2),
+        .hash_ready(hash_ready),
+        .is_bad_word(is_bad_word)
+    );
+    
+    is_alpha new_char_alpha_test(
+        .character(char_in),
+        .is_alpha(is_new_char_alpha)
+    );
+
+    mask_controller #(`input_buf_len) mask_controller(
+        .clk(clk),
+        .is_bad_word(is_bad_word),
+        .word_len(word_len),
+        .mask_out(mask_out)
+    );
+    
+    out_char_select out_char_select(
+        .clk(clk),
+        .char_in(char_buff2sel),
+        .mask_bit(mask_out),
+        .char_out(char_out),
+        .out_ready(out_ready)
+    );
+    
+endmodule
+
+
+
+
+##### MASK_CONTROLLER #####
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 05/28/2020 08:55:35 PM
+// Design Name: 
+// Module Name: mask_controller
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module mask_controller
+    #(parameter REG_LEN = 15) (
+    input clk,
+    input is_bad_word,
+    input [4:0] word_len,
+    output reg mask_out
+    );
+
+    
+    reg already_set = 0;
+    integer i;
+
+    reg [REG_LEN:0] mask_bits = 0;  
+    
+    always @* begin
+        if(is_bad_word && !already_set) begin
+            for (i = REG_LEN; i > 0 && i <= REG_LEN; i = i - 1) begin
+                if (i <= word_len)
+                    mask_bits[i + 2] = 1;
+            end
+            already_set = 1;
+        end
+    end
+
+    always @(posedge clk) begin
+        already_set = 0;
+        mask_bits[0] <= 0;
+        mask_bits <= (mask_bits << 1);
+        mask_out <= mask_bits[REG_LEN];
+    end
+    
+endmodule
+
+##### INPUT_CHAR_SHIFT_REG #####
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 31.05.2020 14:58:10
+// Design Name: 
+// Module Name: input_char_shift_reg
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module input_char_shift_reg(
+    input clk,
+    input in_ready,
+    input [7:0] in_char,
+    output [7:0] out_char
+    );
+    
+    parameter REG_LEN = 15;
+    
+    reg [7:0] char_buffer [0:REG_LEN];
+    assign out_char = char_buffer [REG_LEN];
+    integer i = REG_LEN;
+    
+    always @(posedge clk) begin
+        for (i = REG_LEN; i > 0; i = i - 1) begin
+            char_buffer[i] = char_buffer[i-1];
+        end
+        if(in_ready) begin
+            char_buffer[0] = in_char;
+        end else begin
+            char_buffer[0] = 8'h0;
+        end
+    end
+    
+endmodule
+
+
+
+##### HASHING #####
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 05/28/2020 09:32:08 PM
+// Design Name: 
+// Module Name: hashing
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module hashing(
+    input clk,
+    input nrst,
+    input [7:0] character,
+    output [9:0] hash1, hash2,
+    output [4:0] word_len,
+    output reg hash_ready
+    );
+    
+    wire [7:0] character_lower;
+    reg hash_ready_next;
+    wire hash_ready_bernstein, hash_ready_rotating;
+    wire is_character_alpha;
+    
+    is_alpha is_alpha(
+        .character(character),
+        .is_alpha(is_character_alpha)
+    );
+    
+    character_to_lower character_to_lower(
+        .character(character),
+        .character_lower(character_lower)
+    );
+    
+    hash_bernstein hash_bernstein(
+        .clk(clk),
+        .nrst(nrst),
+        .letter(character_lower),
+        .is_alpha(is_character_alpha),
+        .hash(hash1),
+        .hash_ready(hash_ready_bernstein)
+    );
+    
+    hash_rotating hash_rotating(
+        .clk(clk),
+        .nrst(nrst),
+        .letter(character_lower),
+        .is_alpha(is_character_alpha),
+        .hash(hash2),
+        .hash_ready(hash_ready_rotating)
+    );
+    
+    word_length_counter word_length_counter(
+        .clk(clk),
+        .nrst(nrst),
+        .is_alpha(is_character_alpha),
+        .word_len(word_len)
+    );
+    
+    always @* begin
+        hash_ready <= (hash_ready_bernstein && hash_ready_rotating);
+    end
+    
+endmodule
+
+
+
+
+##### HASH_ROTATING #####
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 05/28/2020 08:55:35 PM
+// Design Name: 
+// Module Name: hash_rotating
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module hash_rotating(
+    input clk,
+    input nrst,
+    input [7:0] letter,
+    input is_alpha,
+    output reg [9:0] hash,
+    output reg hash_ready
+    );
+    
+    reg [9:0] hash_next=7312;
+    reg hash_ready_next=0;
+    
+    always @* begin
+        if(!nrst) begin
+            hash_next = hash;
+            hash_ready_next = 1;
+        end else begin
+            if (is_alpha) begin
+                if(hash_ready) begin
+                    // jesli hash_ready jest 1, to wartosc hash jest jeszcze poprzednia - nie bylo kiedy resetowac
+                    hash_next = (((7312 << 4) ^ (7312 >> 6)) ^ letter) % 1024;
+                end else begin
+                    hash_next = (((hash << 4) ^ (hash >> 6)) ^ letter) % 1024;
+                end
+                hash_ready_next = 0;
+            end else begin
+                hash_next = hash;//hash;
+                hash_ready_next = 1;
+            end
+        end
+    end
+    
+    always @(posedge clk) begin
+        hash <= hash_next;
+        hash_ready <= hash_ready_next;
+    end
+    
+endmodule
+
+##### HASH_BERNSTEIN #####
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 05/28/2020 08:55:35 PM
+// Design Name: 
+// Module Name: hash_bernstein
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module hash_bernstein(
+    input clk,
+    input nrst,
+    input [7:0] letter,
+    input is_alpha,
+    output reg [9:0] hash,
+    output reg hash_ready
+    );
+    
+    reg [9:0] hash_next=2137;
+    reg hash_ready_next=0;
+    
+    always @* begin
+        if(!nrst) begin
+            hash_next = hash;
+            hash_ready_next = 1;
+        end else begin
+            if (is_alpha) begin
+                if(hash_ready) begin
+                    // jesli hash_ready jest 1, to wartosc hash jest jeszcze poprzednia - nie bylo kiedy resetowac
+                    hash_next = (((2137 << 5) * 2137) + letter) % 1024;
+                end else begin
+                    hash_next = (((hash << 5) * hash) + letter) % 1024;
+                end
+                hash_ready_next = 0;
+            end else begin
+                hash_next = hash;//hash;
+                hash_ready_next = 1;
+            end
+        end
+    end
+    
+    always @(posedge clk) begin
+        hash <= hash_next;
+        hash_ready <= hash_ready_next;
+    end
+    
+endmodule
+
+##### IS_ALPHA #####
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 05/28/2020 08:55:35 PM
+// Design Name: 
+// Module Name: is_alpha
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+// LETTERS' CODES IN UTF-8 //
+`define A_code 8'h41
+`define Z_code 8'h5A
+`define a_code 8'h61
+`define z_code 8'h7A
+
+module is_alpha(
+    input [7:0] character,
+    output reg is_alpha
+    );
+    
+    integer character_utf_value;
+        
+    always@* begin
+        if(((character >= `A_code) && (character <= `Z_code)) ||
+            ((character >= `a_code) && (character <= `z_code))) begin
+            is_alpha = 1;
+        end else begin
+            is_alpha = 0;
+        end
+    end
+    
+endmodule
+
+
+
+
+##### OUT_CHAR_SELECT #####
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 06/01/2020 05:43:24 PM
+// Design Name: 
+// Module Name: out_char_select
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+`define ASTERISK 8'h2A
+
+module out_char_select(
+    input clk,
+    input [7:0] char_in,
+    input mask_bit,
+    output reg [7:0] char_out,
+    output reg out_ready
+    );
+    
+    reg out_ready_next;
+    reg [7:0] char_out_next;
+    
+    always @* begin
+        if(mask_bit) begin
+            char_out_next <= `ASTERISK;
+        end else begin
+            char_out_next <= char_in;
+        end
+        
+        if(char_out_next != 0) begin
+            out_ready_next = 1;
+        end else begin
+            out_ready_next = 0;
+        end
+    end
+    
+    always @(negedge clk) begin
+        char_out <= char_out_next;
+        out_ready <= out_ready_next;
+    end
+    
+endmodule
+
+
+
+
+##### BLOOM_TABLE_CONTROL #####
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 05/28/2020 10:17:45 PM
+// Design Name: 
+// Module Name: bloom_table_control
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module bloom_table_control(
+        input [9:0] hash1, hash2,
+        input hash_ready,
+        output reg is_bad_word
+    );
+    
+    reg [1023:0] bloom_table = (1 << 101) | (1 << 165) | (1 << 244) | (1 << 471); // inicjalizacja dla 'the' i 'dont'
+    
+    initial begin
+        is_bad_word = 0;
+    end
+    
+    always @* begin
+        if(hash_ready)
+            is_bad_word = bloom_table[hash1] & bloom_table[hash2];
+    end
+    
+endmodule
+
+
+
+##### CHARACTER_TO_LOWER #####
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 05/28/2020 08:55:35 PM
+// Design Name: 
+// Module Name: character_to_lower
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+`define A_to_a_diff 8'h20
+`define a_code      8'h61
+
+module character_to_lower(
+    input [7:0] character,
+    output reg [7:0] character_lower
+    );
+    
+    always @* begin
+        if(character < `a_code)
+            character_lower = character + `A_to_a_diff;
+        else 
+            character_lower = character;
+    end
+    
+endmodule
+
+
+
+##### WORD_LENGTH_COUNTER #####
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 05/29/2020 05:36:18 PM
+// Design Name: 
+// Module Name: word_length_counter
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module word_length_counter(
+    input clk,
+    input nrst,
+    input is_alpha,
+    output reg [4:0] word_len
+    );
+    
+    reg was_previous_alpha=0, was_previous_alpha_next=0;
+    reg was_previous_nrst;
+    reg [4:0] word_len_next;
+    
+    always @* begin
+        if(!was_previous_nrst) begin
+            word_len_next = word_len;
+            was_previous_alpha_next = 0;
+        end else begin
+            if(is_alpha) begin
+                if(was_previous_alpha) begin
+                    word_len_next = word_len + 1;
+                end else begin
+                    word_len_next = 1;
+                end
+            end else begin
+                word_len_next = word_len;
+            end
+            was_previous_alpha_next = is_alpha;
+        end
+    end
+    
+    always @(posedge clk) begin
+        word_len <= word_len_next;
+        was_previous_alpha <= was_previous_alpha_next;
+        was_previous_nrst <= nrst;
+    end
+    
+    
+endmodule
+
+
+##### NEW_CHAR_ALPHA_TEST #####
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 05/28/2020 08:55:35 PM
+// Design Name: 
+// Module Name: is_alpha
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+// LETTERS' CODES IN UTF-8 //
+`define A_code 8'h41
+`define Z_code 8'h5A
+`define a_code 8'h61
+`define z_code 8'h7A
+
+module is_alpha(
+    input [7:0] character,
+    output reg is_alpha
+    );
+    
+    integer character_utf_value;
+        
+    always@* begin
+        if(((character >= `A_code) && (character <= `Z_code)) ||
+            ((character >= `a_code) && (character <= `z_code))) begin
+            is_alpha = 1;
+        end else begin
+            is_alpha = 0;
+        end
+    end
+    
+endmodule

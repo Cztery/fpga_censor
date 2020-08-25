@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Aug 25 17:49:37 2020
+# Process ID: 2712
+# Current directory: D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18128 D:\Dokumenty\AGH\SDUP\Projekt\fpga_censor\censor_axi\censor_axi.xpr
+# Log file: D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/vivado.log
+# Journal file: D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.xpr
+update_compile_order -fileset sources_1
+ipx::edit_ip_in_project -upgrade true -name censor_ip_v1_0_project -directory D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.tmp/censor_ip_v1_0_project d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/ip_repo/censor_ip_1.0/component.xml
+update_compile_order -fileset sources_1
+current_project censor_axi
+write_hwdef -force  -file D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.sdk/mb_design_wrapper.hdf
+launch_sdk -workspace D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.sdk -hwspec D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.sdk/mb_design_wrapper.hdf
+close_project

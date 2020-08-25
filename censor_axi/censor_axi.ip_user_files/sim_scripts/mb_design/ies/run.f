@@ -72,6 +72,45 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/mb_design/ip/mb_design_rst_clk_wiz_1_100M_0/sim/mb_design_rst_clk_wiz_1_100M_0.vhd" \
 -endlib
+-makelib ies_lib/generic_baseblocks_v2_1_0 \
+  "../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/axi_infrastructure_v1_1_0 \
+  "../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/axi_register_slice_v2_1_18 \
+  "../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/fifo_generator_v13_2_3 \
+  "../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/64f4/simulation/fifo_generator_vlog_beh.v" \
+-endlib
+-makelib ies_lib/fifo_generator_v13_2_3 \
+  "../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/64f4/hdl/fifo_generator_v13_2_rfs.vhd" \
+-endlib
+-makelib ies_lib/fifo_generator_v13_2_3 \
+  "../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/64f4/hdl/fifo_generator_v13_2_rfs.v" \
+-endlib
+-makelib ies_lib/axi_data_fifo_v2_1_17 \
+  "../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/axi_crossbar_v2_1_19 \
+  "../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/mb_design/ip/mb_design_xbar_0/sim/mb_design_xbar_0.v" \
+-endlib
+-makelib ies_lib/interrupt_control_v3_1_4 \
+  "../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/a040/hdl/interrupt_control_v3_1_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/axi_gpio_v2_0_20 \
+  "../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/a7c9/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/mb_design/ip/mb_design_axi_gpio_0_0/sim/mb_design_axi_gpio_0_0.vhd" \
+  "../../../bd/mb_design/ip/mb_design_axi_gpio_0_1/sim/mb_design_axi_gpio_0_1.vhd" \
+  "../../../bd/mb_design/ip/mb_design_axi_gpio_0_2/sim/mb_design_axi_gpio_0_2.vhd" \
+  "../../../bd/mb_design/ip/mb_design_axi_gpio_2_0/sim/mb_design_axi_gpio_2_0.vhd" \
+-endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v
 -endlib

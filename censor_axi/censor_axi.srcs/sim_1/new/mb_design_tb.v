@@ -29,6 +29,7 @@ module mb_design_tb();
     
     reg[7:0] char;
     assign char_in = char;
+    real character;
     
     // Reset stimulus
     initial
@@ -60,15 +61,15 @@ module mb_design_tb();
     begin
         // LOGIK
         char <= string_in[7:0];
-        
+        character = char_out;
     end
     
     //Instantiate tested module
     mb_design_wrapper mb_design_inst ( clk_n, 
                                         clk_p,
                                         char_in,
-                                        in_ready,
                                         char_out,
+                                        in_ready,
                                         out_ready,
                                         reset, 
                                         reset_n);

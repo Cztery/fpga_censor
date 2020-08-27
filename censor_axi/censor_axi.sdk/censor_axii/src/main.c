@@ -22,7 +22,7 @@
 #define OUTPUT_READY_REG_OFFSET	CENSOR_IP_S00_AXI_SLV_REG2_OFFSET
 #define OUTPUT_CHAR_REG_OFFSET	CENSOR_IP_S00_AXI_SLV_REG3_OFFSET
 
-//#define RESULT_TO_CHAR(param)	(char)(param & 0x000000FF)
+#define RESULT_TO_CHAR(param)	(char)(param & 0x000000FF)
 /***************************** Main function *********************************/
 int main(){
 	//char input_string[10] = {'A', 'l', 'a', ' ', 'm', 'a', ' ', 'k', 'o', 'd'};
@@ -31,9 +31,6 @@ int main(){
 	int status;
 	u32 result;
 	XGpio inReadyGpio, charInGpio, outReadyGpio, charOutGpio;
-
-	result = 1;//CENSOR_IP_mReadReg(CENSOR_BASE_ADDR, OUTPUT_CHAR_REG_OFFSET);
-	XGpio_DiscreteWrite(&charOutGpio, CHANNEL, result);
 
 	/* Initialize driver for the char_in GPIOe */
 	status = XGpio_Initialize(&charInGpio, XPAR_GPIO_CHAR_IN_0_DEVICE_ID);
@@ -63,6 +60,9 @@ int main(){
 	}
 	XGpio_SetDataDirection(&outReadyGpio, CHANNEL, 0x000);
 
+	result = 2;//CENSOR_IP_mReadReg(CENSOR_BASE_ADDR, OUTPUT_CHAR_REG_OFFSET);
+	XGpio_DiscreteWrite(&charOutGpio, CHANNEL, result);
+
 	//Send 1 at in_ready to start Censor processor
 	CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_READY_REG_OFFSET, 1);
 	//CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_READY_REG_OFFSET, 0);
@@ -76,11 +76,12 @@ int main(){
 		while( (CENSOR_IP_mReadReg(CENSOR_BASE_ADDR, OUTPUT_READY_REG_OFFSET) & 0x01) == 0);
 
 		//Get output char and send to GPIO
-		result = 1;//CENSOR_IP_mReadReg(CENSOR_BASE_ADDR, OUTPUT_CHAR_REG_OFFSET);
+		result = CENSOR_IP_mReadReg(CENSOR_BASE_ADDR, OUTPUT_CHAR_REG_OFFSET);
 		XGpio_DiscreteWrite(&charOutGpio, CHANNEL, result);
 
 		//Parse result to char
 		//char_out = RESULT_TO_CHAR( result );	//TODO
+
 	}
 
 	/* Failure or end trap */

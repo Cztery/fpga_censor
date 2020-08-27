@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Tue Aug 25 18:42:32 2020
+//Date        : Thu Aug 27 22:36:26 2020
 //Host        : Dell-Piotrek running 64-bit major release  (build 9200)
 //Command     : generate_target mb_design_wrapper.bd
 //Design      : mb_design_wrapper
@@ -17,7 +17,21 @@ module mb_design_wrapper
     gpio_in_ready_tri_io,
     gpio_out_ready_tri_io,
     reset_rtl_0,
-    reset_rtl_0_0);
+    reset_rtl_0_0,
+    uart_rtl_0_baudoutn,
+    uart_rtl_0_ctsn,
+    uart_rtl_0_dcdn,
+    uart_rtl_0_ddis,
+    uart_rtl_0_dsrn,
+    uart_rtl_0_dtrn,
+    uart_rtl_0_out1n,
+    uart_rtl_0_out2n,
+    uart_rtl_0_ri,
+    uart_rtl_0_rtsn,
+    uart_rtl_0_rxd,
+    uart_rtl_0_rxrdyn,
+    uart_rtl_0_txd,
+    uart_rtl_0_txrdyn);
   input diff_clock_rtl_0_clk_n;
   input diff_clock_rtl_0_clk_p;
   inout [31:0]gpio_char_in_tri_io;
@@ -26,6 +40,20 @@ module mb_design_wrapper
   inout [31:0]gpio_out_ready_tri_io;
   input reset_rtl_0;
   input reset_rtl_0_0;
+  output uart_rtl_0_baudoutn;
+  input uart_rtl_0_ctsn;
+  input uart_rtl_0_dcdn;
+  output uart_rtl_0_ddis;
+  input uart_rtl_0_dsrn;
+  output uart_rtl_0_dtrn;
+  output uart_rtl_0_out1n;
+  output uart_rtl_0_out2n;
+  input uart_rtl_0_ri;
+  output uart_rtl_0_rtsn;
+  input uart_rtl_0_rxd;
+  output uart_rtl_0_rxrdyn;
+  output uart_rtl_0_txd;
+  output uart_rtl_0_txrdyn;
 
   wire diff_clock_rtl_0_clk_n;
   wire diff_clock_rtl_0_clk_p;
@@ -543,6 +571,20 @@ module mb_design_wrapper
   wire [9:9]gpio_out_ready_tri_t_9;
   wire reset_rtl_0;
   wire reset_rtl_0_0;
+  wire uart_rtl_0_baudoutn;
+  wire uart_rtl_0_ctsn;
+  wire uart_rtl_0_dcdn;
+  wire uart_rtl_0_ddis;
+  wire uart_rtl_0_dsrn;
+  wire uart_rtl_0_dtrn;
+  wire uart_rtl_0_out1n;
+  wire uart_rtl_0_out2n;
+  wire uart_rtl_0_ri;
+  wire uart_rtl_0_rtsn;
+  wire uart_rtl_0_rxd;
+  wire uart_rtl_0_rxrdyn;
+  wire uart_rtl_0_txd;
+  wire uart_rtl_0_txrdyn;
 
   IOBUF gpio_char_in_tri_iobuf_0
        (.I(gpio_char_in_tri_o_0),
@@ -1200,5 +1242,19 @@ module mb_design_wrapper
         .gpio_out_ready_tri_o({gpio_out_ready_tri_o_31,gpio_out_ready_tri_o_30,gpio_out_ready_tri_o_29,gpio_out_ready_tri_o_28,gpio_out_ready_tri_o_27,gpio_out_ready_tri_o_26,gpio_out_ready_tri_o_25,gpio_out_ready_tri_o_24,gpio_out_ready_tri_o_23,gpio_out_ready_tri_o_22,gpio_out_ready_tri_o_21,gpio_out_ready_tri_o_20,gpio_out_ready_tri_o_19,gpio_out_ready_tri_o_18,gpio_out_ready_tri_o_17,gpio_out_ready_tri_o_16,gpio_out_ready_tri_o_15,gpio_out_ready_tri_o_14,gpio_out_ready_tri_o_13,gpio_out_ready_tri_o_12,gpio_out_ready_tri_o_11,gpio_out_ready_tri_o_10,gpio_out_ready_tri_o_9,gpio_out_ready_tri_o_8,gpio_out_ready_tri_o_7,gpio_out_ready_tri_o_6,gpio_out_ready_tri_o_5,gpio_out_ready_tri_o_4,gpio_out_ready_tri_o_3,gpio_out_ready_tri_o_2,gpio_out_ready_tri_o_1,gpio_out_ready_tri_o_0}),
         .gpio_out_ready_tri_t({gpio_out_ready_tri_t_31,gpio_out_ready_tri_t_30,gpio_out_ready_tri_t_29,gpio_out_ready_tri_t_28,gpio_out_ready_tri_t_27,gpio_out_ready_tri_t_26,gpio_out_ready_tri_t_25,gpio_out_ready_tri_t_24,gpio_out_ready_tri_t_23,gpio_out_ready_tri_t_22,gpio_out_ready_tri_t_21,gpio_out_ready_tri_t_20,gpio_out_ready_tri_t_19,gpio_out_ready_tri_t_18,gpio_out_ready_tri_t_17,gpio_out_ready_tri_t_16,gpio_out_ready_tri_t_15,gpio_out_ready_tri_t_14,gpio_out_ready_tri_t_13,gpio_out_ready_tri_t_12,gpio_out_ready_tri_t_11,gpio_out_ready_tri_t_10,gpio_out_ready_tri_t_9,gpio_out_ready_tri_t_8,gpio_out_ready_tri_t_7,gpio_out_ready_tri_t_6,gpio_out_ready_tri_t_5,gpio_out_ready_tri_t_4,gpio_out_ready_tri_t_3,gpio_out_ready_tri_t_2,gpio_out_ready_tri_t_1,gpio_out_ready_tri_t_0}),
         .reset_rtl_0(reset_rtl_0),
-        .reset_rtl_0_0(reset_rtl_0_0));
+        .reset_rtl_0_0(reset_rtl_0_0),
+        .uart_rtl_0_baudoutn(uart_rtl_0_baudoutn),
+        .uart_rtl_0_ctsn(uart_rtl_0_ctsn),
+        .uart_rtl_0_dcdn(uart_rtl_0_dcdn),
+        .uart_rtl_0_ddis(uart_rtl_0_ddis),
+        .uart_rtl_0_dsrn(uart_rtl_0_dsrn),
+        .uart_rtl_0_dtrn(uart_rtl_0_dtrn),
+        .uart_rtl_0_out1n(uart_rtl_0_out1n),
+        .uart_rtl_0_out2n(uart_rtl_0_out2n),
+        .uart_rtl_0_ri(uart_rtl_0_ri),
+        .uart_rtl_0_rtsn(uart_rtl_0_rtsn),
+        .uart_rtl_0_rxd(uart_rtl_0_rxd),
+        .uart_rtl_0_rxrdyn(uart_rtl_0_rxrdyn),
+        .uart_rtl_0_txd(uart_rtl_0_txd),
+        .uart_rtl_0_txrdyn(uart_rtl_0_txrdyn));
 endmodule

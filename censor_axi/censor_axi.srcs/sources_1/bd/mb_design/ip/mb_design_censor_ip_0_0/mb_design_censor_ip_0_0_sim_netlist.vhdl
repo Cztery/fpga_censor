@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
 -- Date        : Sat Aug 22 20:31:18 2020
 -- Host        : Dell-Piotrek running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_censor_ip_0_0/mb_design_censor_ip_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top mb_design_censor_ip_0_0 -prefix
+--               mb_design_censor_ip_0_0_ mb_design_censor_ip_0_0_sim_netlist.vhdl
 -- Design      : mb_design_censor_ip_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,8 +20,6 @@ entity mb_design_censor_ip_0_0_bloom_table_control is
     \mask_bits_reg[7]__0\ : in STD_LOGIC;
     hash_ready_rotating : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_bloom_table_control : entity is "bloom_table_control";
 end mb_design_censor_ip_0_0_bloom_table_control;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_bloom_table_control is
@@ -61,8 +59,6 @@ entity mb_design_censor_ip_0_0_hash_bernstein is
     hash2 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     is_bad_word_reg_i_1_0 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_hash_bernstein : entity is "hash_bernstein";
 end mb_design_censor_ip_0_0_hash_bernstein;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_hash_bernstein is
@@ -653,8 +649,6 @@ entity mb_design_censor_ip_0_0_hash_rotating is
     s00_axi_aclk : in STD_LOGIC;
     D : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_hash_rotating : entity is "hash_rotating";
 end mb_design_censor_ip_0_0_hash_rotating;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_hash_rotating is
@@ -844,8 +838,6 @@ entity mb_design_censor_ip_0_0_input_char_shift_reg is
     \char_buffer_reg[0][0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     mask_out : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_input_char_shift_reg : entity is "input_char_shift_reg";
 end mb_design_censor_ip_0_0_input_char_shift_reg;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_input_char_shift_reg is
@@ -1188,8 +1180,6 @@ entity mb_design_censor_ip_0_0_mask_controller is
     \mask_bits_reg[4]__0_0\ : in STD_LOGIC;
     \mask_bits_reg[3]__0_1\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_mask_controller : entity is "mask_controller";
 end mb_design_censor_ip_0_0_mask_controller;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_mask_controller is
@@ -1495,8 +1485,6 @@ entity mb_design_censor_ip_0_0_out_char_select is
     mask_out : in STD_LOGIC;
     \char_out_reg[7]_0\ : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_out_char_select : entity is "out_char_select";
 end mb_design_censor_ip_0_0_out_char_select;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_out_char_select is
@@ -1625,8 +1613,6 @@ entity mb_design_censor_ip_0_0_word_length_counter is
     Q : in STD_LOGIC_VECTOR ( 6 downto 0 );
     \mask_bits_reg[15]__0\ : in STD_LOGIC_VECTOR ( 11 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_word_length_counter : entity is "word_length_counter";
 end mb_design_censor_ip_0_0_word_length_counter;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_word_length_counter is
@@ -1976,8 +1962,6 @@ entity mb_design_censor_ip_0_0_hashing is
     was_previous_nrst_reg : in STD_LOGIC_VECTOR ( 0 to 0 );
     \mask_bits_reg[15]__0\ : in STD_LOGIC_VECTOR ( 11 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_hashing : entity is "hashing";
 end mb_design_censor_ip_0_0_hashing;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_hashing is
@@ -2084,8 +2068,6 @@ entity mb_design_censor_ip_0_0_censor_main is
     Q : in STD_LOGIC_VECTOR ( 7 downto 0 );
     was_previous_nrst_reg : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_censor_main : entity is "censor_main";
 end mb_design_censor_ip_0_0_censor_main;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_censor_main is
@@ -2216,8 +2198,6 @@ entity mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI : entity is "censor_ip_v1_0_S00_AXI";
 end mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI is
@@ -3965,8 +3945,6 @@ entity mb_design_censor_ip_0_0_censor_ip_v1_0 is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_censor_ip_v1_0 : entity is "censor_ip_v1_0";
 end mb_design_censor_ip_0_0_censor_ip_v1_0;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_censor_ip_v1_0 is

@@ -410,7 +410,7 @@
     assign slv_wire2[31:1] = 31'b0;
     assign slv_wire3[31:8] = 24'b0;
 
-    censor_main censor_main_inst(.clk(S_AXI_ACLK),
+    censor_main censor_main_inst(.clk(slv_reg0[1]),
                                    .in_ready(slv_reg0[0]),
                                    .char_in(slv_reg1[7:0]),                                   
                                    .out_ready(slv_wire2[0]),

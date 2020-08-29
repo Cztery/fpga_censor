@@ -25,10 +25,11 @@
 #define RESULT_TO_CHAR(param)	(char)(param & 0x000000FF)
 /***************************** Main function *********************************/
 int main(){
-	//char input_string[10] = {'A', 'l', 'a', ' ', 'm', 'a', ' ', 'k', 'o', 'd'};
+	char input_string[10] = {'A', 'l', 'a', ' ', 'm', 'a', ' ', 'k', 'o', 'd'};
 	char input_char;
 	char char_out;
 	int status;
+	int i;
 	u32 result;
 	XGpio inReadyGpio, charInGpio, outReadyGpio, charOutGpio;
 
@@ -67,9 +68,13 @@ int main(){
 	CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_READY_REG_OFFSET, 1);
 	//CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_READY_REG_OFFSET, 0);
 
+	i=0;
 	while(1){
-		//Send characters at char_in register
-		input_char = XGpio_DiscreteRead(&charInGpio, CHANNEL);
+		input_char = input_string[i];
+		i = (i == 10) ? 0 : i + 1;
+		//Send characters to char_in register
+		// input_char = XGpio_DiscreteRead(&charInGpio, CHANNEL);
+
 		CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_CHAR_REG_OFFSET, input_char);
 
 		//Wait for out_ready

@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Sat Aug 22 20:31:17 2020
+// Date        : Sun Aug 30 22:18:02 2020
 // Host        : Dell-Piotrek running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top mb_design_censor_ip_0_0 -prefix
-//               mb_design_censor_ip_0_0_ mb_design_censor_ip_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim {D:/Dokumenty/AGH/SDUP/Projekt/drugi
+//               projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_censor_ip_0_0/mb_design_censor_ip_0_0_sim_netlist.v}
 // Design      : mb_design_censor_ip_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,6 +12,98 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
+(* CHECK_LICENSE_TYPE = "mb_design_censor_ip_0_0,censor_ip_v1_0,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "censor_ip_v1_0,Vivado 2018.3" *) 
+(* NotValidForBitStream *)
+module mb_design_censor_ip_0_0
+   (s00_axi_awaddr,
+    s00_axi_awprot,
+    s00_axi_awvalid,
+    s00_axi_awready,
+    s00_axi_wdata,
+    s00_axi_wstrb,
+    s00_axi_wvalid,
+    s00_axi_wready,
+    s00_axi_bresp,
+    s00_axi_bvalid,
+    s00_axi_bready,
+    s00_axi_araddr,
+    s00_axi_arprot,
+    s00_axi_arvalid,
+    s00_axi_arready,
+    s00_axi_rdata,
+    s00_axi_rresp,
+    s00_axi_rvalid,
+    s00_axi_rready,
+    s00_axi_aclk,
+    s00_axi_aresetn);
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *) input [3:0]s00_axi_awaddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *) input [2:0]s00_axi_awprot;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID" *) input s00_axi_awvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWREADY" *) output s00_axi_awready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WDATA" *) input [31:0]s00_axi_wdata;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WSTRB" *) input [3:0]s00_axi_wstrb;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WVALID" *) input s00_axi_wvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WREADY" *) output s00_axi_wready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BRESP" *) output [1:0]s00_axi_bresp;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BVALID" *) output s00_axi_bvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BREADY" *) input s00_axi_bready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARADDR" *) input [3:0]s00_axi_araddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARPROT" *) input [2:0]s00_axi_arprot;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARVALID" *) input s00_axi_arvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARREADY" *) output s00_axi_arready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RDATA" *) output [31:0]s00_axi_rdata;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RRESP" *) output [1:0]s00_axi_rresp;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RVALID" *) output s00_axi_rvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN mb_design_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input s00_axi_rready;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN mb_design_clk_wiz_1_0_clk_out1, INSERT_VIP 0" *) input s00_axi_aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 S00_AXI_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s00_axi_aresetn;
+
+  wire \<const0> ;
+  wire s00_axi_aclk;
+  wire [3:0]s00_axi_araddr;
+  wire s00_axi_aresetn;
+  wire s00_axi_arready;
+  wire s00_axi_arvalid;
+  wire [3:0]s00_axi_awaddr;
+  wire s00_axi_awready;
+  wire s00_axi_awvalid;
+  wire s00_axi_bready;
+  wire s00_axi_bvalid;
+  wire [31:0]s00_axi_rdata;
+  wire s00_axi_rready;
+  wire s00_axi_rvalid;
+  wire [31:0]s00_axi_wdata;
+  wire s00_axi_wready;
+  wire [3:0]s00_axi_wstrb;
+  wire s00_axi_wvalid;
+
+  assign s00_axi_bresp[1] = \<const0> ;
+  assign s00_axi_bresp[0] = \<const0> ;
+  assign s00_axi_rresp[1] = \<const0> ;
+  assign s00_axi_rresp[0] = \<const0> ;
+  GND GND
+       (.G(\<const0> ));
+  mb_design_censor_ip_0_0_censor_ip_v1_0 inst
+       (.S_AXI_ARREADY(s00_axi_arready),
+        .S_AXI_AWREADY(s00_axi_awready),
+        .S_AXI_WREADY(s00_axi_wready),
+        .s00_axi_aclk(s00_axi_aclk),
+        .s00_axi_araddr(s00_axi_araddr[3:2]),
+        .s00_axi_aresetn(s00_axi_aresetn),
+        .s00_axi_arvalid(s00_axi_arvalid),
+        .s00_axi_awaddr(s00_axi_awaddr[3:2]),
+        .s00_axi_awvalid(s00_axi_awvalid),
+        .s00_axi_bready(s00_axi_bready),
+        .s00_axi_bvalid(s00_axi_bvalid),
+        .s00_axi_rdata(s00_axi_rdata),
+        .s00_axi_rready(s00_axi_rready),
+        .s00_axi_rvalid(s00_axi_rvalid),
+        .s00_axi_wdata(s00_axi_wdata),
+        .s00_axi_wstrb(s00_axi_wstrb),
+        .s00_axi_wvalid(s00_axi_wvalid));
+endmodule
+
+(* ORIG_REF_NAME = "bloom_table_control" *) 
 module mb_design_censor_ip_0_0_bloom_table_control
    (is_bad_word,
     \mask_bits_reg[7]__0 ,
@@ -35,6 +127,7 @@ module mb_design_censor_ip_0_0_bloom_table_control
         .Q(is_bad_word));
 endmodule
 
+(* ORIG_REF_NAME = "censor_ip_v1_0" *) 
 module mb_design_censor_ip_0_0_censor_ip_v1_0
    (S_AXI_AWREADY,
     S_AXI_WREADY,
@@ -109,6 +202,7 @@ module mb_design_censor_ip_0_0_censor_ip_v1_0
         .s00_axi_wvalid(s00_axi_wvalid));
 endmodule
 
+(* ORIG_REF_NAME = "censor_ip_v1_0_S00_AXI" *) 
 module mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI
    (S_AXI_AWREADY,
     S_AXI_WREADY,
@@ -178,7 +272,7 @@ module mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI
   wire [31:0]s00_axi_wdata;
   wire [3:0]s00_axi_wstrb;
   wire s00_axi_wvalid;
-  wire [0:0]slv_reg0;
+  wire [1:0]slv_reg0;
   wire \slv_reg0[15]_i_1_n_0 ;
   wire \slv_reg0[23]_i_1_n_0 ;
   wire \slv_reg0[31]_i_1_n_0 ;
@@ -193,7 +287,6 @@ module mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI
   wire \slv_reg0_reg_n_0_[17] ;
   wire \slv_reg0_reg_n_0_[18] ;
   wire \slv_reg0_reg_n_0_[19] ;
-  wire \slv_reg0_reg_n_0_[1] ;
   wire \slv_reg0_reg_n_0_[20] ;
   wire \slv_reg0_reg_n_0_[21] ;
   wire \slv_reg0_reg_n_0_[22] ;
@@ -381,7 +474,7 @@ module mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI
         .I2(axi_araddr[2]),
         .I3(slv_reg2),
         .I4(axi_araddr[3]),
-        .I5(slv_reg0),
+        .I5(slv_reg0[0]),
         .O(reg_data_out[0]));
   LUT4 #(
     .INIT(16'h00E2)) 
@@ -469,7 +562,7 @@ module mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI
        (.I0(slv_reg3[1]),
         .I1(slv_reg1[1]),
         .I2(axi_araddr[2]),
-        .I3(\slv_reg0_reg_n_0_[1] ),
+        .I3(slv_reg0[1]),
         .I4(axi_araddr[3]),
         .O(reg_data_out[1]));
   LUT4 #(
@@ -861,10 +954,9 @@ module mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI
         .R(axi_awready_i_1_n_0));
   mb_design_censor_ip_0_0_censor_main censor_main_inst
        (.D(slv_wire3),
-        .Q(slv_reg1),
-        .s00_axi_aclk(s00_axi_aclk),
-        .slv_wire2(slv_wire2),
-        .was_previous_nrst_reg(slv_reg0));
+        .Q(slv_reg0),
+        .\char_buffer_reg[0][7] (slv_reg1),
+        .slv_wire2(slv_wire2));
   LUT4 #(
     .INIT(16'h0200)) 
     \slv_reg0[15]_i_1 
@@ -901,7 +993,7 @@ module mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI
        (.C(s00_axi_aclk),
         .CE(\slv_reg0[7]_i_1_n_0 ),
         .D(s00_axi_wdata[0]),
-        .Q(slv_reg0),
+        .Q(slv_reg0[0]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg0_reg[10] 
        (.C(s00_axi_aclk),
@@ -967,7 +1059,7 @@ module mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI
        (.C(s00_axi_aclk),
         .CE(\slv_reg0[7]_i_1_n_0 ),
         .D(s00_axi_wdata[1]),
-        .Q(\slv_reg0_reg_n_0_[1] ),
+        .Q(slv_reg0[1]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg0_reg[20] 
        (.C(s00_axi_aclk),
@@ -1457,20 +1549,20 @@ module mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI
         .O(slv_reg_rden__0));
 endmodule
 
+(* ORIG_REF_NAME = "censor_main" *) 
 module mb_design_censor_ip_0_0_censor_main
    (slv_wire2,
     D,
-    s00_axi_aclk,
     Q,
-    was_previous_nrst_reg);
+    \char_buffer_reg[0][7] );
   output slv_wire2;
   output [7:0]D;
-  input s00_axi_aclk;
-  input [7:0]Q;
-  input [0:0]was_previous_nrst_reg;
+  input [1:0]Q;
+  input [7:0]\char_buffer_reg[0][7] ;
 
   wire [7:0]D;
-  wire [7:0]Q;
+  wire [1:0]Q;
+  wire [7:0]\char_buffer_reg[0][7] ;
   wire [7:0]\char_buffer_reg[15] ;
   wire [5:1]char_out_next;
   wire hash_ready_rotating;
@@ -1492,9 +1584,7 @@ module mb_design_censor_ip_0_0_censor_main
   wire [15:3]mask_bits;
   wire mask_out;
   wire out_ready_next;
-  wire s00_axi_aclk;
   wire slv_wire2;
-  wire [0:0]was_previous_nrst_reg;
 
   mb_design_censor_ip_0_0_bloom_table_control bloom_table_control
        (.hash_ready_rotating(hash_ready_rotating),
@@ -1502,11 +1592,10 @@ module mb_design_censor_ip_0_0_censor_main
         .\mask_bits_reg[7]__0 (hashing_n_1));
   mb_design_censor_ip_0_0_hashing hashing
        (.Q(Q),
+        .hash_next0(\char_buffer_reg[0][7] ),
         .hash_ready_rotating(hash_ready_rotating),
         .\hash_reg[8] (hashing_n_1),
         .\mask_bits_reg[15]__0 ({mask_bits[15:7],mask_bits[5:3]}),
-        .s00_axi_aclk(s00_axi_aclk),
-        .was_previous_nrst_reg(was_previous_nrst_reg),
         .\word_len_reg[1] (hashing_n_2),
         .\word_len_reg[1]_0 (hashing_n_4),
         .\word_len_reg[1]_1 (hashing_n_5),
@@ -1523,11 +1612,10 @@ module mb_design_censor_ip_0_0_censor_main
   mb_design_censor_ip_0_0_input_char_shift_reg input_char_buffer
        (.D({char_out_next[5],char_out_next[3],char_out_next[1]}),
         .Q(Q),
-        .\char_buffer_reg[0][0]_0 (was_previous_nrst_reg),
+        .\char_buffer_reg[0][7]_0 (\char_buffer_reg[0][7] ),
         .\char_buffer_reg[15][7]_0 ({\char_buffer_reg[15] [7:6],\char_buffer_reg[15] [4],\char_buffer_reg[15] [2],\char_buffer_reg[15] [0]}),
         .mask_out(mask_out),
-        .out_ready_next(out_ready_next),
-        .s00_axi_aclk(s00_axi_aclk));
+        .out_ready_next(out_ready_next));
   mb_design_censor_ip_0_0_mask_controller mask_controller
        (.Q({mask_bits[15:7],mask_bits[5:3]}),
         .is_bad_word(is_bad_word),
@@ -1545,17 +1633,18 @@ module mb_design_censor_ip_0_0_censor_main
         .\mask_bits_reg[8]__0_0 (hashing_n_10),
         .\mask_bits_reg[9]__0_0 (hashing_n_11),
         .mask_out(mask_out),
-        .s00_axi_aclk(s00_axi_aclk));
+        .mask_out_reg_0(Q[1]));
   mb_design_censor_ip_0_0_out_char_select out_char_select
        (.D(D),
+        .Q(Q[1]),
         .\char_out_reg[5]_0 ({char_out_next[5],char_out_next[3],char_out_next[1]}),
         .\char_out_reg[7]_0 ({\char_buffer_reg[15] [7:6],\char_buffer_reg[15] [4],\char_buffer_reg[15] [2],\char_buffer_reg[15] [0]}),
         .mask_out(mask_out),
         .out_ready_next(out_ready_next),
-        .s00_axi_aclk(s00_axi_aclk),
         .slv_wire2(slv_wire2));
 endmodule
 
+(* ORIG_REF_NAME = "hash_bernstein" *) 
 module mb_design_censor_ip_0_0_hash_bernstein
    (\slv_reg0_reg[0] ,
     hash_ready_reg_0,
@@ -1565,7 +1654,6 @@ module mb_design_censor_ip_0_0_hash_bernstein
     \hash_reg[0]_2 ,
     \hash_reg[9]_0 ,
     D,
-    s00_axi_aclk,
     Q,
     hash_next0_0,
     is_bad_word_reg_i_1,
@@ -1579,20 +1667,19 @@ module mb_design_censor_ip_0_0_hash_bernstein
   output \hash_reg[0]_2 ;
   output \hash_reg[9]_0 ;
   output [7:0]D;
-  input s00_axi_aclk;
-  input [7:0]Q;
-  input [0:0]hash_next0_0;
+  input [1:0]Q;
+  input [7:0]hash_next0_0;
   input is_bad_word_reg_i_1;
   input [7:0]hash2;
   input is_bad_word_reg_i_1_0;
 
   wire [7:0]D;
-  wire [7:0]Q;
+  wire [1:0]Q;
   wire [7:5]character_lower;
   wire [9:0]hash1;
   wire [7:0]hash2;
   wire \hash[9]_i_1_n_0 ;
-  wire [0:0]hash_next0_0;
+  wire [7:0]hash_next0_0;
   wire hash_next0_i_15_n_0;
   wire hash_next0_i_16_n_0;
   wire [9:0]hash_next0_in;
@@ -1616,7 +1703,6 @@ module mb_design_censor_ip_0_0_hash_bernstein
   wire is_bad_word_reg_i_1;
   wire is_bad_word_reg_i_10_n_0;
   wire is_bad_word_reg_i_1_0;
-  wire s00_axi_aclk;
   wire \slv_reg0_reg[0] ;
   wire NLW_hash_next0_CARRYCASCOUT_UNCONNECTED;
   wire NLW_hash_next0_MULTSIGNOUT_UNCONNECTED;
@@ -1636,14 +1722,14 @@ module mb_design_censor_ip_0_0_hash_bernstein
     \hash[0]_i_1 
        (.I0(hash_ready_reg_0),
         .I1(hash2[4]),
-        .I2(Q[0]),
+        .I2(hash_next0_0[0]),
         .O(D[0]));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'h36)) 
     \hash[1]_i_1 
        (.I0(hash_ready_reg_0),
-        .I1(Q[1]),
+        .I1(hash_next0_0[1]),
         .I2(hash2[5]),
         .O(D[1]));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
@@ -1651,7 +1737,7 @@ module mb_design_censor_ip_0_0_hash_bernstein
     .INIT(8'h9C)) 
     \hash[2]_i_1 
        (.I0(hash_ready_reg_0),
-        .I1(Q[2]),
+        .I1(hash_next0_0[2]),
         .I2(hash2[6]),
         .O(D[2]));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
@@ -1659,7 +1745,7 @@ module mb_design_censor_ip_0_0_hash_bernstein
     .INIT(8'h9C)) 
     \hash[3]_i_1 
        (.I0(hash_ready_reg_0),
-        .I1(Q[3]),
+        .I1(hash_next0_0[3]),
         .I2(hash2[7]),
         .O(D[3]));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
@@ -1667,7 +1753,7 @@ module mb_design_censor_ip_0_0_hash_bernstein
     .INIT(8'h36)) 
     \hash[4]_i_1 
        (.I0(hash_ready_reg_0),
-        .I1(Q[4]),
+        .I1(hash_next0_0[4]),
         .I2(hash2[0]),
         .O(D[4]));
   (* SOFT_HLUTNM = "soft_lutpair6" *) 
@@ -1735,7 +1821,7 @@ module mb_design_censor_ip_0_0_hash_bernstein
         .B({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,hash_next0_in}),
         .BCIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .BCOUT(NLW_hash_next0_BCOUT_UNCONNECTED[17:0]),
-        .C({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,character_lower,Q[4:0]}),
+        .C({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,character_lower,hash_next0_0[4:0]}),
         .CARRYCASCIN(1'b0),
         .CARRYCASCOUT(NLW_hash_next0_CARRYCASCOUT_UNCONNECTED),
         .CARRYIN(1'b0),
@@ -1754,7 +1840,7 @@ module mb_design_censor_ip_0_0_hash_bernstein
         .CEINMODE(1'b0),
         .CEM(1'b0),
         .CEP(1'b0),
-        .CLK(s00_axi_aclk),
+        .CLK(Q[1]),
         .D({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .INMODE({1'b0,1'b0,1'b0,1'b0,1'b0}),
         .MULTSIGNIN(1'b0),
@@ -1780,69 +1866,69 @@ module mb_design_censor_ip_0_0_hash_bernstein
   LUT5 #(
     .INIT(32'h00000020)) 
     hash_next0_i_1
-       (.I0(hash_next0_0),
+       (.I0(Q[0]),
         .I1(hash_next0_i_15_n_0),
-        .I2(Q[6]),
-        .I3(Q[7]),
+        .I2(hash_next0_0[6]),
+        .I3(hash_next0_0[7]),
         .I4(hash_next0_i_16_n_0),
         .O(\slv_reg0_reg[0] ));
   LUT3 #(
     .INIT(8'hB8)) 
     hash_next0_i_10
-       (.I0(Q[1]),
+       (.I0(hash_next0_0[1]),
         .I1(hash_ready_reg_0),
         .I2(hash_next0_n_104),
         .O(hash_next0_in[1]));
   LUT3 #(
     .INIT(8'hB8)) 
     hash_next0_i_11
-       (.I0(Q[0]),
+       (.I0(hash_next0_0[0]),
         .I1(hash_ready_reg_0),
         .I2(hash_next0_n_105),
         .O(hash_next0_in[0]));
   LUT4 #(
     .INIT(16'hECCC)) 
     hash_next0_i_12
-       (.I0(Q[6]),
-        .I1(Q[7]),
-        .I2(Q[5]),
+       (.I0(hash_next0_0[6]),
+        .I1(hash_next0_0[7]),
+        .I2(hash_next0_0[5]),
         .I3(hash_next0_i_15_n_0),
         .O(character_lower[7]));
   LUT4 #(
     .INIT(16'hF70C)) 
     hash_next0_i_13
        (.I0(hash_next0_i_15_n_0),
-        .I1(Q[5]),
-        .I2(Q[7]),
-        .I3(Q[6]),
+        .I1(hash_next0_0[5]),
+        .I2(hash_next0_0[7]),
+        .I3(hash_next0_0[6]),
         .O(character_lower[6]));
   LUT4 #(
     .INIT(16'hF04F)) 
     hash_next0_i_14
        (.I0(hash_next0_i_15_n_0),
-        .I1(Q[6]),
-        .I2(Q[5]),
-        .I3(Q[7]),
+        .I1(hash_next0_0[6]),
+        .I2(hash_next0_0[5]),
+        .I3(hash_next0_0[7]),
         .O(character_lower[5]));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h00000001)) 
     hash_next0_i_15
-       (.I0(Q[1]),
-        .I1(Q[2]),
-        .I2(Q[4]),
-        .I3(Q[3]),
-        .I4(Q[0]),
+       (.I0(hash_next0_0[1]),
+        .I1(hash_next0_0[2]),
+        .I2(hash_next0_0[4]),
+        .I3(hash_next0_0[3]),
+        .I4(hash_next0_0[0]),
         .O(hash_next0_i_15_n_0));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h88808080)) 
     hash_next0_i_16
-       (.I0(Q[3]),
-        .I1(Q[4]),
-        .I2(Q[2]),
-        .I3(Q[1]),
-        .I4(Q[0]),
+       (.I0(hash_next0_0[3]),
+        .I1(hash_next0_0[4]),
+        .I2(hash_next0_0[2]),
+        .I3(hash_next0_0[1]),
+        .I4(hash_next0_0[0]),
         .O(hash_next0_i_16_n_0));
   LUT2 #(
     .INIT(4'hE)) 
@@ -1854,26 +1940,26 @@ module mb_design_censor_ip_0_0_hash_bernstein
     .INIT(32'hC000AAAA)) 
     hash_next0_i_3
        (.I0(hash_next0_n_97),
-        .I1(Q[6]),
-        .I2(Q[7]),
-        .I3(Q[5]),
+        .I1(hash_next0_0[6]),
+        .I2(hash_next0_0[7]),
+        .I3(hash_next0_0[5]),
         .I4(hash_ready_reg_0),
         .O(hash_next0_in[8]));
   LUT5 #(
     .INIT(32'h3CAAFCAA)) 
     hash_next0_i_4
        (.I0(hash_next0_n_98),
-        .I1(Q[6]),
-        .I2(Q[7]),
+        .I1(hash_next0_0[6]),
+        .I2(hash_next0_0[7]),
         .I3(hash_ready_reg_0),
-        .I4(Q[5]),
+        .I4(hash_next0_0[5]),
         .O(hash_next0_in[7]));
   LUT5 #(
     .INIT(32'h65FF6500)) 
     hash_next0_i_5
-       (.I0(Q[6]),
-        .I1(Q[5]),
-        .I2(Q[7]),
+       (.I0(hash_next0_0[6]),
+        .I1(hash_next0_0[5]),
+        .I2(hash_next0_0[7]),
         .I3(hash_ready_reg_0),
         .I4(hash_next0_n_99),
         .O(hash_next0_in[6]));
@@ -1882,29 +1968,29 @@ module mb_design_censor_ip_0_0_hash_bernstein
     hash_next0_i_6
        (.I0(hash_next0_n_100),
         .I1(hash_ready_reg_0),
-        .I2(Q[5]),
-        .I3(Q[7]),
-        .I4(Q[6]),
+        .I2(hash_next0_0[5]),
+        .I3(hash_next0_0[7]),
+        .I4(hash_next0_0[6]),
         .I5(hash_next0_i_15_n_0),
         .O(hash_next0_in[5]));
   LUT3 #(
     .INIT(8'hB8)) 
     hash_next0_i_7
-       (.I0(Q[4]),
+       (.I0(hash_next0_0[4]),
         .I1(hash_ready_reg_0),
         .I2(hash_next0_n_101),
         .O(hash_next0_in[4]));
   LUT3 #(
     .INIT(8'hB8)) 
     hash_next0_i_8
-       (.I0(Q[3]),
+       (.I0(hash_next0_0[3]),
         .I1(hash_ready_reg_0),
         .I2(hash_next0_n_102),
         .O(hash_next0_in[3]));
   LUT3 #(
     .INIT(8'hB8)) 
     hash_next0_i_9
-       (.I0(Q[2]),
+       (.I0(hash_next0_0[2]),
         .I1(hash_ready_reg_0),
         .I2(hash_next0_n_103),
         .O(hash_next0_in[2]));
@@ -1915,67 +2001,67 @@ module mb_design_censor_ip_0_0_hash_bernstein
        (.I0(\slv_reg0_reg[0] ),
         .O(hash_ready_i_1_n_0));
   FDRE hash_ready_reg
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
         .D(hash_ready_i_1_n_0),
         .Q(hash_ready_reg_0),
         .R(1'b0));
   FDRE \hash_reg[0] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(\slv_reg0_reg[0] ),
         .D(hash_next0_in[0]),
         .Q(hash1[0]),
         .R(1'b0));
   FDRE \hash_reg[1] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(\slv_reg0_reg[0] ),
         .D(hash_next0_in[1]),
         .Q(hash1[1]),
         .R(1'b0));
   FDRE \hash_reg[2] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(\slv_reg0_reg[0] ),
         .D(hash_next0_in[2]),
         .Q(hash1[2]),
         .R(1'b0));
   FDRE \hash_reg[3] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(\slv_reg0_reg[0] ),
         .D(hash_next0_in[3]),
         .Q(hash1[3]),
         .R(1'b0));
   FDRE \hash_reg[4] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(\slv_reg0_reg[0] ),
         .D(hash_next0_in[4]),
         .Q(hash1[4]),
         .R(1'b0));
   FDRE \hash_reg[5] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(\slv_reg0_reg[0] ),
         .D(hash_next0_in[5]),
         .Q(hash1[5]),
         .R(1'b0));
   FDRE \hash_reg[6] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(\slv_reg0_reg[0] ),
         .D(hash_next0_in[6]),
         .Q(\hash_reg[7]_0 [0]),
         .R(1'b0));
   FDRE \hash_reg[7] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(\slv_reg0_reg[0] ),
         .D(hash_next0_in[7]),
         .Q(\hash_reg[7]_0 [1]),
         .R(1'b0));
   FDRE \hash_reg[8] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(\slv_reg0_reg[0] ),
         .D(hash_next0_in[8]),
         .Q(hash1[8]),
         .R(1'b0));
   FDRE \hash_reg[9] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
         .D(\hash[9]_i_1_n_0 ),
         .Q(hash1[9]),
@@ -2027,6 +2113,7 @@ module mb_design_censor_ip_0_0_hash_bernstein
         .O(\hash_reg[0]_0 ));
 endmodule
 
+(* ORIG_REF_NAME = "hash_rotating" *) 
 module mb_design_censor_ip_0_0_hash_rotating
    (\hash_reg[8]_0 ,
     \hash_reg[9]_0 ,
@@ -2039,7 +2126,7 @@ module mb_design_censor_ip_0_0_hash_rotating
     is_bad_word_reg_i_4,
     hash_ready_rotating,
     E,
-    s00_axi_aclk,
+    Q,
     D);
   output \hash_reg[8]_0 ;
   output [7:0]\hash_reg[9]_0 ;
@@ -2052,11 +2139,12 @@ module mb_design_censor_ip_0_0_hash_rotating
   input [1:0]is_bad_word_reg_i_4;
   input hash_ready_rotating;
   input [0:0]E;
-  input s00_axi_aclk;
+  input [0:0]Q;
   input [7:0]D;
 
   wire [7:0]D;
   wire [0:0]E;
+  wire [0:0]Q;
   wire [5:4]hash2;
   wire \hash[8]_i_1_n_0 ;
   wire \hash[9]_i_1_n_0 ;
@@ -2072,7 +2160,6 @@ module mb_design_censor_ip_0_0_hash_rotating
   wire \mask_bits_reg[7]__0 ;
   wire \mask_bits_reg[7]__0_0 ;
   wire \mask_bits_reg[7]__0_1 ;
-  wire s00_axi_aclk;
 
   LUT4 #(
     .INIT(16'hFACA)) 
@@ -2089,61 +2176,61 @@ module mb_design_censor_ip_0_0_hash_rotating
         .I1(hash_ready_rotating),
         .O(\hash[9]_i_1_n_0 ));
   FDRE \hash_reg[0] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(E),
         .D(D[0]),
         .Q(\hash_reg[9]_0 [0]),
         .R(1'b0));
   FDRE \hash_reg[1] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(E),
         .D(D[1]),
         .Q(\hash_reg[9]_0 [1]),
         .R(1'b0));
   FDRE \hash_reg[2] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(E),
         .D(D[2]),
         .Q(\hash_reg[9]_0 [2]),
         .R(1'b0));
   FDRE \hash_reg[3] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(E),
         .D(D[3]),
         .Q(\hash_reg[9]_0 [3]),
         .R(1'b0));
   FDRE \hash_reg[4] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(E),
         .D(D[4]),
         .Q(hash2[4]),
         .R(1'b0));
   FDRE \hash_reg[5] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(E),
         .D(D[5]),
         .Q(hash2[5]),
         .R(1'b0));
   FDRE \hash_reg[6] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(E),
         .D(D[6]),
         .Q(\hash_reg[9]_0 [4]),
         .R(1'b0));
   FDRE \hash_reg[7] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(E),
         .D(D[7]),
         .Q(\hash_reg[9]_0 [5]),
         .R(1'b0));
   FDRE \hash_reg[8] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(1'b1),
         .D(\hash[8]_i_1_n_0 ),
         .Q(\hash_reg[9]_0 [6]),
         .R(1'b0));
   FDRE \hash_reg[9] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(E),
         .D(\hash[9]_i_1_n_0 ),
         .Q(\hash_reg[9]_0 [7]),
@@ -2198,6 +2285,7 @@ module mb_design_censor_ip_0_0_hash_rotating
         .O(\hash_reg[7]_0 ));
 endmodule
 
+(* ORIG_REF_NAME = "hashing" *) 
 module mb_design_censor_ip_0_0_hashing
    (hash_ready_rotating,
     \hash_reg[8] ,
@@ -2214,9 +2302,8 @@ module mb_design_censor_ip_0_0_hashing
     \word_len_reg[4] ,
     \word_len_reg[1]_3 ,
     \word_len_reg[1]_4 ,
-    s00_axi_aclk,
     Q,
-    was_previous_nrst_reg,
+    hash_next0,
     \mask_bits_reg[15]__0 );
   output hash_ready_rotating;
   output \hash_reg[8] ;
@@ -2233,12 +2320,11 @@ module mb_design_censor_ip_0_0_hashing
   output \word_len_reg[4] ;
   output \word_len_reg[1]_3 ;
   output \word_len_reg[1]_4 ;
-  input s00_axi_aclk;
-  input [7:0]Q;
-  input [0:0]was_previous_nrst_reg;
+  input [1:0]Q;
+  input [7:0]hash_next0;
   input [11:0]\mask_bits_reg[15]__0 ;
 
-  wire [7:0]Q;
+  wire [1:0]Q;
   wire [7:6]hash1;
   wire [9:0]hash2;
   wire hash_bernstein_n_0;
@@ -2254,13 +2340,12 @@ module mb_design_censor_ip_0_0_hashing
   wire hash_bernstein_n_7;
   wire hash_bernstein_n_8;
   wire hash_bernstein_n_9;
+  wire [7:0]hash_next0;
   wire hash_ready_rotating;
   wire \hash_reg[8] ;
   wire hash_rotating_n_10;
   wire hash_rotating_n_9;
   wire [11:0]\mask_bits_reg[15]__0 ;
-  wire s00_axi_aclk;
-  wire [0:0]was_previous_nrst_reg;
   wire \word_len_reg[1] ;
   wire \word_len_reg[1]_0 ;
   wire \word_len_reg[1]_1 ;
@@ -2279,7 +2364,7 @@ module mb_design_censor_ip_0_0_hashing
        (.D({hash_bernstein_n_8,hash_bernstein_n_9,hash_bernstein_n_10,hash_bernstein_n_11,hash_bernstein_n_12,hash_bernstein_n_13,hash_bernstein_n_14,hash_bernstein_n_15}),
         .Q(Q),
         .hash2({hash2[9:6],hash2[3:0]}),
-        .hash_next0_0(was_previous_nrst_reg),
+        .hash_next0_0(hash_next0),
         .hash_ready_reg_0(hash_ready_rotating),
         .\hash_reg[0]_0 (hash_bernstein_n_2),
         .\hash_reg[0]_1 (hash_bernstein_n_5),
@@ -2288,11 +2373,11 @@ module mb_design_censor_ip_0_0_hashing
         .\hash_reg[9]_0 (hash_bernstein_n_7),
         .is_bad_word_reg_i_1(hash_rotating_n_9),
         .is_bad_word_reg_i_1_0(hash_rotating_n_10),
-        .s00_axi_aclk(s00_axi_aclk),
         .\slv_reg0_reg[0] (hash_bernstein_n_0));
   mb_design_censor_ip_0_0_hash_rotating hash_rotating
        (.D({hash_bernstein_n_8,hash_bernstein_n_9,hash_bernstein_n_10,hash_bernstein_n_11,hash_bernstein_n_12,hash_bernstein_n_13,hash_bernstein_n_14,hash_bernstein_n_15}),
         .E(hash_bernstein_n_0),
+        .Q(Q[1]),
         .hash_ready_rotating(hash_ready_rotating),
         .\hash_reg[0]_0 (hash_rotating_n_9),
         .\hash_reg[7]_0 (hash_rotating_n_10),
@@ -2302,13 +2387,11 @@ module mb_design_censor_ip_0_0_hashing
         .is_bad_word_reg_i_4(hash1),
         .\mask_bits_reg[7]__0 (hash_bernstein_n_6),
         .\mask_bits_reg[7]__0_0 (hash_bernstein_n_7),
-        .\mask_bits_reg[7]__0_1 (hash_bernstein_n_5),
-        .s00_axi_aclk(s00_axi_aclk));
+        .\mask_bits_reg[7]__0_1 (hash_bernstein_n_5));
   mb_design_censor_ip_0_0_word_length_counter word_length_counter
-       (.Q({Q[7:6],Q[4:0]}),
+       (.Q(Q),
         .\mask_bits_reg[15]__0 (\mask_bits_reg[15]__0 ),
-        .s00_axi_aclk(s00_axi_aclk),
-        .was_previous_nrst_reg_0(was_previous_nrst_reg),
+        .\word_len[4]_i_4_0 ({hash_next0[7:6],hash_next0[4:0]}),
         .\word_len_reg[1]_0 (\word_len_reg[1] ),
         .\word_len_reg[1]_1 (\word_len_reg[1]_0 ),
         .\word_len_reg[1]_2 (\word_len_reg[1]_1 ),
@@ -2324,27 +2407,26 @@ module mb_design_censor_ip_0_0_hashing
         .\word_len_reg[4]_0 (\word_len_reg[4] ));
 endmodule
 
+(* ORIG_REF_NAME = "input_char_shift_reg" *) 
 module mb_design_censor_ip_0_0_input_char_shift_reg
    (\char_buffer_reg[15][7]_0 ,
     out_ready_next,
     D,
-    s00_axi_aclk,
     Q,
-    \char_buffer_reg[0][0]_0 ,
+    \char_buffer_reg[0][7]_0 ,
     mask_out);
   output [4:0]\char_buffer_reg[15][7]_0 ;
   output out_ready_next;
   output [2:0]D;
-  input s00_axi_aclk;
-  input [7:0]Q;
-  input [0:0]\char_buffer_reg[0][0]_0 ;
+  input [1:0]Q;
+  input [7:0]\char_buffer_reg[0][7]_0 ;
   input mask_out;
 
   wire [2:0]D;
-  wire [7:0]Q;
+  wire [1:0]Q;
   wire \char_buffer[0][7]_i_1_n_0 ;
   wire [7:0]\char_buffer_reg[0] ;
-  wire [0:0]\char_buffer_reg[0][0]_0 ;
+  wire [7:0]\char_buffer_reg[0][7]_0 ;
   wire \char_buffer_reg[14][0]_srl14_n_0 ;
   wire \char_buffer_reg[14][1]_srl14_n_0 ;
   wire \char_buffer_reg[14][2]_srl14_n_0 ;
@@ -2358,59 +2440,58 @@ module mb_design_censor_ip_0_0_input_char_shift_reg
   wire mask_out;
   wire out_ready_i_2_n_0;
   wire out_ready_next;
-  wire s00_axi_aclk;
 
   LUT1 #(
     .INIT(2'h1)) 
     \char_buffer[0][7]_i_1 
-       (.I0(\char_buffer_reg[0][0]_0 ),
+       (.I0(Q[0]),
         .O(\char_buffer[0][7]_i_1_n_0 ));
   FDRE \char_buffer_reg[0][0] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
-        .D(Q[0]),
+        .D(\char_buffer_reg[0][7]_0 [0]),
         .Q(\char_buffer_reg[0] [0]),
         .R(\char_buffer[0][7]_i_1_n_0 ));
   FDRE \char_buffer_reg[0][1] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
-        .D(Q[1]),
+        .D(\char_buffer_reg[0][7]_0 [1]),
         .Q(\char_buffer_reg[0] [1]),
         .R(\char_buffer[0][7]_i_1_n_0 ));
   FDRE \char_buffer_reg[0][2] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
-        .D(Q[2]),
+        .D(\char_buffer_reg[0][7]_0 [2]),
         .Q(\char_buffer_reg[0] [2]),
         .R(\char_buffer[0][7]_i_1_n_0 ));
   FDRE \char_buffer_reg[0][3] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
-        .D(Q[3]),
+        .D(\char_buffer_reg[0][7]_0 [3]),
         .Q(\char_buffer_reg[0] [3]),
         .R(\char_buffer[0][7]_i_1_n_0 ));
   FDRE \char_buffer_reg[0][4] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
-        .D(Q[4]),
+        .D(\char_buffer_reg[0][7]_0 [4]),
         .Q(\char_buffer_reg[0] [4]),
         .R(\char_buffer[0][7]_i_1_n_0 ));
   FDRE \char_buffer_reg[0][5] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
-        .D(Q[5]),
+        .D(\char_buffer_reg[0][7]_0 [5]),
         .Q(\char_buffer_reg[0] [5]),
         .R(\char_buffer[0][7]_i_1_n_0 ));
   FDRE \char_buffer_reg[0][6] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
-        .D(Q[6]),
+        .D(\char_buffer_reg[0][7]_0 [6]),
         .Q(\char_buffer_reg[0] [6]),
         .R(\char_buffer[0][7]_i_1_n_0 ));
   FDRE \char_buffer_reg[0][7] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
-        .D(Q[7]),
+        .D(\char_buffer_reg[0][7]_0 [7]),
         .Q(\char_buffer_reg[0] [7]),
         .R(\char_buffer[0][7]_i_1_n_0 ));
   (* srl_bus_name = "\inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/input_char_buffer/char_buffer_reg[14] " *) 
@@ -2421,7 +2502,7 @@ module mb_design_censor_ip_0_0_input_char_shift_reg
         .A2(1'b1),
         .A3(1'b1),
         .CE(1'b1),
-        .CLK(s00_axi_aclk),
+        .CLK(Q[1]),
         .D(\char_buffer_reg[0] [0]),
         .Q(\char_buffer_reg[14][0]_srl14_n_0 ));
   (* srl_bus_name = "\inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/input_char_buffer/char_buffer_reg[14] " *) 
@@ -2432,7 +2513,7 @@ module mb_design_censor_ip_0_0_input_char_shift_reg
         .A2(1'b1),
         .A3(1'b1),
         .CE(1'b1),
-        .CLK(s00_axi_aclk),
+        .CLK(Q[1]),
         .D(\char_buffer_reg[0] [1]),
         .Q(\char_buffer_reg[14][1]_srl14_n_0 ));
   (* srl_bus_name = "\inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/input_char_buffer/char_buffer_reg[14] " *) 
@@ -2443,7 +2524,7 @@ module mb_design_censor_ip_0_0_input_char_shift_reg
         .A2(1'b1),
         .A3(1'b1),
         .CE(1'b1),
-        .CLK(s00_axi_aclk),
+        .CLK(Q[1]),
         .D(\char_buffer_reg[0] [2]),
         .Q(\char_buffer_reg[14][2]_srl14_n_0 ));
   (* srl_bus_name = "\inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/input_char_buffer/char_buffer_reg[14] " *) 
@@ -2454,7 +2535,7 @@ module mb_design_censor_ip_0_0_input_char_shift_reg
         .A2(1'b1),
         .A3(1'b1),
         .CE(1'b1),
-        .CLK(s00_axi_aclk),
+        .CLK(Q[1]),
         .D(\char_buffer_reg[0] [3]),
         .Q(\char_buffer_reg[14][3]_srl14_n_0 ));
   (* srl_bus_name = "\inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/input_char_buffer/char_buffer_reg[14] " *) 
@@ -2465,7 +2546,7 @@ module mb_design_censor_ip_0_0_input_char_shift_reg
         .A2(1'b1),
         .A3(1'b1),
         .CE(1'b1),
-        .CLK(s00_axi_aclk),
+        .CLK(Q[1]),
         .D(\char_buffer_reg[0] [4]),
         .Q(\char_buffer_reg[14][4]_srl14_n_0 ));
   (* srl_bus_name = "\inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/input_char_buffer/char_buffer_reg[14] " *) 
@@ -2476,7 +2557,7 @@ module mb_design_censor_ip_0_0_input_char_shift_reg
         .A2(1'b1),
         .A3(1'b1),
         .CE(1'b1),
-        .CLK(s00_axi_aclk),
+        .CLK(Q[1]),
         .D(\char_buffer_reg[0] [5]),
         .Q(\char_buffer_reg[14][5]_srl14_n_0 ));
   (* srl_bus_name = "\inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/input_char_buffer/char_buffer_reg[14] " *) 
@@ -2487,7 +2568,7 @@ module mb_design_censor_ip_0_0_input_char_shift_reg
         .A2(1'b1),
         .A3(1'b1),
         .CE(1'b1),
-        .CLK(s00_axi_aclk),
+        .CLK(Q[1]),
         .D(\char_buffer_reg[0] [6]),
         .Q(\char_buffer_reg[14][6]_srl14_n_0 ));
   (* srl_bus_name = "\inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/input_char_buffer/char_buffer_reg[14] " *) 
@@ -2498,53 +2579,53 @@ module mb_design_censor_ip_0_0_input_char_shift_reg
         .A2(1'b1),
         .A3(1'b1),
         .CE(1'b1),
-        .CLK(s00_axi_aclk),
+        .CLK(Q[1]),
         .D(\char_buffer_reg[0] [7]),
         .Q(\char_buffer_reg[14][7]_srl14_n_0 ));
   FDRE \char_buffer_reg[15][0] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
         .D(\char_buffer_reg[14][0]_srl14_n_0 ),
         .Q(\char_buffer_reg[15][7]_0 [0]),
         .R(1'b0));
   FDRE \char_buffer_reg[15][1] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
         .D(\char_buffer_reg[14][1]_srl14_n_0 ),
         .Q(\char_buffer_reg[15] [1]),
         .R(1'b0));
   FDRE \char_buffer_reg[15][2] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
         .D(\char_buffer_reg[14][2]_srl14_n_0 ),
         .Q(\char_buffer_reg[15][7]_0 [1]),
         .R(1'b0));
   FDRE \char_buffer_reg[15][3] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
         .D(\char_buffer_reg[14][3]_srl14_n_0 ),
         .Q(\char_buffer_reg[15] [3]),
         .R(1'b0));
   FDRE \char_buffer_reg[15][4] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
         .D(\char_buffer_reg[14][4]_srl14_n_0 ),
         .Q(\char_buffer_reg[15][7]_0 [2]),
         .R(1'b0));
   FDRE \char_buffer_reg[15][5] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
         .D(\char_buffer_reg[14][5]_srl14_n_0 ),
         .Q(\char_buffer_reg[15] [5]),
         .R(1'b0));
   FDRE \char_buffer_reg[15][6] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
         .D(\char_buffer_reg[14][6]_srl14_n_0 ),
         .Q(\char_buffer_reg[15][7]_0 [3]),
         .R(1'b0));
   FDRE \char_buffer_reg[15][7] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
         .D(\char_buffer_reg[14][7]_srl14_n_0 ),
         .Q(\char_buffer_reg[15][7]_0 [4]),
@@ -2592,10 +2673,11 @@ module mb_design_censor_ip_0_0_input_char_shift_reg
         .O(out_ready_i_2_n_0));
 endmodule
 
+(* ORIG_REF_NAME = "mask_controller" *) 
 module mb_design_censor_ip_0_0_mask_controller
    (mask_out,
     Q,
-    s00_axi_aclk,
+    mask_out_reg_0,
     \mask_bits_reg[15]__0_0 ,
     is_bad_word,
     \mask_bits_reg[14]__0_0 ,
@@ -2612,7 +2694,7 @@ module mb_design_censor_ip_0_0_mask_controller
     \mask_bits_reg[3]__0_1 );
   output mask_out;
   output [11:0]Q;
-  input s00_axi_aclk;
+  input [0:0]mask_out_reg_0;
   input \mask_bits_reg[15]__0_0 ;
   input is_bad_word;
   input \mask_bits_reg[14]__0_0 ;
@@ -2645,12 +2727,12 @@ module mb_design_censor_ip_0_0_mask_controller
   wire \mask_bits_reg[8]__0_0 ;
   wire \mask_bits_reg[9]__0_0 ;
   wire mask_out;
-  wire s00_axi_aclk;
+  wire [0:0]mask_out_reg_0;
 
   FDRE #(
     .INIT(1'b0)) 
     \mask_bits_reg[10] 
-       (.C(s00_axi_aclk),
+       (.C(mask_out_reg_0),
         .CE(1'b1),
         .D(Q[5]),
         .Q(Q[6]),
@@ -2666,7 +2748,7 @@ module mb_design_censor_ip_0_0_mask_controller
   FDRE #(
     .INIT(1'b0)) 
     \mask_bits_reg[11] 
-       (.C(s00_axi_aclk),
+       (.C(mask_out_reg_0),
         .CE(1'b1),
         .D(Q[6]),
         .Q(Q[7]),
@@ -2682,7 +2764,7 @@ module mb_design_censor_ip_0_0_mask_controller
   FDRE #(
     .INIT(1'b0)) 
     \mask_bits_reg[12] 
-       (.C(s00_axi_aclk),
+       (.C(mask_out_reg_0),
         .CE(1'b1),
         .D(Q[7]),
         .Q(Q[8]),
@@ -2698,7 +2780,7 @@ module mb_design_censor_ip_0_0_mask_controller
   FDRE #(
     .INIT(1'b0)) 
     \mask_bits_reg[13] 
-       (.C(s00_axi_aclk),
+       (.C(mask_out_reg_0),
         .CE(1'b1),
         .D(Q[8]),
         .Q(Q[9]),
@@ -2714,7 +2796,7 @@ module mb_design_censor_ip_0_0_mask_controller
   FDRE #(
     .INIT(1'b0)) 
     \mask_bits_reg[14] 
-       (.C(s00_axi_aclk),
+       (.C(mask_out_reg_0),
         .CE(1'b1),
         .D(Q[9]),
         .Q(Q[10]),
@@ -2730,7 +2812,7 @@ module mb_design_censor_ip_0_0_mask_controller
   FDRE #(
     .INIT(1'b0)) 
     \mask_bits_reg[15] 
-       (.C(s00_axi_aclk),
+       (.C(mask_out_reg_0),
         .CE(1'b1),
         .D(Q[10]),
         .Q(Q[11]),
@@ -2746,7 +2828,7 @@ module mb_design_censor_ip_0_0_mask_controller
   FDRE #(
     .INIT(1'b0)) 
     \mask_bits_reg[3] 
-       (.C(s00_axi_aclk),
+       (.C(mask_out_reg_0),
         .CE(1'b1),
         .D(1'b0),
         .Q(Q[0]),
@@ -2762,7 +2844,7 @@ module mb_design_censor_ip_0_0_mask_controller
   FDRE #(
     .INIT(1'b0)) 
     \mask_bits_reg[4] 
-       (.C(s00_axi_aclk),
+       (.C(mask_out_reg_0),
         .CE(1'b1),
         .D(Q[0]),
         .Q(Q[1]),
@@ -2778,7 +2860,7 @@ module mb_design_censor_ip_0_0_mask_controller
   FDRE #(
     .INIT(1'b0)) 
     \mask_bits_reg[5] 
-       (.C(s00_axi_aclk),
+       (.C(mask_out_reg_0),
         .CE(1'b1),
         .D(Q[1]),
         .Q(Q[2]),
@@ -2794,7 +2876,7 @@ module mb_design_censor_ip_0_0_mask_controller
   FDRE #(
     .INIT(1'b0)) 
     \mask_bits_reg[6] 
-       (.C(s00_axi_aclk),
+       (.C(mask_out_reg_0),
         .CE(1'b1),
         .D(Q[2]),
         .Q(mask_bits),
@@ -2802,7 +2884,7 @@ module mb_design_censor_ip_0_0_mask_controller
   FDRE #(
     .INIT(1'b0)) 
     \mask_bits_reg[7] 
-       (.C(s00_axi_aclk),
+       (.C(mask_out_reg_0),
         .CE(1'b1),
         .D(mask_bits),
         .Q(Q[3]),
@@ -2818,7 +2900,7 @@ module mb_design_censor_ip_0_0_mask_controller
   FDRE #(
     .INIT(1'b0)) 
     \mask_bits_reg[8] 
-       (.C(s00_axi_aclk),
+       (.C(mask_out_reg_0),
         .CE(1'b1),
         .D(Q[3]),
         .Q(Q[4]),
@@ -2834,7 +2916,7 @@ module mb_design_censor_ip_0_0_mask_controller
   FDRE #(
     .INIT(1'b0)) 
     \mask_bits_reg[9] 
-       (.C(s00_axi_aclk),
+       (.C(mask_out_reg_0),
         .CE(1'b1),
         .D(Q[4]),
         .Q(Q[5]),
@@ -2848,132 +2930,42 @@ module mb_design_censor_ip_0_0_mask_controller
         .Q(Q[5]),
         .R(1'b0));
   FDRE mask_out_reg
-       (.C(s00_axi_aclk),
+       (.C(mask_out_reg_0),
         .CE(1'b1),
         .D(Q[11]),
         .Q(mask_out),
         .R(1'b0));
 endmodule
 
-(* CHECK_LICENSE_TYPE = "mb_design_censor_ip_0_0,censor_ip_v1_0,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "censor_ip_v1_0,Vivado 2018.3" *) 
-(* NotValidForBitStream *)
-module mb_design_censor_ip_0_0
-   (s00_axi_awaddr,
-    s00_axi_awprot,
-    s00_axi_awvalid,
-    s00_axi_awready,
-    s00_axi_wdata,
-    s00_axi_wstrb,
-    s00_axi_wvalid,
-    s00_axi_wready,
-    s00_axi_bresp,
-    s00_axi_bvalid,
-    s00_axi_bready,
-    s00_axi_araddr,
-    s00_axi_arprot,
-    s00_axi_arvalid,
-    s00_axi_arready,
-    s00_axi_rdata,
-    s00_axi_rresp,
-    s00_axi_rvalid,
-    s00_axi_rready,
-    s00_axi_aclk,
-    s00_axi_aresetn);
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *) input [3:0]s00_axi_awaddr;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *) input [2:0]s00_axi_awprot;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID" *) input s00_axi_awvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWREADY" *) output s00_axi_awready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WDATA" *) input [31:0]s00_axi_wdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WSTRB" *) input [3:0]s00_axi_wstrb;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WVALID" *) input s00_axi_wvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WREADY" *) output s00_axi_wready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BRESP" *) output [1:0]s00_axi_bresp;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BVALID" *) output s00_axi_bvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BREADY" *) input s00_axi_bready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARADDR" *) input [3:0]s00_axi_araddr;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARPROT" *) input [2:0]s00_axi_arprot;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARVALID" *) input s00_axi_arvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARREADY" *) output s00_axi_arready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RDATA" *) output [31:0]s00_axi_rdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RRESP" *) output [1:0]s00_axi_rresp;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RVALID" *) output s00_axi_rvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN mb_design_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input s00_axi_rready;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN mb_design_clk_wiz_1_0_clk_out1, INSERT_VIP 0" *) input s00_axi_aclk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 S00_AXI_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s00_axi_aresetn;
-
-  wire \<const0> ;
-  wire s00_axi_aclk;
-  wire [3:0]s00_axi_araddr;
-  wire s00_axi_aresetn;
-  wire s00_axi_arready;
-  wire s00_axi_arvalid;
-  wire [3:0]s00_axi_awaddr;
-  wire s00_axi_awready;
-  wire s00_axi_awvalid;
-  wire s00_axi_bready;
-  wire s00_axi_bvalid;
-  wire [31:0]s00_axi_rdata;
-  wire s00_axi_rready;
-  wire s00_axi_rvalid;
-  wire [31:0]s00_axi_wdata;
-  wire s00_axi_wready;
-  wire [3:0]s00_axi_wstrb;
-  wire s00_axi_wvalid;
-
-  assign s00_axi_bresp[1] = \<const0> ;
-  assign s00_axi_bresp[0] = \<const0> ;
-  assign s00_axi_rresp[1] = \<const0> ;
-  assign s00_axi_rresp[0] = \<const0> ;
-  GND GND
-       (.G(\<const0> ));
-  mb_design_censor_ip_0_0_censor_ip_v1_0 inst
-       (.S_AXI_ARREADY(s00_axi_arready),
-        .S_AXI_AWREADY(s00_axi_awready),
-        .S_AXI_WREADY(s00_axi_wready),
-        .s00_axi_aclk(s00_axi_aclk),
-        .s00_axi_araddr(s00_axi_araddr[3:2]),
-        .s00_axi_aresetn(s00_axi_aresetn),
-        .s00_axi_arvalid(s00_axi_arvalid),
-        .s00_axi_awaddr(s00_axi_awaddr[3:2]),
-        .s00_axi_awvalid(s00_axi_awvalid),
-        .s00_axi_bready(s00_axi_bready),
-        .s00_axi_bvalid(s00_axi_bvalid),
-        .s00_axi_rdata(s00_axi_rdata),
-        .s00_axi_rready(s00_axi_rready),
-        .s00_axi_rvalid(s00_axi_rvalid),
-        .s00_axi_wdata(s00_axi_wdata),
-        .s00_axi_wstrb(s00_axi_wstrb),
-        .s00_axi_wvalid(s00_axi_wvalid));
-endmodule
-
+(* ORIG_REF_NAME = "out_char_select" *) 
 module mb_design_censor_ip_0_0_out_char_select
    (slv_wire2,
     D,
     out_ready_next,
-    s00_axi_aclk,
+    Q,
     \char_out_reg[5]_0 ,
     mask_out,
     \char_out_reg[7]_0 );
   output slv_wire2;
   output [7:0]D;
   input out_ready_next;
-  input s00_axi_aclk;
+  input [0:0]Q;
   input [2:0]\char_out_reg[5]_0 ;
   input mask_out;
   input [4:0]\char_out_reg[7]_0 ;
 
   wire [7:0]D;
+  wire [0:0]Q;
   wire [2:0]\char_out_reg[5]_0 ;
   wire [4:0]\char_out_reg[7]_0 ;
   wire mask_out;
   wire out_ready_next;
-  wire s00_axi_aclk;
   wire slv_wire2;
 
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     \char_out_reg[0] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(1'b1),
         .D(\char_out_reg[7]_0 [0]),
         .Q(D[0]),
@@ -2981,7 +2973,7 @@ module mb_design_censor_ip_0_0_out_char_select
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     \char_out_reg[1] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(1'b1),
         .D(\char_out_reg[5]_0 [0]),
         .Q(D[1]),
@@ -2989,7 +2981,7 @@ module mb_design_censor_ip_0_0_out_char_select
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     \char_out_reg[2] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(1'b1),
         .D(\char_out_reg[7]_0 [1]),
         .Q(D[2]),
@@ -2997,7 +2989,7 @@ module mb_design_censor_ip_0_0_out_char_select
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     \char_out_reg[3] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(1'b1),
         .D(\char_out_reg[5]_0 [1]),
         .Q(D[3]),
@@ -3005,7 +2997,7 @@ module mb_design_censor_ip_0_0_out_char_select
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     \char_out_reg[4] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(1'b1),
         .D(\char_out_reg[7]_0 [2]),
         .Q(D[4]),
@@ -3013,7 +3005,7 @@ module mb_design_censor_ip_0_0_out_char_select
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     \char_out_reg[5] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(1'b1),
         .D(\char_out_reg[5]_0 [2]),
         .Q(D[5]),
@@ -3021,7 +3013,7 @@ module mb_design_censor_ip_0_0_out_char_select
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     \char_out_reg[6] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(1'b1),
         .D(\char_out_reg[7]_0 [3]),
         .Q(D[6]),
@@ -3029,7 +3021,7 @@ module mb_design_censor_ip_0_0_out_char_select
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     \char_out_reg[7] 
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(1'b1),
         .D(\char_out_reg[7]_0 [4]),
         .Q(D[7]),
@@ -3037,13 +3029,14 @@ module mb_design_censor_ip_0_0_out_char_select
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     out_ready_reg
-       (.C(s00_axi_aclk),
+       (.C(Q),
         .CE(1'b1),
         .D(out_ready_next),
         .Q(slv_wire2),
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "word_length_counter" *) 
 module mb_design_censor_ip_0_0_word_length_counter
    (\word_len_reg[1]_0 ,
     \word_len_reg[2]_0 ,
@@ -3058,9 +3051,8 @@ module mb_design_censor_ip_0_0_word_length_counter
     \word_len_reg[4]_0 ,
     \word_len_reg[1]_4 ,
     \word_len_reg[1]_5 ,
-    was_previous_nrst_reg_0,
-    s00_axi_aclk,
     Q,
+    \word_len[4]_i_4_0 ,
     \mask_bits_reg[15]__0 );
   output \word_len_reg[1]_0 ;
   output \word_len_reg[2]_0 ;
@@ -3075,19 +3067,17 @@ module mb_design_censor_ip_0_0_word_length_counter
   output \word_len_reg[4]_0 ;
   output \word_len_reg[1]_4 ;
   output \word_len_reg[1]_5 ;
-  input [0:0]was_previous_nrst_reg_0;
-  input s00_axi_aclk;
-  input [6:0]Q;
+  input [1:0]Q;
+  input [6:0]\word_len[4]_i_4_0 ;
   input [11:0]\mask_bits_reg[15]__0 ;
 
-  wire [6:0]Q;
+  wire [1:0]Q;
   wire [11:0]\mask_bits_reg[15]__0 ;
   wire [4:0]p_0_in__0;
-  wire s00_axi_aclk;
   wire was_previous_alpha;
   wire was_previous_nrst;
-  wire [0:0]was_previous_nrst_reg_0;
   wire \word_len[4]_i_1_n_0 ;
+  wire [6:0]\word_len[4]_i_4_0 ;
   wire \word_len[4]_i_4_n_0 ;
   wire \word_len[4]_i_5_n_0 ;
   wire word_len_next;
@@ -3225,15 +3215,15 @@ module mb_design_censor_ip_0_0_word_length_counter
   FDRE #(
     .INIT(1'b0)) 
     was_previous_alpha_reg
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
         .D(word_len_next),
         .Q(was_previous_alpha),
         .R(1'b0));
   FDRE was_previous_nrst_reg
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(1'b1),
-        .D(was_previous_nrst_reg_0),
+        .D(Q[0]),
         .Q(was_previous_nrst),
         .R(1'b0));
   LUT1 #(
@@ -3292,44 +3282,44 @@ module mb_design_censor_ip_0_0_word_length_counter
     .INIT(64'hFEAAAAAAFAAAAAAB)) 
     \word_len[4]_i_4 
        (.I0(\word_len[4]_i_5_n_0 ),
-        .I1(Q[1]),
-        .I2(Q[2]),
-        .I3(Q[4]),
-        .I4(Q[3]),
-        .I5(Q[0]),
+        .I1(\word_len[4]_i_4_0 [1]),
+        .I2(\word_len[4]_i_4_0 [2]),
+        .I3(\word_len[4]_i_4_0 [4]),
+        .I4(\word_len[4]_i_4_0 [3]),
+        .I5(\word_len[4]_i_4_0 [0]),
         .O(\word_len[4]_i_4_n_0 ));
   LUT2 #(
     .INIT(4'hB)) 
     \word_len[4]_i_5 
-       (.I0(Q[6]),
-        .I1(Q[5]),
+       (.I0(\word_len[4]_i_4_0 [6]),
+        .I1(\word_len[4]_i_4_0 [5]),
         .O(\word_len[4]_i_5_n_0 ));
   FDSE \word_len_reg[0] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(word_len_next),
         .D(p_0_in__0[0]),
         .Q(word_len_reg__0[0]),
         .S(\word_len[4]_i_1_n_0 ));
   FDRE \word_len_reg[1] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(word_len_next),
         .D(p_0_in__0[1]),
         .Q(word_len_reg__0[1]),
         .R(\word_len[4]_i_1_n_0 ));
   FDRE \word_len_reg[2] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(word_len_next),
         .D(p_0_in__0[2]),
         .Q(word_len_reg__0[2]),
         .R(\word_len[4]_i_1_n_0 ));
   FDRE \word_len_reg[3] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(word_len_next),
         .D(p_0_in__0[3]),
         .Q(word_len_reg__0[3]),
         .R(\word_len[4]_i_1_n_0 ));
   FDRE \word_len_reg[4] 
-       (.C(s00_axi_aclk),
+       (.C(Q[1]),
         .CE(word_len_next),
         .D(p_0_in__0[4]),
         .Q(word_len_reg__0[4]),

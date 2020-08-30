@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Sat Aug 22 20:31:18 2020
+-- Date        : Sun Aug 30 22:18:02 2020
 -- Host        : Dell-Piotrek running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top mb_design_censor_ip_0_0 -prefix
---               mb_design_censor_ip_0_0_ mb_design_censor_ip_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim {D:/Dokumenty/AGH/SDUP/Projekt/drugi
+--               projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_censor_ip_0_0/mb_design_censor_ip_0_0_sim_netlist.vhdl}
 -- Design      : mb_design_censor_ip_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,6 +20,8 @@ entity mb_design_censor_ip_0_0_bloom_table_control is
     \mask_bits_reg[7]__0\ : in STD_LOGIC;
     hash_ready_rotating : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_bloom_table_control : entity is "bloom_table_control";
 end mb_design_censor_ip_0_0_bloom_table_control;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_bloom_table_control is
@@ -52,13 +54,14 @@ entity mb_design_censor_ip_0_0_hash_bernstein is
     \hash_reg[0]_2\ : out STD_LOGIC;
     \hash_reg[9]_0\ : out STD_LOGIC;
     D : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    s00_axi_aclk : in STD_LOGIC;
-    Q : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    hash_next0_0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    hash_next0_0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     is_bad_word_reg_i_1 : in STD_LOGIC;
     hash2 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     is_bad_word_reg_i_1_0 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_hash_bernstein : entity is "hash_bernstein";
 end mb_design_censor_ip_0_0_hash_bernstein;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_hash_bernstein is
@@ -122,7 +125,7 @@ begin
         port map (
       I0 => \^hash_ready_reg_0\,
       I1 => hash2(4),
-      I2 => Q(0),
+      I2 => hash_next0_0(0),
       O => D(0)
     );
 \hash[1]_i_1\: unisim.vcomponents.LUT3
@@ -131,7 +134,7 @@ begin
     )
         port map (
       I0 => \^hash_ready_reg_0\,
-      I1 => Q(1),
+      I1 => hash_next0_0(1),
       I2 => hash2(5),
       O => D(1)
     );
@@ -141,7 +144,7 @@ begin
     )
         port map (
       I0 => \^hash_ready_reg_0\,
-      I1 => Q(2),
+      I1 => hash_next0_0(2),
       I2 => hash2(6),
       O => D(2)
     );
@@ -151,7 +154,7 @@ begin
     )
         port map (
       I0 => \^hash_ready_reg_0\,
-      I1 => Q(3),
+      I1 => hash_next0_0(3),
       I2 => hash2(7),
       O => D(3)
     );
@@ -161,7 +164,7 @@ begin
     )
         port map (
       I0 => \^hash_ready_reg_0\,
-      I1 => Q(4),
+      I1 => hash_next0_0(4),
       I2 => hash2(0),
       O => D(4)
     );
@@ -244,7 +247,7 @@ hash_next0: unisim.vcomponents.DSP48E1
       BCOUT(17 downto 0) => NLW_hash_next0_BCOUT_UNCONNECTED(17 downto 0),
       C(47 downto 8) => B"0000000000000000000000000000000000000000",
       C(7 downto 5) => character_lower(7 downto 5),
-      C(4 downto 0) => Q(4 downto 0),
+      C(4 downto 0) => hash_next0_0(4 downto 0),
       CARRYCASCIN => '0',
       CARRYCASCOUT => NLW_hash_next0_CARRYCASCOUT_UNCONNECTED,
       CARRYIN => '0',
@@ -263,7 +266,7 @@ hash_next0: unisim.vcomponents.DSP48E1
       CEINMODE => '0',
       CEM => '0',
       CEP => '0',
-      CLK => s00_axi_aclk,
+      CLK => Q(1),
       D(24 downto 0) => B"0000000000000000000000000",
       INMODE(4 downto 0) => B"00000",
       MULTSIGNIN => '0',
@@ -302,10 +305,10 @@ hash_next0_i_1: unisim.vcomponents.LUT5
       INIT => X"00000020"
     )
         port map (
-      I0 => hash_next0_0(0),
+      I0 => Q(0),
       I1 => hash_next0_i_15_n_0,
-      I2 => Q(6),
-      I3 => Q(7),
+      I2 => hash_next0_0(6),
+      I3 => hash_next0_0(7),
       I4 => hash_next0_i_16_n_0,
       O => \^slv_reg0_reg[0]\
     );
@@ -314,7 +317,7 @@ hash_next0_i_10: unisim.vcomponents.LUT3
       INIT => X"B8"
     )
         port map (
-      I0 => Q(1),
+      I0 => hash_next0_0(1),
       I1 => \^hash_ready_reg_0\,
       I2 => hash_next0_n_104,
       O => hash_next0_in(1)
@@ -324,7 +327,7 @@ hash_next0_i_11: unisim.vcomponents.LUT3
       INIT => X"B8"
     )
         port map (
-      I0 => Q(0),
+      I0 => hash_next0_0(0),
       I1 => \^hash_ready_reg_0\,
       I2 => hash_next0_n_105,
       O => hash_next0_in(0)
@@ -334,9 +337,9 @@ hash_next0_i_12: unisim.vcomponents.LUT4
       INIT => X"ECCC"
     )
         port map (
-      I0 => Q(6),
-      I1 => Q(7),
-      I2 => Q(5),
+      I0 => hash_next0_0(6),
+      I1 => hash_next0_0(7),
+      I2 => hash_next0_0(5),
       I3 => hash_next0_i_15_n_0,
       O => character_lower(7)
     );
@@ -346,9 +349,9 @@ hash_next0_i_13: unisim.vcomponents.LUT4
     )
         port map (
       I0 => hash_next0_i_15_n_0,
-      I1 => Q(5),
-      I2 => Q(7),
-      I3 => Q(6),
+      I1 => hash_next0_0(5),
+      I2 => hash_next0_0(7),
+      I3 => hash_next0_0(6),
       O => character_lower(6)
     );
 hash_next0_i_14: unisim.vcomponents.LUT4
@@ -357,9 +360,9 @@ hash_next0_i_14: unisim.vcomponents.LUT4
     )
         port map (
       I0 => hash_next0_i_15_n_0,
-      I1 => Q(6),
-      I2 => Q(5),
-      I3 => Q(7),
+      I1 => hash_next0_0(6),
+      I2 => hash_next0_0(5),
+      I3 => hash_next0_0(7),
       O => character_lower(5)
     );
 hash_next0_i_15: unisim.vcomponents.LUT5
@@ -367,11 +370,11 @@ hash_next0_i_15: unisim.vcomponents.LUT5
       INIT => X"00000001"
     )
         port map (
-      I0 => Q(1),
-      I1 => Q(2),
-      I2 => Q(4),
-      I3 => Q(3),
-      I4 => Q(0),
+      I0 => hash_next0_0(1),
+      I1 => hash_next0_0(2),
+      I2 => hash_next0_0(4),
+      I3 => hash_next0_0(3),
+      I4 => hash_next0_0(0),
       O => hash_next0_i_15_n_0
     );
 hash_next0_i_16: unisim.vcomponents.LUT5
@@ -379,11 +382,11 @@ hash_next0_i_16: unisim.vcomponents.LUT5
       INIT => X"88808080"
     )
         port map (
-      I0 => Q(3),
-      I1 => Q(4),
-      I2 => Q(2),
-      I3 => Q(1),
-      I4 => Q(0),
+      I0 => hash_next0_0(3),
+      I1 => hash_next0_0(4),
+      I2 => hash_next0_0(2),
+      I3 => hash_next0_0(1),
+      I4 => hash_next0_0(0),
       O => hash_next0_i_16_n_0
     );
 hash_next0_i_2: unisim.vcomponents.LUT2
@@ -401,9 +404,9 @@ hash_next0_i_3: unisim.vcomponents.LUT5
     )
         port map (
       I0 => hash_next0_n_97,
-      I1 => Q(6),
-      I2 => Q(7),
-      I3 => Q(5),
+      I1 => hash_next0_0(6),
+      I2 => hash_next0_0(7),
+      I3 => hash_next0_0(5),
       I4 => \^hash_ready_reg_0\,
       O => hash_next0_in(8)
     );
@@ -413,10 +416,10 @@ hash_next0_i_4: unisim.vcomponents.LUT5
     )
         port map (
       I0 => hash_next0_n_98,
-      I1 => Q(6),
-      I2 => Q(7),
+      I1 => hash_next0_0(6),
+      I2 => hash_next0_0(7),
       I3 => \^hash_ready_reg_0\,
-      I4 => Q(5),
+      I4 => hash_next0_0(5),
       O => hash_next0_in(7)
     );
 hash_next0_i_5: unisim.vcomponents.LUT5
@@ -424,9 +427,9 @@ hash_next0_i_5: unisim.vcomponents.LUT5
       INIT => X"65FF6500"
     )
         port map (
-      I0 => Q(6),
-      I1 => Q(5),
-      I2 => Q(7),
+      I0 => hash_next0_0(6),
+      I1 => hash_next0_0(5),
+      I2 => hash_next0_0(7),
       I3 => \^hash_ready_reg_0\,
       I4 => hash_next0_n_99,
       O => hash_next0_in(6)
@@ -438,9 +441,9 @@ hash_next0_i_6: unisim.vcomponents.LUT6
         port map (
       I0 => hash_next0_n_100,
       I1 => \^hash_ready_reg_0\,
-      I2 => Q(5),
-      I3 => Q(7),
-      I4 => Q(6),
+      I2 => hash_next0_0(5),
+      I3 => hash_next0_0(7),
+      I4 => hash_next0_0(6),
       I5 => hash_next0_i_15_n_0,
       O => hash_next0_in(5)
     );
@@ -449,7 +452,7 @@ hash_next0_i_7: unisim.vcomponents.LUT3
       INIT => X"B8"
     )
         port map (
-      I0 => Q(4),
+      I0 => hash_next0_0(4),
       I1 => \^hash_ready_reg_0\,
       I2 => hash_next0_n_101,
       O => hash_next0_in(4)
@@ -459,7 +462,7 @@ hash_next0_i_8: unisim.vcomponents.LUT3
       INIT => X"B8"
     )
         port map (
-      I0 => Q(3),
+      I0 => hash_next0_0(3),
       I1 => \^hash_ready_reg_0\,
       I2 => hash_next0_n_102,
       O => hash_next0_in(3)
@@ -469,7 +472,7 @@ hash_next0_i_9: unisim.vcomponents.LUT3
       INIT => X"B8"
     )
         port map (
-      I0 => Q(2),
+      I0 => hash_next0_0(2),
       I1 => \^hash_ready_reg_0\,
       I2 => hash_next0_n_103,
       O => hash_next0_in(2)
@@ -484,7 +487,7 @@ hash_ready_i_1: unisim.vcomponents.LUT1
     );
 hash_ready_reg: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
       D => hash_ready_i_1_n_0,
       Q => \^hash_ready_reg_0\,
@@ -492,7 +495,7 @@ hash_ready_reg: unisim.vcomponents.FDRE
     );
 \hash_reg[0]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => \^slv_reg0_reg[0]\,
       D => hash_next0_in(0),
       Q => hash1(0),
@@ -500,7 +503,7 @@ hash_ready_reg: unisim.vcomponents.FDRE
     );
 \hash_reg[1]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => \^slv_reg0_reg[0]\,
       D => hash_next0_in(1),
       Q => hash1(1),
@@ -508,7 +511,7 @@ hash_ready_reg: unisim.vcomponents.FDRE
     );
 \hash_reg[2]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => \^slv_reg0_reg[0]\,
       D => hash_next0_in(2),
       Q => hash1(2),
@@ -516,7 +519,7 @@ hash_ready_reg: unisim.vcomponents.FDRE
     );
 \hash_reg[3]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => \^slv_reg0_reg[0]\,
       D => hash_next0_in(3),
       Q => hash1(3),
@@ -524,7 +527,7 @@ hash_ready_reg: unisim.vcomponents.FDRE
     );
 \hash_reg[4]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => \^slv_reg0_reg[0]\,
       D => hash_next0_in(4),
       Q => hash1(4),
@@ -532,7 +535,7 @@ hash_ready_reg: unisim.vcomponents.FDRE
     );
 \hash_reg[5]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => \^slv_reg0_reg[0]\,
       D => hash_next0_in(5),
       Q => hash1(5),
@@ -540,7 +543,7 @@ hash_ready_reg: unisim.vcomponents.FDRE
     );
 \hash_reg[6]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => \^slv_reg0_reg[0]\,
       D => hash_next0_in(6),
       Q => \^hash_reg[7]_0\(0),
@@ -548,7 +551,7 @@ hash_ready_reg: unisim.vcomponents.FDRE
     );
 \hash_reg[7]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => \^slv_reg0_reg[0]\,
       D => hash_next0_in(7),
       Q => \^hash_reg[7]_0\(1),
@@ -556,7 +559,7 @@ hash_ready_reg: unisim.vcomponents.FDRE
     );
 \hash_reg[8]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => \^slv_reg0_reg[0]\,
       D => hash_next0_in(8),
       Q => hash1(8),
@@ -564,7 +567,7 @@ hash_ready_reg: unisim.vcomponents.FDRE
     );
 \hash_reg[9]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
       D => \hash[9]_i_1_n_0\,
       Q => hash1(9),
@@ -646,9 +649,11 @@ entity mb_design_censor_ip_0_0_hash_rotating is
     is_bad_word_reg_i_4 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     hash_ready_rotating : in STD_LOGIC;
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
-    s00_axi_aclk : in STD_LOGIC;
+    Q : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_hash_rotating : entity is "hash_rotating";
 end mb_design_censor_ip_0_0_hash_rotating;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_hash_rotating is
@@ -682,7 +687,7 @@ begin
     );
 \hash_reg[0]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => E(0),
       D => D(0),
       Q => \^hash_reg[9]_0\(0),
@@ -690,7 +695,7 @@ begin
     );
 \hash_reg[1]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => E(0),
       D => D(1),
       Q => \^hash_reg[9]_0\(1),
@@ -698,7 +703,7 @@ begin
     );
 \hash_reg[2]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => E(0),
       D => D(2),
       Q => \^hash_reg[9]_0\(2),
@@ -706,7 +711,7 @@ begin
     );
 \hash_reg[3]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => E(0),
       D => D(3),
       Q => \^hash_reg[9]_0\(3),
@@ -714,7 +719,7 @@ begin
     );
 \hash_reg[4]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => E(0),
       D => D(4),
       Q => hash2(4),
@@ -722,7 +727,7 @@ begin
     );
 \hash_reg[5]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => E(0),
       D => D(5),
       Q => hash2(5),
@@ -730,7 +735,7 @@ begin
     );
 \hash_reg[6]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => E(0),
       D => D(6),
       Q => \^hash_reg[9]_0\(4),
@@ -738,7 +743,7 @@ begin
     );
 \hash_reg[7]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => E(0),
       D => D(7),
       Q => \^hash_reg[9]_0\(5),
@@ -746,7 +751,7 @@ begin
     );
 \hash_reg[8]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => '1',
       D => \hash[8]_i_1_n_0\,
       Q => \^hash_reg[9]_0\(6),
@@ -754,7 +759,7 @@ begin
     );
 \hash_reg[9]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => E(0),
       D => \hash[9]_i_1_n_0\,
       Q => \^hash_reg[9]_0\(7),
@@ -833,11 +838,12 @@ entity mb_design_censor_ip_0_0_input_char_shift_reg is
     \char_buffer_reg[15][7]_0\ : out STD_LOGIC_VECTOR ( 4 downto 0 );
     out_ready_next : out STD_LOGIC;
     D : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_aclk : in STD_LOGIC;
-    Q : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    \char_buffer_reg[0][0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    \char_buffer_reg[0][7]_0\ : in STD_LOGIC_VECTOR ( 7 downto 0 );
     mask_out : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_input_char_shift_reg : entity is "input_char_shift_reg";
 end mb_design_censor_ip_0_0_input_char_shift_reg;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_input_char_shift_reg is
@@ -884,70 +890,70 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => \char_buffer_reg[0][0]_0\(0),
+      I0 => Q(0),
       O => \char_buffer[0][7]_i_1_n_0\
     );
 \char_buffer_reg[0][0]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
-      D => Q(0),
+      D => \char_buffer_reg[0][7]_0\(0),
       Q => \char_buffer_reg[0]\(0),
       R => \char_buffer[0][7]_i_1_n_0\
     );
 \char_buffer_reg[0][1]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
-      D => Q(1),
+      D => \char_buffer_reg[0][7]_0\(1),
       Q => \char_buffer_reg[0]\(1),
       R => \char_buffer[0][7]_i_1_n_0\
     );
 \char_buffer_reg[0][2]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
-      D => Q(2),
+      D => \char_buffer_reg[0][7]_0\(2),
       Q => \char_buffer_reg[0]\(2),
       R => \char_buffer[0][7]_i_1_n_0\
     );
 \char_buffer_reg[0][3]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
-      D => Q(3),
+      D => \char_buffer_reg[0][7]_0\(3),
       Q => \char_buffer_reg[0]\(3),
       R => \char_buffer[0][7]_i_1_n_0\
     );
 \char_buffer_reg[0][4]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
-      D => Q(4),
+      D => \char_buffer_reg[0][7]_0\(4),
       Q => \char_buffer_reg[0]\(4),
       R => \char_buffer[0][7]_i_1_n_0\
     );
 \char_buffer_reg[0][5]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
-      D => Q(5),
+      D => \char_buffer_reg[0][7]_0\(5),
       Q => \char_buffer_reg[0]\(5),
       R => \char_buffer[0][7]_i_1_n_0\
     );
 \char_buffer_reg[0][6]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
-      D => Q(6),
+      D => \char_buffer_reg[0][7]_0\(6),
       Q => \char_buffer_reg[0]\(6),
       R => \char_buffer[0][7]_i_1_n_0\
     );
 \char_buffer_reg[0][7]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
-      D => Q(7),
+      D => \char_buffer_reg[0][7]_0\(7),
       Q => \char_buffer_reg[0]\(7),
       R => \char_buffer[0][7]_i_1_n_0\
     );
@@ -958,7 +964,7 @@ begin
       A2 => '1',
       A3 => '1',
       CE => '1',
-      CLK => s00_axi_aclk,
+      CLK => Q(1),
       D => \char_buffer_reg[0]\(0),
       Q => \char_buffer_reg[14][0]_srl14_n_0\
     );
@@ -969,7 +975,7 @@ begin
       A2 => '1',
       A3 => '1',
       CE => '1',
-      CLK => s00_axi_aclk,
+      CLK => Q(1),
       D => \char_buffer_reg[0]\(1),
       Q => \char_buffer_reg[14][1]_srl14_n_0\
     );
@@ -980,7 +986,7 @@ begin
       A2 => '1',
       A3 => '1',
       CE => '1',
-      CLK => s00_axi_aclk,
+      CLK => Q(1),
       D => \char_buffer_reg[0]\(2),
       Q => \char_buffer_reg[14][2]_srl14_n_0\
     );
@@ -991,7 +997,7 @@ begin
       A2 => '1',
       A3 => '1',
       CE => '1',
-      CLK => s00_axi_aclk,
+      CLK => Q(1),
       D => \char_buffer_reg[0]\(3),
       Q => \char_buffer_reg[14][3]_srl14_n_0\
     );
@@ -1002,7 +1008,7 @@ begin
       A2 => '1',
       A3 => '1',
       CE => '1',
-      CLK => s00_axi_aclk,
+      CLK => Q(1),
       D => \char_buffer_reg[0]\(4),
       Q => \char_buffer_reg[14][4]_srl14_n_0\
     );
@@ -1013,7 +1019,7 @@ begin
       A2 => '1',
       A3 => '1',
       CE => '1',
-      CLK => s00_axi_aclk,
+      CLK => Q(1),
       D => \char_buffer_reg[0]\(5),
       Q => \char_buffer_reg[14][5]_srl14_n_0\
     );
@@ -1024,7 +1030,7 @@ begin
       A2 => '1',
       A3 => '1',
       CE => '1',
-      CLK => s00_axi_aclk,
+      CLK => Q(1),
       D => \char_buffer_reg[0]\(6),
       Q => \char_buffer_reg[14][6]_srl14_n_0\
     );
@@ -1035,13 +1041,13 @@ begin
       A2 => '1',
       A3 => '1',
       CE => '1',
-      CLK => s00_axi_aclk,
+      CLK => Q(1),
       D => \char_buffer_reg[0]\(7),
       Q => \char_buffer_reg[14][7]_srl14_n_0\
     );
 \char_buffer_reg[15][0]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
       D => \char_buffer_reg[14][0]_srl14_n_0\,
       Q => \^char_buffer_reg[15][7]_0\(0),
@@ -1049,7 +1055,7 @@ begin
     );
 \char_buffer_reg[15][1]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
       D => \char_buffer_reg[14][1]_srl14_n_0\,
       Q => \char_buffer_reg[15]\(1),
@@ -1057,7 +1063,7 @@ begin
     );
 \char_buffer_reg[15][2]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
       D => \char_buffer_reg[14][2]_srl14_n_0\,
       Q => \^char_buffer_reg[15][7]_0\(1),
@@ -1065,7 +1071,7 @@ begin
     );
 \char_buffer_reg[15][3]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
       D => \char_buffer_reg[14][3]_srl14_n_0\,
       Q => \char_buffer_reg[15]\(3),
@@ -1073,7 +1079,7 @@ begin
     );
 \char_buffer_reg[15][4]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
       D => \char_buffer_reg[14][4]_srl14_n_0\,
       Q => \^char_buffer_reg[15][7]_0\(2),
@@ -1081,7 +1087,7 @@ begin
     );
 \char_buffer_reg[15][5]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
       D => \char_buffer_reg[14][5]_srl14_n_0\,
       Q => \char_buffer_reg[15]\(5),
@@ -1089,7 +1095,7 @@ begin
     );
 \char_buffer_reg[15][6]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
       D => \char_buffer_reg[14][6]_srl14_n_0\,
       Q => \^char_buffer_reg[15][7]_0\(3),
@@ -1097,7 +1103,7 @@ begin
     );
 \char_buffer_reg[15][7]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
       D => \char_buffer_reg[14][7]_srl14_n_0\,
       Q => \^char_buffer_reg[15][7]_0\(4),
@@ -1164,7 +1170,7 @@ entity mb_design_censor_ip_0_0_mask_controller is
   port (
     mask_out : out STD_LOGIC;
     Q : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    s00_axi_aclk : in STD_LOGIC;
+    mask_out_reg_0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     \mask_bits_reg[15]__0_0\ : in STD_LOGIC;
     is_bad_word : in STD_LOGIC;
     \mask_bits_reg[14]__0_0\ : in STD_LOGIC;
@@ -1180,6 +1186,8 @@ entity mb_design_censor_ip_0_0_mask_controller is
     \mask_bits_reg[4]__0_0\ : in STD_LOGIC;
     \mask_bits_reg[3]__0_1\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_mask_controller : entity is "mask_controller";
 end mb_design_censor_ip_0_0_mask_controller;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_mask_controller is
@@ -1192,7 +1200,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => s00_axi_aclk,
+      C => mask_out_reg_0(0),
       CE => '1',
       D => \^q\(5),
       Q => \^q\(6),
@@ -1214,7 +1222,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => s00_axi_aclk,
+      C => mask_out_reg_0(0),
       CE => '1',
       D => \^q\(6),
       Q => \^q\(7),
@@ -1236,7 +1244,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => s00_axi_aclk,
+      C => mask_out_reg_0(0),
       CE => '1',
       D => \^q\(7),
       Q => \^q\(8),
@@ -1258,7 +1266,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => s00_axi_aclk,
+      C => mask_out_reg_0(0),
       CE => '1',
       D => \^q\(8),
       Q => \^q\(9),
@@ -1280,7 +1288,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => s00_axi_aclk,
+      C => mask_out_reg_0(0),
       CE => '1',
       D => \^q\(9),
       Q => \^q\(10),
@@ -1302,7 +1310,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => s00_axi_aclk,
+      C => mask_out_reg_0(0),
       CE => '1',
       D => \^q\(10),
       Q => \^q\(11),
@@ -1324,7 +1332,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => s00_axi_aclk,
+      C => mask_out_reg_0(0),
       CE => '1',
       D => '0',
       Q => \^q\(0),
@@ -1346,7 +1354,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => s00_axi_aclk,
+      C => mask_out_reg_0(0),
       CE => '1',
       D => \^q\(0),
       Q => \^q\(1),
@@ -1368,7 +1376,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => s00_axi_aclk,
+      C => mask_out_reg_0(0),
       CE => '1',
       D => \^q\(1),
       Q => \^q\(2),
@@ -1390,7 +1398,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => s00_axi_aclk,
+      C => mask_out_reg_0(0),
       CE => '1',
       D => \^q\(2),
       Q => mask_bits(6),
@@ -1401,7 +1409,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => s00_axi_aclk,
+      C => mask_out_reg_0(0),
       CE => '1',
       D => mask_bits(6),
       Q => \^q\(3),
@@ -1423,7 +1431,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => s00_axi_aclk,
+      C => mask_out_reg_0(0),
       CE => '1',
       D => \^q\(3),
       Q => \^q\(4),
@@ -1445,7 +1453,7 @@ begin
       INIT => '0'
     )
         port map (
-      C => s00_axi_aclk,
+      C => mask_out_reg_0(0),
       CE => '1',
       D => \^q\(4),
       Q => \^q\(5),
@@ -1464,7 +1472,7 @@ begin
     );
 mask_out_reg: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => mask_out_reg_0(0),
       CE => '1',
       D => \^q\(11),
       Q => mask_out,
@@ -1480,11 +1488,13 @@ entity mb_design_censor_ip_0_0_out_char_select is
     slv_wire2 : out STD_LOGIC;
     D : out STD_LOGIC_VECTOR ( 7 downto 0 );
     out_ready_next : in STD_LOGIC;
-    s00_axi_aclk : in STD_LOGIC;
+    Q : in STD_LOGIC_VECTOR ( 0 to 0 );
     \char_out_reg[5]_0\ : in STD_LOGIC_VECTOR ( 2 downto 0 );
     mask_out : in STD_LOGIC;
     \char_out_reg[7]_0\ : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_out_char_select : entity is "out_char_select";
 end mb_design_censor_ip_0_0_out_char_select;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_out_char_select is
@@ -1494,7 +1504,7 @@ begin
       IS_C_INVERTED => '1'
     )
         port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => '1',
       D => \char_out_reg[7]_0\(0),
       Q => D(0),
@@ -1505,7 +1515,7 @@ begin
       IS_C_INVERTED => '1'
     )
         port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => '1',
       D => \char_out_reg[5]_0\(0),
       Q => D(1),
@@ -1516,7 +1526,7 @@ begin
       IS_C_INVERTED => '1'
     )
         port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => '1',
       D => \char_out_reg[7]_0\(1),
       Q => D(2),
@@ -1527,7 +1537,7 @@ begin
       IS_C_INVERTED => '1'
     )
         port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => '1',
       D => \char_out_reg[5]_0\(1),
       Q => D(3),
@@ -1538,7 +1548,7 @@ begin
       IS_C_INVERTED => '1'
     )
         port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => '1',
       D => \char_out_reg[7]_0\(2),
       Q => D(4),
@@ -1549,7 +1559,7 @@ begin
       IS_C_INVERTED => '1'
     )
         port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => '1',
       D => \char_out_reg[5]_0\(2),
       Q => D(5),
@@ -1560,7 +1570,7 @@ begin
       IS_C_INVERTED => '1'
     )
         port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => '1',
       D => \char_out_reg[7]_0\(3),
       Q => D(6),
@@ -1571,7 +1581,7 @@ begin
       IS_C_INVERTED => '1'
     )
         port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => '1',
       D => \char_out_reg[7]_0\(4),
       Q => D(7),
@@ -1582,7 +1592,7 @@ out_ready_reg: unisim.vcomponents.FDRE
       IS_C_INVERTED => '1'
     )
         port map (
-      C => s00_axi_aclk,
+      C => Q(0),
       CE => '1',
       D => out_ready_next,
       Q => slv_wire2,
@@ -1608,11 +1618,12 @@ entity mb_design_censor_ip_0_0_word_length_counter is
     \word_len_reg[4]_0\ : out STD_LOGIC;
     \word_len_reg[1]_4\ : out STD_LOGIC;
     \word_len_reg[1]_5\ : out STD_LOGIC;
-    was_previous_nrst_reg_0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    s00_axi_aclk : in STD_LOGIC;
-    Q : in STD_LOGIC_VECTOR ( 6 downto 0 );
+    Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    \word_len[4]_i_4_0\ : in STD_LOGIC_VECTOR ( 6 downto 0 );
     \mask_bits_reg[15]__0\ : in STD_LOGIC_VECTOR ( 11 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_word_length_counter : entity is "word_length_counter";
 end mb_design_censor_ip_0_0_word_length_counter;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_word_length_counter is
@@ -1790,7 +1801,7 @@ was_previous_alpha_reg: unisim.vcomponents.FDRE
       INIT => '0'
     )
         port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
       D => word_len_next,
       Q => was_previous_alpha,
@@ -1798,9 +1809,9 @@ was_previous_alpha_reg: unisim.vcomponents.FDRE
     );
 was_previous_nrst_reg: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => '1',
-      D => was_previous_nrst_reg_0(0),
+      D => Q(0),
       Q => was_previous_nrst,
       R => '0'
     );
@@ -1879,11 +1890,11 @@ was_previous_nrst_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \word_len[4]_i_5_n_0\,
-      I1 => Q(1),
-      I2 => Q(2),
-      I3 => Q(4),
-      I4 => Q(3),
-      I5 => Q(0),
+      I1 => \word_len[4]_i_4_0\(1),
+      I2 => \word_len[4]_i_4_0\(2),
+      I3 => \word_len[4]_i_4_0\(4),
+      I4 => \word_len[4]_i_4_0\(3),
+      I5 => \word_len[4]_i_4_0\(0),
       O => \word_len[4]_i_4_n_0\
     );
 \word_len[4]_i_5\: unisim.vcomponents.LUT2
@@ -1891,13 +1902,13 @@ was_previous_nrst_reg: unisim.vcomponents.FDRE
       INIT => X"B"
     )
         port map (
-      I0 => Q(6),
-      I1 => Q(5),
+      I0 => \word_len[4]_i_4_0\(6),
+      I1 => \word_len[4]_i_4_0\(5),
       O => \word_len[4]_i_5_n_0\
     );
 \word_len_reg[0]\: unisim.vcomponents.FDSE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => word_len_next,
       D => \p_0_in__0\(0),
       Q => \word_len_reg__0\(0),
@@ -1905,7 +1916,7 @@ was_previous_nrst_reg: unisim.vcomponents.FDRE
     );
 \word_len_reg[1]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => word_len_next,
       D => \p_0_in__0\(1),
       Q => \word_len_reg__0\(1),
@@ -1913,7 +1924,7 @@ was_previous_nrst_reg: unisim.vcomponents.FDRE
     );
 \word_len_reg[2]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => word_len_next,
       D => \p_0_in__0\(2),
       Q => \word_len_reg__0\(2),
@@ -1921,7 +1932,7 @@ was_previous_nrst_reg: unisim.vcomponents.FDRE
     );
 \word_len_reg[3]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => word_len_next,
       D => \p_0_in__0\(3),
       Q => \word_len_reg__0\(3),
@@ -1929,7 +1940,7 @@ was_previous_nrst_reg: unisim.vcomponents.FDRE
     );
 \word_len_reg[4]\: unisim.vcomponents.FDRE
      port map (
-      C => s00_axi_aclk,
+      C => Q(1),
       CE => word_len_next,
       D => \p_0_in__0\(4),
       Q => \word_len_reg__0\(4),
@@ -1957,11 +1968,12 @@ entity mb_design_censor_ip_0_0_hashing is
     \word_len_reg[4]\ : out STD_LOGIC;
     \word_len_reg[1]_3\ : out STD_LOGIC;
     \word_len_reg[1]_4\ : out STD_LOGIC;
-    s00_axi_aclk : in STD_LOGIC;
-    Q : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    was_previous_nrst_reg : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    hash_next0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     \mask_bits_reg[15]__0\ : in STD_LOGIC_VECTOR ( 11 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_hashing : entity is "hashing";
 end mb_design_censor_ip_0_0_hashing;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_hashing is
@@ -1995,10 +2007,10 @@ hash_bernstein: entity work.mb_design_censor_ip_0_0_hash_bernstein
       D(2) => hash_bernstein_n_13,
       D(1) => hash_bernstein_n_14,
       D(0) => hash_bernstein_n_15,
-      Q(7 downto 0) => Q(7 downto 0),
+      Q(1 downto 0) => Q(1 downto 0),
       hash2(7 downto 4) => hash2(9 downto 6),
       hash2(3 downto 0) => hash2(3 downto 0),
-      hash_next0_0(0) => was_previous_nrst_reg(0),
+      hash_next0_0(7 downto 0) => hash_next0(7 downto 0),
       hash_ready_reg_0 => \^hash_ready_rotating\,
       \hash_reg[0]_0\ => hash_bernstein_n_2,
       \hash_reg[0]_1\ => hash_bernstein_n_5,
@@ -2007,7 +2019,6 @@ hash_bernstein: entity work.mb_design_censor_ip_0_0_hash_bernstein
       \hash_reg[9]_0\ => hash_bernstein_n_7,
       is_bad_word_reg_i_1 => hash_rotating_n_9,
       is_bad_word_reg_i_1_0 => hash_rotating_n_10,
-      s00_axi_aclk => s00_axi_aclk,
       \slv_reg0_reg[0]\ => hash_bernstein_n_0
     );
 hash_rotating: entity work.mb_design_censor_ip_0_0_hash_rotating
@@ -2021,6 +2032,7 @@ hash_rotating: entity work.mb_design_censor_ip_0_0_hash_rotating
       D(1) => hash_bernstein_n_14,
       D(0) => hash_bernstein_n_15,
       E(0) => hash_bernstein_n_0,
+      Q(0) => Q(1),
       hash_ready_rotating => \^hash_ready_rotating\,
       \hash_reg[0]_0\ => hash_rotating_n_9,
       \hash_reg[7]_0\ => hash_rotating_n_10,
@@ -2031,16 +2043,14 @@ hash_rotating: entity work.mb_design_censor_ip_0_0_hash_rotating
       is_bad_word_reg_i_4(1 downto 0) => hash1(7 downto 6),
       \mask_bits_reg[7]__0\ => hash_bernstein_n_6,
       \mask_bits_reg[7]__0_0\ => hash_bernstein_n_7,
-      \mask_bits_reg[7]__0_1\ => hash_bernstein_n_5,
-      s00_axi_aclk => s00_axi_aclk
+      \mask_bits_reg[7]__0_1\ => hash_bernstein_n_5
     );
 word_length_counter: entity work.mb_design_censor_ip_0_0_word_length_counter
      port map (
-      Q(6 downto 5) => Q(7 downto 6),
-      Q(4 downto 0) => Q(4 downto 0),
+      Q(1 downto 0) => Q(1 downto 0),
       \mask_bits_reg[15]__0\(11 downto 0) => \mask_bits_reg[15]__0\(11 downto 0),
-      s00_axi_aclk => s00_axi_aclk,
-      was_previous_nrst_reg_0(0) => was_previous_nrst_reg(0),
+      \word_len[4]_i_4_0\(6 downto 5) => hash_next0(7 downto 6),
+      \word_len[4]_i_4_0\(4 downto 0) => hash_next0(4 downto 0),
       \word_len_reg[1]_0\ => \word_len_reg[1]\,
       \word_len_reg[1]_1\ => \word_len_reg[1]_0\,
       \word_len_reg[1]_2\ => \word_len_reg[1]_1\,
@@ -2064,10 +2074,11 @@ entity mb_design_censor_ip_0_0_censor_main is
   port (
     slv_wire2 : out STD_LOGIC;
     D : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    s00_axi_aclk : in STD_LOGIC;
-    Q : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    was_previous_nrst_reg : in STD_LOGIC_VECTOR ( 0 to 0 )
+    Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    \char_buffer_reg[0][7]\ : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_censor_main : entity is "censor_main";
 end mb_design_censor_ip_0_0_censor_main;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_censor_main is
@@ -2101,13 +2112,12 @@ bloom_table_control: entity work.mb_design_censor_ip_0_0_bloom_table_control
     );
 hashing: entity work.mb_design_censor_ip_0_0_hashing
      port map (
-      Q(7 downto 0) => Q(7 downto 0),
+      Q(1 downto 0) => Q(1 downto 0),
+      hash_next0(7 downto 0) => \char_buffer_reg[0][7]\(7 downto 0),
       hash_ready_rotating => hash_ready_rotating,
       \hash_reg[8]\ => hashing_n_1,
       \mask_bits_reg[15]__0\(11 downto 3) => mask_bits(15 downto 7),
       \mask_bits_reg[15]__0\(2 downto 0) => mask_bits(5 downto 3),
-      s00_axi_aclk => s00_axi_aclk,
-      was_previous_nrst_reg(0) => was_previous_nrst_reg(0),
       \word_len_reg[1]\ => hashing_n_2,
       \word_len_reg[1]_0\ => hashing_n_4,
       \word_len_reg[1]_1\ => hashing_n_5,
@@ -2127,15 +2137,14 @@ input_char_buffer: entity work.mb_design_censor_ip_0_0_input_char_shift_reg
       D(2) => char_out_next(5),
       D(1) => char_out_next(3),
       D(0) => char_out_next(1),
-      Q(7 downto 0) => Q(7 downto 0),
-      \char_buffer_reg[0][0]_0\(0) => was_previous_nrst_reg(0),
+      Q(1 downto 0) => Q(1 downto 0),
+      \char_buffer_reg[0][7]_0\(7 downto 0) => \char_buffer_reg[0][7]\(7 downto 0),
       \char_buffer_reg[15][7]_0\(4 downto 3) => \char_buffer_reg[15]\(7 downto 6),
       \char_buffer_reg[15][7]_0\(2) => \char_buffer_reg[15]\(4),
       \char_buffer_reg[15][7]_0\(1) => \char_buffer_reg[15]\(2),
       \char_buffer_reg[15][7]_0\(0) => \char_buffer_reg[15]\(0),
       mask_out => mask_out,
-      out_ready_next => out_ready_next,
-      s00_axi_aclk => s00_axi_aclk
+      out_ready_next => out_ready_next
     );
 mask_controller: entity work.mb_design_censor_ip_0_0_mask_controller
      port map (
@@ -2156,11 +2165,12 @@ mask_controller: entity work.mb_design_censor_ip_0_0_mask_controller
       \mask_bits_reg[8]__0_0\ => hashing_n_10,
       \mask_bits_reg[9]__0_0\ => hashing_n_11,
       mask_out => mask_out,
-      s00_axi_aclk => s00_axi_aclk
+      mask_out_reg_0(0) => Q(1)
     );
 out_char_select: entity work.mb_design_censor_ip_0_0_out_char_select
      port map (
       D(7 downto 0) => D(7 downto 0),
+      Q(0) => Q(1),
       \char_out_reg[5]_0\(2) => char_out_next(5),
       \char_out_reg[5]_0\(1) => char_out_next(3),
       \char_out_reg[5]_0\(0) => char_out_next(1),
@@ -2170,7 +2180,6 @@ out_char_select: entity work.mb_design_censor_ip_0_0_out_char_select
       \char_out_reg[7]_0\(0) => \char_buffer_reg[15]\(0),
       mask_out => mask_out,
       out_ready_next => out_ready_next,
-      s00_axi_aclk => s00_axi_aclk,
       slv_wire2 => slv_wire2
     );
 end STRUCTURE;
@@ -2198,6 +2207,8 @@ entity mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI : entity is "censor_ip_v1_0_S00_AXI";
 end mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI is
@@ -2222,7 +2233,7 @@ architecture STRUCTURE of mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI is
   signal reg_data_out : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \^s00_axi_bvalid\ : STD_LOGIC;
   signal \^s00_axi_rvalid\ : STD_LOGIC;
-  signal slv_reg0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal slv_reg0 : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \slv_reg0[15]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg0[23]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg0[31]_i_1_n_0\ : STD_LOGIC;
@@ -2237,7 +2248,6 @@ architecture STRUCTURE of mb_design_censor_ip_0_0_censor_ip_v1_0_S00_AXI is
   signal \slv_reg0_reg_n_0_[17]\ : STD_LOGIC;
   signal \slv_reg0_reg_n_0_[18]\ : STD_LOGIC;
   signal \slv_reg0_reg_n_0_[19]\ : STD_LOGIC;
-  signal \slv_reg0_reg_n_0_[1]\ : STD_LOGIC;
   signal \slv_reg0_reg_n_0_[20]\ : STD_LOGIC;
   signal \slv_reg0_reg_n_0_[21]\ : STD_LOGIC;
   signal \slv_reg0_reg_n_0_[22]\ : STD_LOGIC;
@@ -2599,7 +2609,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       I0 => slv_reg3(1),
       I1 => slv_reg1(1),
       I2 => axi_araddr(2),
-      I3 => \slv_reg0_reg_n_0_[1]\,
+      I3 => slv_reg0(1),
       I4 => axi_araddr(3),
       O => reg_data_out(1)
     );
@@ -3126,10 +3136,9 @@ axi_wready_reg: unisim.vcomponents.FDRE
 censor_main_inst: entity work.mb_design_censor_ip_0_0_censor_main
      port map (
       D(7 downto 0) => slv_wire3(7 downto 0),
-      Q(7 downto 0) => slv_reg1(7 downto 0),
-      s00_axi_aclk => s00_axi_aclk,
-      slv_wire2 => slv_wire2,
-      was_previous_nrst_reg(0) => slv_reg0(0)
+      Q(1 downto 0) => slv_reg0(1 downto 0),
+      \char_buffer_reg[0][7]\(7 downto 0) => slv_reg1(7 downto 0),
+      slv_wire2 => slv_wire2
     );
 \slv_reg0[15]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -3268,7 +3277,7 @@ censor_main_inst: entity work.mb_design_censor_ip_0_0_censor_main
       C => s00_axi_aclk,
       CE => \slv_reg0[7]_i_1_n_0\,
       D => s00_axi_wdata(1),
-      Q => \slv_reg0_reg_n_0_[1]\,
+      Q => slv_reg0(1),
       R => axi_awready_i_1_n_0
     );
 \slv_reg0_reg[20]\: unisim.vcomponents.FDRE
@@ -3945,6 +3954,8 @@ entity mb_design_censor_ip_0_0_censor_ip_v1_0 is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_censor_ip_v1_0 : entity is "censor_ip_v1_0";
 end mb_design_censor_ip_0_0_censor_ip_v1_0;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_censor_ip_v1_0 is
@@ -4023,7 +4034,7 @@ architecture STRUCTURE of mb_design_censor_ip_0_0 is
   attribute X_INTERFACE_INFO of s00_axi_bready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI BREADY";
   attribute X_INTERFACE_INFO of s00_axi_bvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI BVALID";
   attribute X_INTERFACE_INFO of s00_axi_rready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI RREADY";
-  attribute X_INTERFACE_PARAMETER of s00_axi_rready : signal is "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN mb_design_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of s00_axi_rready : signal is "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN mb_design_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s00_axi_rvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI RVALID";
   attribute X_INTERFACE_INFO of s00_axi_wready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WREADY";
   attribute X_INTERFACE_INFO of s00_axi_wvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WVALID";

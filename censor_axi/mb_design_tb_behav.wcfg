@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="mb_design_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="ipif_pkg" />
+            <top_module name="lib_pkg" />
+            <top_module name="lmb_bram_if_funcs" />
+            <top_module name="mb_design_tb" />
+            <top_module name="mdm_funcs" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="66981666666fs"></ZoomStartTime>
+      <ZoomEndTime time="105631666667fs"></ZoomEndTime>
+      <Cursor1Time time="99190000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="140"></NameColumnWidth>
+      <ValueColumnWidth column_width="62"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/mb_design_tb/clk_n" type="logic">
+      <obj_property name="ElementShortName">clk_n</obj_property>
+      <obj_property name="ObjectShortName">clk_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_design_tb/clk_p" type="logic">
+      <obj_property name="ElementShortName">clk_p</obj_property>
+      <obj_property name="ObjectShortName">clk_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_design_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_design_tb/reset_n" type="logic">
+      <obj_property name="ElementShortName">reset_n</obj_property>
+      <obj_property name="ObjectShortName">reset_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_design_tb/char_in" type="array">
+      <obj_property name="ElementShortName">char_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_design_tb/char_out" type="array">
+      <obj_property name="ElementShortName">char_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char_out[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_design_tb/string_in" type="array">
+      <obj_property name="ElementShortName">string_in[80:0]</obj_property>
+      <obj_property name="ObjectShortName">string_in[80:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_design_tb/in_ready" type="logic">
+      <obj_property name="ElementShortName">in_ready</obj_property>
+      <obj_property name="ObjectShortName">in_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_design_tb/out_ready" type="logic">
+      <obj_property name="ElementShortName">out_ready</obj_property>
+      <obj_property name="ObjectShortName">out_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_design_tb/char" type="array">
+      <obj_property name="ElementShortName">char[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mb_design_tb/character" type="other">
+      <obj_property name="ElementShortName">character</obj_property>
+      <obj_property name="ObjectShortName">character</obj_property>
+   </wvobject>
+</wave_config>

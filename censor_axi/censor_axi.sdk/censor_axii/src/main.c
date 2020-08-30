@@ -9,9 +9,16 @@
 #include "censor_ip.h"
 #include "xil_io.h"
 #include "xgpio.h"
+#include <stdio.h>
 
+//#ifdef STDOUT_IS_16550
+ #include "xuartns550_l.h"
+
+ #define UART_BAUD 9600
+//#endif
 /**************************** user definitions ********************************/
 #define CHANNEL 1
+#define CENSOR_BUF_LEN 19
 
 //Censor processor base addres redefinition
 #define CENSOR_BASE_ADDR 		XPAR_CENSOR_IP_0_S00_AXI_BASEADDR
@@ -25,11 +32,11 @@
 #define RESULT_TO_CHAR(param)	(char)(param & 0x000000FF)
 /***************************** Main function *********************************/
 int main(){
-	char input_string[10] = {'A', 'l', 'a', ' ', 'm', 'a', ' ', 'k', 'o', 'd'};
+	char input_string[19] = {'A', 'l', 'a', ' ', 'm', 'a', ' ', 't', 'h', 'e', '.', ' ', 'I', ' ', 'd', 'o', 'n', 't', '.'};
 	char input_char;
 	char char_out;
 	int status;
-	int i;
+	int i, input_ready;
 	u32 result;
 	XGpio inReadyGpio, charInGpio, outReadyGpio, charOutGpio;
 
@@ -68,22 +75,42 @@ int main(){
 	CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_READY_REG_OFFSET, 1);
 	//CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_READY_REG_OFFSET, 0);
 
+
+	//#ifdef STDOUT_IS_16550
+		result = 9;//CENSOR_IP_mReadReg(CENSOR_BASE_ADDR, OUTPUT_CHAR_REG_OFFSET);
+		XGpio_DiscreteWrite(&charOutGpio, CHANNEL, result);
+		XUartNs550_SetBaud(STDOUT_BASEADDRESS, XPAR_XUARTNS550_CLOCK_HZ, UART_BAUD);
+		XUartNs550_SetLineControlReg(STDOUT_BASEADDRESS, XUN_LCR_8_DATA_BITS);
+	//#endif
+	for (int j = 0; j < CENSOR_BUF_LEN; j++) {
+		CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_READY_REG_OFFSET, 0b01); //clock down
+		input_char = ' ';
+		CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_CHAR_REG_OFFSET, input_char);
+		CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_READY_REG_OFFSET, 0b11); //clock up
+	}
 	i=0;
+	input_ready = 1;
 	while(1){
-		input_char = input_string[i];
-		i = (i == 10) ? 0 : i + 1;
+
 		//Send characters to char_in register
 		// input_char = XGpio_DiscreteRead(&charInGpio, CHANNEL);
 
+		CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_READY_REG_OFFSET, 0b00 | input_ready); //clock down
+		input_char = input_string[i];
+		if (i < 19 )
+			i++;
+		else
+			input_ready = 0;
 		CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_CHAR_REG_OFFSET, input_char);
+		CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_READY_REG_OFFSET, 0b10 | input_ready); //clock up
 
 		//Wait for out_ready
-		while( (CENSOR_IP_mReadReg(CENSOR_BASE_ADDR, OUTPUT_READY_REG_OFFSET) & 0x01) == 0);
+		//while( (CENSOR_IP_mReadReg(CENSOR_BASE_ADDR, OUTPUT_READY_REG_OFFSET) & 0x01) == 0);
 
 		//Get output char and send to GPIO
 		result = CENSOR_IP_mReadReg(CENSOR_BASE_ADDR, OUTPUT_CHAR_REG_OFFSET);
 		XGpio_DiscreteWrite(&charOutGpio, CHANNEL, result);
-
+		//print(result&0xFF);
 		//Parse result to char
 		//char_out = RESULT_TO_CHAR( result );	//TODO
 

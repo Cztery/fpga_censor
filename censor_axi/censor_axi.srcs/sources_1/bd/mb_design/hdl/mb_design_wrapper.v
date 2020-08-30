@@ -1,8 +1,8 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Thu Aug 27 22:36:26 2020
-//Host        : Dell-Piotrek running 64-bit major release  (build 9200)
+//Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+//Date        : Sat Aug 29 12:41:35 2020
+//Host        : cztery-lenovo running 64-bit Manjaro Linux
 //Command     : generate_target mb_design_wrapper.bd
 //Design      : mb_design_wrapper
 //Purpose     : IP block netlist

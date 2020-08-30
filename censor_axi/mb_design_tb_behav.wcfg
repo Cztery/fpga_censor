@@ -15,15 +15,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="7730000001fs"></ZoomEndTime>
-      <Cursor1Time time="2450000000fs"></Cursor1Time>
+      <ZoomStartTime time="35767950000fs"></ZoomStartTime>
+      <ZoomEndTime time="112367950001fs"></ZoomEndTime>
+      <Cursor1Time time="35607150000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="119"></NameColumnWidth>
-      <ValueColumnWidth column_width="80"></ValueColumnWidth>
+      <NameColumnWidth column_width="140"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="14" />
+   <WVObjectSize size="16" />
    <wvobject type="logic" fp_name="/mb_design_tb/clk_n">
       <obj_property name="ElementShortName">clk_n</obj_property>
       <obj_property name="ObjectShortName">clk_n</obj_property>
@@ -47,18 +47,7 @@
    <wvobject type="array" fp_name="/mb_design_tb/char_out">
       <obj_property name="ElementShortName">char_out[7:0]</obj_property>
       <obj_property name="ObjectShortName">char_out[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/mb_design_tb/string_in">
-      <obj_property name="ElementShortName">string_in[240:0]</obj_property>
-      <obj_property name="ObjectShortName">string_in[240:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/mb_design_tb/in_ready">
-      <obj_property name="ElementShortName">in_ready</obj_property>
-      <obj_property name="ObjectShortName">in_ready</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/mb_design_tb/out_ready">
-      <obj_property name="ElementShortName">out_ready</obj_property>
-      <obj_property name="ObjectShortName">out_ready</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/mb_design_tb/char">
       <obj_property name="ElementShortName">char[7:0]</obj_property>
@@ -72,6 +61,10 @@
       <obj_property name="ElementShortName">in_ready</obj_property>
       <obj_property name="ObjectShortName">in_ready</obj_property>
    </wvobject>
+   <wvobject type="logic" fp_name="/mb_design_tb/mb_design_inst/mb_design_i/censor_ip_0/inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/out_ready">
+      <obj_property name="ElementShortName">out_ready</obj_property>
+      <obj_property name="ObjectShortName">out_ready</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/mb_design_tb/mb_design_inst/mb_design_i/censor_ip_0/inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/char_in">
       <obj_property name="ElementShortName">char_in[7:0]</obj_property>
       <obj_property name="ObjectShortName">char_in[7:0]</obj_property>
@@ -81,5 +74,23 @@
       <obj_property name="ElementShortName">char_out[7:0]</obj_property>
       <obj_property name="ObjectShortName">char_out[7:0]</obj_property>
       <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mb_design_tb/mb_design_inst/mb_design_i/censor_ip_0/inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/clk">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+      <obj_property name="label">clk(censor)</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mb_design_tb/string_in">
+      <obj_property name="ElementShortName">string_in[240:0]</obj_property>
+      <obj_property name="ObjectShortName">string_in[240:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mb_design_tb/in_ready">
+      <obj_property name="ElementShortName">in_ready</obj_property>
+      <obj_property name="ObjectShortName">in_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mb_design_tb/out_ready">
+      <obj_property name="ElementShortName">out_ready</obj_property>
+      <obj_property name="ObjectShortName">out_ready</obj_property>
    </wvobject>
 </wave_config>

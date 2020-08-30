@@ -46,11 +46,11 @@ vmap axi_uart16550_v2_0_20 activehdl/axi_uart16550_v2_0_20
 vmap blk_mem_gen_v8_4_2 activehdl/blk_mem_gen_v8_4_2
 
 vlog -work xil_defaultlib  -sv2k12 "+incdir+../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/ec67/hdl" "+incdir+../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/85a3" \
-"/tools/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
-"/tools/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+"C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm -93 \
-"/tools/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
+"C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/ec67/hdl" "+incdir+../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/85a3" \
 "../../../bd/mb_design/sim/mb_design.v" \
@@ -166,7 +166,7 @@ vlog -work blk_mem_gen_v8_4_2  -v2k5 "+incdir+../../../../censor_axi.srcs/source
 "../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/37c2/simulation/blk_mem_gen_v8_4.v" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/ec67/hdl" "+incdir+../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/85a3" \
-"../../../bd/mb_design/ip/mb_design_lmb_bram_0/sim/mb_design_lmb_bram_0.v" \
+"../../../bd/mb_design/ip/mb_design_lmb_bram_0_1/sim/mb_design_lmb_bram_0.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

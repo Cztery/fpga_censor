@@ -23,65 +23,65 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/cztery/fpga_censor/censor_axi/censor_axi.cache/wt [current_project]
-set_property parent.project_path /home/cztery/fpga_censor/censor_axi/censor_axi.xpr [current_project]
+set_property webtalk.parent_dir D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.cache/wt [current_project]
+set_property parent.project_path D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_repo_paths {
-  /home/cztery/fpga_censor/ip_repo/censor_ip_1.0
-  /home/cztery/fpga_censor/ip_repo/censor_ip_1.0
+  d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/ip_repo/censor_ip_1.0
+  d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/ip_repo/censor_ip_1.0
 } [current_project]
 update_ip_catalog
-set_property ip_output_repo /home/cztery/fpga_censor/censor_axi/censor_axi.cache/ip [current_project]
+set_property ip_output_repo d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files /home/cztery/fpga_censor/censor_axi/censor_axi.sdk/censor_axii/Debug/censor_axii.elf
-set_property SCOPED_TO_REF mb_design [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.sdk/censor_axii/Debug/censor_axii.elf]
-set_property SCOPED_TO_CELLS microblaze_0 [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.sdk/censor_axii/Debug/censor_axii.elf]
+add_files D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.sdk/censor_axii/Debug/censor_axii.elf
+set_property SCOPED_TO_REF mb_design [get_files -all D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.sdk/censor_axii/Debug/censor_axii.elf]
+set_property SCOPED_TO_CELLS microblaze_0 [get_files -all D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.sdk/censor_axii/Debug/censor_axii.elf]
 read_verilog -library xil_defaultlib {
-  /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.v
-  /home/cztery/fpga_censor/ip_repo/censor_ip_1.0/src/word_length_counter.v
-  /home/cztery/fpga_censor/ip_repo/censor_ip_1.0/src/character_to_lower.v
-  /home/cztery/fpga_censor/ip_repo/censor_ip_1.0/src/hash_rotating.v
-  /home/cztery/fpga_censor/ip_repo/censor_ip_1.0/src/hash_bernstein.v
-  /home/cztery/fpga_censor/ip_repo/censor_ip_1.0/src/is_alpha.v
+  D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.v
+  D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/ip_repo/censor_ip_1.0/src/word_length_counter.v
+  D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/ip_repo/censor_ip_1.0/src/character_to_lower.v
+  D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/ip_repo/censor_ip_1.0/src/hash_rotating.v
+  D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/ip_repo/censor_ip_1.0/src/hash_bernstein.v
+  D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/ip_repo/censor_ip_1.0/src/is_alpha.v
 }
-add_files /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_rst_clk_wiz_1_100M_0/mb_design_rst_clk_wiz_1_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_rst_clk_wiz_1_100M_0/mb_design_rst_clk_wiz_1_100M_0.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_rst_clk_wiz_1_100M_0/mb_design_rst_clk_wiz_1_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_xbar_0/mb_design_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_0/mb_design_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_0/mb_design_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_0/mb_design_axi_gpio_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_1/mb_design_axi_gpio_0_1_board.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_1/mb_design_axi_gpio_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_1/mb_design_axi_gpio_0_1.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_2/mb_design_axi_gpio_0_2_board.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_2/mb_design_axi_gpio_0_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_2/mb_design_axi_gpio_0_2.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_2_0/mb_design_axi_gpio_2_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_2_0/mb_design_axi_gpio_2_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_2_0/mb_design_axi_gpio_2_0.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_1/mb_design_microblaze_0_1.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_1/mb_design_microblaze_0_1_ooc_debug.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_1/mb_design_microblaze_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_dlmb_v10_1/mb_design_dlmb_v10_1.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_dlmb_v10_1/mb_design_dlmb_v10_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_ilmb_v10_1/mb_design_ilmb_v10_1.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_ilmb_v10_1/mb_design_ilmb_v10_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_dlmb_bram_if_cntlr_1/mb_design_dlmb_bram_if_cntlr_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_ilmb_bram_if_cntlr_1/mb_design_ilmb_bram_if_cntlr_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_mdm_1_1/mb_design_mdm_1_1.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_mdm_1_1/mb_design_mdm_1_1_ooc_trace.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_uart16550_0_0/mb_design_axi_uart16550_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_uart16550_0_0/mb_design_axi_uart16550_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_uart16550_0_0/mb_design_axi_uart16550_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_clk_wiz_1_0_1/mb_design_clk_wiz_1_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_clk_wiz_1_0_1/mb_design_clk_wiz_1_0.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_clk_wiz_1_0_1/mb_design_clk_wiz_1_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_lmb_bram_0/mb_design_lmb_bram_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/cztery/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design_ooc.xdc]
+add_files D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_rst_clk_wiz_1_100M_0/mb_design_rst_clk_wiz_1_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_rst_clk_wiz_1_100M_0/mb_design_rst_clk_wiz_1_100M_0.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_rst_clk_wiz_1_100M_0/mb_design_rst_clk_wiz_1_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_xbar_0/mb_design_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_0/mb_design_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_0/mb_design_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_0/mb_design_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_1/mb_design_axi_gpio_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_1/mb_design_axi_gpio_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_1/mb_design_axi_gpio_0_1.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_2/mb_design_axi_gpio_0_2_board.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_2/mb_design_axi_gpio_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_2/mb_design_axi_gpio_0_2.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_2_0/mb_design_axi_gpio_2_0_board.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_2_0/mb_design_axi_gpio_2_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_2_0/mb_design_axi_gpio_2_0.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_1/mb_design_microblaze_0_1.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_1/mb_design_microblaze_0_1_ooc_debug.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_1/mb_design_microblaze_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_dlmb_v10_1/mb_design_dlmb_v10_1.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_dlmb_v10_1/mb_design_dlmb_v10_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_ilmb_v10_1/mb_design_ilmb_v10_1.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_ilmb_v10_1/mb_design_ilmb_v10_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_dlmb_bram_if_cntlr_1/mb_design_dlmb_bram_if_cntlr_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_ilmb_bram_if_cntlr_1/mb_design_ilmb_bram_if_cntlr_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_mdm_1_1/mb_design_mdm_1_1.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_mdm_1_1/mb_design_mdm_1_1_ooc_trace.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_uart16550_0_0/mb_design_axi_uart16550_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_uart16550_0_0/mb_design_axi_uart16550_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_axi_uart16550_0_0/mb_design_axi_uart16550_0_0.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_clk_wiz_1_0_1/mb_design_clk_wiz_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_clk_wiz_1_0_1/mb_design_clk_wiz_1_0.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_clk_wiz_1_0_1/mb_design_clk_wiz_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_lmb_bram_0_1/mb_design_lmb_bram_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all D:/Dokumenty/AGH/SDUP/Projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

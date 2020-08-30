@@ -61,4 +61,7 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mb_design_censo
 # IP: bd/mb_design/ip/mb_design_lmb_bram_0/mb_design_lmb_bram_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mb_design_lmb_bram_0 || ORIG_REF_NAME==mb_design_lmb_bram_0} -quiet] -quiet
 
+# IP: bd/mb_design/ip/mb_design_lmb_bram_0_1/mb_design_lmb_bram_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mb_design_lmb_bram_0 || ORIG_REF_NAME==mb_design_lmb_bram_0} -quiet] -quiet
+
 # XDC: bd/mb_design/mb_design_ooc.xdc

@@ -278,9 +278,15 @@ proc create_root_design { parentCell } {
 
   # Create instance: gpio_in_ready_0, and set properties
   set gpio_in_ready_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 gpio_in_ready_0 ]
+  set_property -dict [ list \
+   CONFIG.C_GPIO_WIDTH {1} \
+ ] $gpio_in_ready_0
 
   # Create instance: gpio_out_ready_0, and set properties
   set gpio_out_ready_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 gpio_out_ready_0 ]
+  set_property -dict [ list \
+   CONFIG.C_GPIO_WIDTH {1} \
+ ] $gpio_out_ready_0
 
   # Create instance: mdm_1, and set properties
   set mdm_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mdm:3.2 mdm_1 ]

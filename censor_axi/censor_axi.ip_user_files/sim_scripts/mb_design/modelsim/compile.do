@@ -153,19 +153,19 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/mb_design/ip/mb_design_axi_uart16550_0_0/sim/mb_design_axi_uart16550_0_0.vhd" \
 
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/85a3" "+incdir+../../../../censor_axi.srcs/sources_1/bd/mb_design/ipshared/ec67/hdl" \
-"../../../bd/mb_design/ipshared/3fb2/src/bloom_table_control.v" \
-"../../../bd/mb_design/ipshared/3fb2/hdl/censor_ip_v1_0_S00_AXI.v" \
-"../../../bd/mb_design/ipshared/3fb2/src/censor_main.v" \
-"../../../bd/mb_design/ipshared/3fb2/src/character_to_lower.v" \
-"../../../bd/mb_design/ipshared/3fb2/src/hash_bernstein.v" \
-"../../../bd/mb_design/ipshared/3fb2/src/hash_rotating.v" \
-"../../../bd/mb_design/ipshared/3fb2/src/hashing.v" \
-"../../../bd/mb_design/ipshared/3fb2/src/input_char_shift_reg.v" \
-"../../../bd/mb_design/ipshared/3fb2/src/is_alpha.v" \
-"../../../bd/mb_design/ipshared/3fb2/src/mask_controller.v" \
-"../../../bd/mb_design/ipshared/3fb2/src/out_char_select.v" \
-"../../../bd/mb_design/ipshared/3fb2/src/word_length_counter.v" \
-"../../../bd/mb_design/ipshared/3fb2/hdl/censor_ip_v1_0.v" \
+"../../../bd/mb_design/ipshared/9b27/src/bloom_table_control.v" \
+"../../../bd/mb_design/ipshared/9b27/hdl/censor_ip_v1_0_S00_AXI.v" \
+"../../../bd/mb_design/ipshared/9b27/src/censor_main.v" \
+"../../../bd/mb_design/ipshared/9b27/src/character_to_lower.v" \
+"../../../bd/mb_design/ipshared/9b27/src/hash_bernstein.v" \
+"../../../bd/mb_design/ipshared/9b27/src/hash_rotating.v" \
+"../../../bd/mb_design/ipshared/9b27/src/hashing.v" \
+"../../../bd/mb_design/ipshared/9b27/src/input_char_shift_reg.v" \
+"../../../bd/mb_design/ipshared/9b27/src/is_alpha.v" \
+"../../../bd/mb_design/ipshared/9b27/src/mask_controller.v" \
+"../../../bd/mb_design/ipshared/9b27/src/out_char_select.v" \
+"../../../bd/mb_design/ipshared/9b27/src/word_length_counter.v" \
+"../../../bd/mb_design/ipshared/9b27/hdl/censor_ip_v1_0.v" \
 "../../../bd/mb_design/ip/mb_design_censor_ip_0_0/sim/mb_design_censor_ip_0_0.v" \
 
 vlog -work xil_defaultlib \

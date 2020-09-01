@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:censor_ip:1.0
-// IP Revision: 7
+// IP Revision: 9
 
 (* X_CORE_INFO = "censor_ip_v1_0,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "mb_design_censor_ip_0_0,censor_ip_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "mb_design_censor_ip_0_0,censor_ip_v1_0,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=censor_ip,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *)
+(* CORE_GENERATION_INFO = "mb_design_censor_ip_0_0,censor_ip_v1_0,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=censor_ip,x_ipVersion=1.0,x_ipCoreRevision=9,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module mb_design_censor_ip_0_0 (
   s00_axi_awaddr,

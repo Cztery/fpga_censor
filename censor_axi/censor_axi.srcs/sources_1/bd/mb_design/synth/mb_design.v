@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Sun Aug 30 22:07:25 2020
+//Date        : Tue Sep  1 20:45:59 2020
 //Host        : Dell-Piotrek running 64-bit major release  (build 9200)
 //Command     : generate_target mb_design.bd
 //Design      : mb_design
@@ -855,12 +855,12 @@ module mb_design
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_char_out TRI_I" *) input [31:0]gpio_char_out_tri_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_char_out TRI_O" *) output [31:0]gpio_char_out_tri_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_char_out TRI_T" *) output [31:0]gpio_char_out_tri_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_in_ready TRI_I" *) input [31:0]gpio_in_ready_tri_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_in_ready TRI_O" *) output [31:0]gpio_in_ready_tri_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_in_ready TRI_T" *) output [31:0]gpio_in_ready_tri_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_out_ready TRI_I" *) input [31:0]gpio_out_ready_tri_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_out_ready TRI_O" *) output [31:0]gpio_out_ready_tri_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_out_ready TRI_T" *) output [31:0]gpio_out_ready_tri_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_in_ready TRI_I" *) input [0:0]gpio_in_ready_tri_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_in_ready TRI_O" *) output [0:0]gpio_in_ready_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_in_ready TRI_T" *) output [0:0]gpio_in_ready_tri_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_out_ready TRI_I" *) input [0:0]gpio_out_ready_tri_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_out_ready TRI_O" *) output [0:0]gpio_out_ready_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_out_ready TRI_T" *) output [0:0]gpio_out_ready_tri_t;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET_RTL_0 RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET_RTL_0, INSERT_VIP 0, POLARITY ACTIVE_HIGH" *) input reset_rtl_0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET_RTL_0_0 RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET_RTL_0_0, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input reset_rtl_0_0;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 uart_rtl_0 BAUDOUTn" *) output uart_rtl_0_baudoutn;
@@ -878,18 +878,18 @@ module mb_design
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 uart_rtl_0 TxD" *) output uart_rtl_0_txd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 uart_rtl_0 TXRDYn" *) output uart_rtl_0_txrdyn;
 
-  wire [31:0]axi_gpio_0_GPIO_TRI_I;
-  wire [31:0]axi_gpio_0_GPIO_TRI_O;
-  wire [31:0]axi_gpio_0_GPIO_TRI_T;
+  wire [0:0]axi_gpio_0_GPIO_TRI_I;
+  wire [0:0]axi_gpio_0_GPIO_TRI_O;
+  wire [0:0]axi_gpio_0_GPIO_TRI_T;
   wire [31:0]axi_gpio_1_GPIO_TRI_I;
   wire [31:0]axi_gpio_1_GPIO_TRI_O;
   wire [31:0]axi_gpio_1_GPIO_TRI_T;
   wire [31:0]axi_gpio_2_GPIO_TRI_I;
   wire [31:0]axi_gpio_2_GPIO_TRI_O;
   wire [31:0]axi_gpio_2_GPIO_TRI_T;
-  wire [31:0]axi_gpio_3_GPIO_TRI_I;
-  wire [31:0]axi_gpio_3_GPIO_TRI_O;
-  wire [31:0]axi_gpio_3_GPIO_TRI_T;
+  wire [0:0]axi_gpio_3_GPIO_TRI_I;
+  wire [0:0]axi_gpio_3_GPIO_TRI_O;
+  wire [0:0]axi_gpio_3_GPIO_TRI_T;
   wire axi_uart16550_0_UART_BAUDOUTn;
   wire axi_uart16550_0_UART_CTSn;
   wire axi_uart16550_0_UART_DCDn;
@@ -1066,10 +1066,10 @@ module mb_design
   wire rst_clk_wiz_1_100M_mb_reset;
   wire [0:0]rst_clk_wiz_1_100M_peripheral_aresetn;
 
-  assign axi_gpio_0_GPIO_TRI_I = gpio_out_ready_tri_i[31:0];
+  assign axi_gpio_0_GPIO_TRI_I = gpio_out_ready_tri_i[0];
   assign axi_gpio_1_GPIO_TRI_I = gpio_char_in_tri_i[31:0];
   assign axi_gpio_2_GPIO_TRI_I = gpio_char_out_tri_i[31:0];
-  assign axi_gpio_3_GPIO_TRI_I = gpio_in_ready_tri_i[31:0];
+  assign axi_gpio_3_GPIO_TRI_I = gpio_in_ready_tri_i[0];
   assign axi_uart16550_0_UART_CTSn = uart_rtl_0_ctsn;
   assign axi_uart16550_0_UART_DCDn = uart_rtl_0_dcdn;
   assign axi_uart16550_0_UART_DSRn = uart_rtl_0_dsrn;
@@ -1081,10 +1081,10 @@ module mb_design
   assign gpio_char_in_tri_t[31:0] = axi_gpio_1_GPIO_TRI_T;
   assign gpio_char_out_tri_o[31:0] = axi_gpio_2_GPIO_TRI_O;
   assign gpio_char_out_tri_t[31:0] = axi_gpio_2_GPIO_TRI_T;
-  assign gpio_in_ready_tri_o[31:0] = axi_gpio_3_GPIO_TRI_O;
-  assign gpio_in_ready_tri_t[31:0] = axi_gpio_3_GPIO_TRI_T;
-  assign gpio_out_ready_tri_o[31:0] = axi_gpio_0_GPIO_TRI_O;
-  assign gpio_out_ready_tri_t[31:0] = axi_gpio_0_GPIO_TRI_T;
+  assign gpio_in_ready_tri_o[0] = axi_gpio_3_GPIO_TRI_O;
+  assign gpio_in_ready_tri_t[0] = axi_gpio_3_GPIO_TRI_T;
+  assign gpio_out_ready_tri_o[0] = axi_gpio_0_GPIO_TRI_O;
+  assign gpio_out_ready_tri_t[0] = axi_gpio_0_GPIO_TRI_T;
   assign reset_rtl_0_0_1 = reset_rtl_0_0;
   assign reset_rtl_0_1 = reset_rtl_0;
   assign uart_rtl_0_baudoutn = axi_uart16550_0_UART_BAUDOUTn;

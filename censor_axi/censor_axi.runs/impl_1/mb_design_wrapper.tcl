@@ -60,7 +60,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -87,6 +86,7 @@ set rc [catch {
   add_files {{D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.sdk/censor_axii/Debug/censor_axii.elf}}
   set_property SCOPED_TO_REF mb_design [get_files -all {{D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.sdk/censor_axii/Debug/censor_axii.elf}}]
   set_property SCOPED_TO_CELLS microblaze_0 [get_files -all {{D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.sdk/censor_axii/Debug/censor_axii.elf}}]
+  read_xdc {{D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.srcs/constrs_1/new/gpio_constraints.xdc}}
   set_param project.isImplRun true
   link_design -top mb_design_wrapper -part xc7z010clg400-1
   set_param project.isImplRun false
@@ -162,6 +162,27 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
+  unset ACTIVE_STEP 
+}
+
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
+set rc [catch {
+  create_msg_db write_bitstream.pb
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  catch { write_mem_info -force mb_design_wrapper.mmi }
+  catch { write_bmm -force mb_design_wrapper_bd.bmm }
+  write_bitstream -force mb_design_wrapper.bit 
+  catch { write_sysdef -hwdef mb_design_wrapper.hwdef -bitfile mb_design_wrapper.bit -meminfo mb_design_wrapper.mmi -file mb_design_wrapper.sysdef }
+  catch {write_debug_probes -quiet -force mb_design_wrapper}
+  catch {file copy -force mb_design_wrapper.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
+} RESULT]
+if {$rc} {
+  step_failed write_bitstream
+  return -code error $RESULT
+} else {
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

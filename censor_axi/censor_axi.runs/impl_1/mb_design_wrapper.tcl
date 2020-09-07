@@ -169,6 +169,15 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set src_rc [catch { 
+    puts "source {D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/tcl/tcl.pre}"
+    source {D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/tcl/tcl.pre}
+  } _RESULT] 
+  if {$src_rc} { 
+    send_msg_id runtcl-1 error "$_RESULT"
+    send_msg_id runtcl-2 error "sourcing script {D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/tcl/tcl.pre} failed"
+    return -code error
+  }
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force mb_design_wrapper.mmi }
   catch { write_bmm -force mb_design_wrapper_bd.bmm }

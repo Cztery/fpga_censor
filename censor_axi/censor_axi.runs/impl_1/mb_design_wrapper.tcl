@@ -65,6 +65,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7z010clg400-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
@@ -83,9 +84,6 @@ set rc [catch {
   set_param project.isImplRun true
   add_files {{D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd}}
   set_param project.isImplRun false
-  add_files {{D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.sdk/censor_axii/Debug/censor_axii.elf}}
-  set_property SCOPED_TO_REF mb_design [get_files -all {{D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.sdk/censor_axii/Debug/censor_axii.elf}}]
-  set_property SCOPED_TO_CELLS microblaze_0 [get_files -all {{D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.sdk/censor_axii/Debug/censor_axii.elf}}]
   read_xdc {{D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.srcs/constrs_1/new/gpio_constraints.xdc}}
   set_param project.isImplRun true
   link_design -top mb_design_wrapper -part xc7z010clg400-1
@@ -169,18 +167,8 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set src_rc [catch { 
-    puts "source {D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/tcl/tcl.pre}"
-    source {D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/tcl/tcl.pre}
-  } _RESULT] 
-  if {$src_rc} { 
-    send_msg_id runtcl-1 error "$_RESULT"
-    send_msg_id runtcl-2 error "sourcing script {D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/tcl/tcl.pre} failed"
-    return -code error
-  }
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force mb_design_wrapper.mmi }
-  catch { write_bmm -force mb_design_wrapper_bd.bmm }
   write_bitstream -force mb_design_wrapper.bit 
   catch { write_sysdef -hwdef mb_design_wrapper.hwdef -bitfile mb_design_wrapper.bit -meminfo mb_design_wrapper.mmi -file mb_design_wrapper.sysdef }
   catch {write_debug_probes -quiet -force mb_design_wrapper}

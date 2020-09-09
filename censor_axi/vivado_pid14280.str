@@ -1,0 +1,1061 @@
+/*
+
+Xilinx Vivado v2018.3 (64-bit) [Major: 2018, Minor: 3]
+SW Build: 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build: 2404404 on Fri Dec  7 01:43:56 MST 2018
+
+Process ID (PID): 14280
+License: Customer
+
+Current time: 	Tue Sep 08 11:18:10 CEST 2020
+Time zone: 	Central European Standard Time (Europe/Belgrade)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 29 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.3/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2018.3/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	piotr
+User home directory: C:/Users/piotr
+User working directory: D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi
+User country: 	PL
+User language: 	pl
+User locale: 	pl_PL
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.3
+RDI_DATADIR: C:/Xilinx/Vivado/2018.3/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.3/bin
+
+Vivado preferences file location: C:/Users/piotr/AppData/Roaming/Xilinx/Vivado/2018.3/vivado.xml
+Vivado preferences directory: C:/Users/piotr/AppData/Roaming/Xilinx/Vivado/2018.3/
+Vivado layouts directory: C:/Users/piotr/AppData/Roaming/Xilinx/Vivado/2018.3/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.3/lib/classes/planAhead.jar
+Vivado log file location: 	D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/vivado.log
+Vivado journal file location: 	D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/vivado.jou
+Engine tmp dir: 	D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/.Xil/Vivado-14280-Dell-Piotrek
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2018.3
+XILINX_SDK: C:/Xilinx/SDK/2018.3
+XILINX_VIVADO: C:/Xilinx/Vivado/2018.3
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2018.3
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 598 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bx (cp):  Open Project : addNotify
+// Opening Vivado Project: D:\Dokumenty\AGH\SDUP\Projekt\drugi_projekt\fpga_censor\censor_axi\censor_axi.xpr. Version: Vivado v2018.3 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 44 MB. Current time: 9/8/20, 11:18:12 AM CEST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 97 MB (+99569kb) [00:00:21]
+// [Engine Memory]: 638 MB (+517966kb) [00:00:21]
+// WARNING: HEventQueue.dispatchEvent() is taking  5810 ms.
+// Tcl Message: open_project D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/ip_repo/censor_ip_1.0'. 
+// Tcl Message: INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/ip_repo/censor_ip_1.0'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'. 
+// [Engine Memory]: 716 MB (+48278kb) [00:00:26]
+// WARNING: HEventQueue.dispatchEvent() is taking  1525 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1031 ms. Increasing delay to 3000 ms.
+// Tcl Message: open_project: Time (s): cpu = 00:00:26 ; elapsed = 00:00:13 . Memory (MB): peak = 739.621 ; gain = 143.934 
+// [GUI Memory]: 110 MB (+7781kb) [00:00:29]
+// [Engine Memory]: 914 MB (+169518kb) [00:00:29]
+// Project name: censor_axi; location: D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi; part: xc7z010clg400-1
+dismissDialog("Open Project"); // bx (cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 55 MB. Current time: 9/8/20, 11:18:27 AM CEST
+// [Engine Memory]: 967 MB (+7308kb) [00:00:33]
+// Tcl Message: update_compile_order -fileset sources_1 
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // af (cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// aa (cp): Launch SDK: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aa)
+dismissDialog("Launch SDK"); // aa (cp)
+// Tcl Message: launch_sdk -workspace D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sdk -hwspec D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sdk/mb_design_wrapper.hdf 
+// Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sdk -hwspec D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sdk/mb_design_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 244ms to process. Increasing delay to 2000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1043 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 2280 ms. Increasing delay to 6840 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1069 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 54 MB. Current time: 9/8/20, 11:48:27 AM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 50 MB. Current time: 9/8/20, 12:18:28 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 50 MB. Current time: 9/8/20, 12:48:28 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 50 MB. Current time: 9/8/20, 1:18:29 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 50 MB. Current time: 9/8/20, 1:48:29 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 50 MB. Current time: 9/8/20, 2:18:30 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 50 MB. Current time: 9/8/20, 2:48:30 PM CEST
+// Elapsed time: 13467 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v)]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v)]", 3); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci)]", 4); // B (D, cp)
+// TclEventType: DG_GRAPH_STALE
+// Elapsed time: 27 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci), mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.v)]", 5); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci), mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.v)]", 5); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci), mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.v)]", 5); // B (D, cp)
+// PAPropertyPanels.initPanels (censor_ip_v1_0_S00_AXI.v) elapsed time: 0.3s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci), mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.v), inst : censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v)]", 7, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci), mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.v), inst : censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v)]", 7, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+// Elapsed time: 67 seconds
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 253, 188); // D (w, cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 54 MB. Current time: 9/8/20, 3:18:31 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 54 MB. Current time: 9/8/20, 3:48:31 PM CEST
+// Elapsed time: 3198 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // k (j, cp)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "censor_ip_v1_0_S00_AXI.v", 1); // k (j, cp)
+// Elapsed time: 1205 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// bx (cp):  Open Block Design : addNotify
+// TclEventType: LOAD_FEATURE
+// Tcl Message: open_bd_design {D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd} 
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: LOAD_FEATURE
+// Tcl Message: Adding cell -- xilinx.com:user:censor_ip:1.0 - censor_ip_0 Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0 Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_50M Adding cell -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph 
+// TclEventType: RSB_PROPERTY_CHANGE
+// Tcl Message: Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc 
+// TclEventType: RSB_OPEN_DIAGRAM
+// Tcl Message: Successfully read diagram <mb_design> from BD file <D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd> 
+// TclEventType: RSB_OPEN_DIAGRAM
+// PAPropertyPanels.initPanels (censor_ip_v1_0_S00_AXI.v) elapsed time: 0.2s
+// WARNING: HEventQueue.dispatchEvent() is taking  4259 ms.
+// TclEventType: RSB_CONNECTION_CHANGE
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: RSB_LOCK_CHANGE
+// Tcl Message: open_bd_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1252.816 ; gain = 0.000 
+// 'bA' command handler elapsed time: 8 seconds
+dismissDialog("Open Block Design"); // bx (cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 57 MB. Current time: 9/8/20, 4:18:32 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 58 MB. Current time: 9/8/20, 4:48:32 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 56 MB. Current time: 9/8/20, 5:18:33 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 55 MB. Current time: 9/8/20, 5:48:33 PM CEST
+// Elapsed time: 7043 seconds
+selectTab((HResource) null, (HResource) null, "Sources", 0); // aI (aF, cp)
+// [GUI Memory]: 116 MB (+586kb) [06:58:05]
+// Elapsed time: 37 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci)]", 4, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci)]", 4, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+// Run Command: PAResourceCommand.PACommandNames_RECUSTOMIZE_CORE
+// HOptionPane Warning: ''mb_design_censor_ip_0_0.xci' IP is part of a block design. Please use the block design 'mb_design' to customize the IP. (Re-customize IP)'
+selectButton("PAResourceQtoS.RecustomizeCore_THIS_IP_PART_OF_BLOCK_DESIGN_OK", "OK"); // JButton (C, I)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci)]", 4); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci), mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.v), inst : censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v)]", 7); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci), mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.v), inst : censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v), censor_main_inst : censor_main (censor_main.v)]", 8); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci), mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.v), inst : censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v)]", 7, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci), mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.v), inst : censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v)]", 7, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci), mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.v), inst : censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v)]", 7); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci)]", 4, true, false, false, false, true, false); // B (D, cp) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_EDIT_IN_IP_PACKAGER, "Edit in IP Packager"); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_EDIT_IN_IP_PACKAGER
+// k (cp): Edit in IP Packager: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (k)
+// bx (cp):  Edit in IP Packager : addNotify
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: ipx::edit_ip_in_project -upgrade true -name censor_ip_v1_0_project -directory D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.tmp/censor_ip_v1_0_project d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/ip_repo/censor_ip_1.0/component.xml 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'd:/dokumenty/agh/sdup/projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.tmp/censor_ip_v1_0_project' 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'. 
+// TclEventType: PROJECT_NEW
+// WARNING: HEventQueue.dispatchEvent() is taking  4168 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: create_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 1252.816 ; gain = 0.000 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/ip_repo/censor_ip_1.0'. 
+// Tcl Message: INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/ip_repo/censor_ip_1.0'. INFO: [IP_Flow 19-795] Syncing license key meta-data 
+// TclEventType: PACKAGER_CURRENT_CORE
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+// WARNING: HEventQueue.dispatchEvent() is taking  2304 ms.
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: ipx::edit_ip_in_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:13 . Memory (MB): peak = 1252.816 ; gain = 0.000 
+// [GUI Memory]: 136 MB (+15089kb) [06:59:08]
+// 'i' command handler elapsed time: 15 seconds
+// Elapsed time: 14 seconds
+dismissDialog("Edit in IP Packager"); // bx (cp)
+// WARNING: HEventQueue.dispatchEvent() is taking  1118 ms.
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v)]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v), censor_main_inst : censor_main (censor_main.v)]", 3); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v)]", 2, true); // B (D, cp) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v)]", 2); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v)]", 2, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v)]", 2, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+// Elapsed time: 62 seconds
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 461, 276); // cl (w, cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 73 MB. Current time: 9/8/20, 6:18:34 PM CEST
+// Elapsed time: 43 seconds
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 232, 309); // cl (w, cp)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 34 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v)]", 2); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v), censor_main_inst : censor_main (censor_main.v)]", 3, true); // B (D, cp) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v), censor_main_inst : censor_main (censor_main.v)]", 3); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v), censor_main_inst : censor_main (censor_main.v)]", 3, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v), censor_main_inst : censor_main (censor_main.v)]", 3, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "censor_ip_v1_0_S00_AXI.v", 2); // k (j, cp)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "censor_main.v", 3); // k (j, cp)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "censor_ip_v1_0_S00_AXI.v", 2); // k (j, cp)
+// Elapsed time: 37 seconds
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 394, 223); // cl (w, cp)
+// Elapsed time: 153 seconds
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 157, 412); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 152, 414); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 182, 401); // cl (w, cp)
+// Elapsed time: 30 seconds
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 30, 76); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 30, 76, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 56, 81); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 56, 81, false, false, false, false, true); // cl (w, cp) - Double Click
+// Elapsed time: 102 seconds
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 721, 146); // cl (w, cp)
+// Elapsed time: 178 seconds
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 528, 252); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 249, 367); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 251, 337); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 252, 349); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 262, 372); // cl (w, cp)
+// Elapsed time: 33 seconds
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 496, 285); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 419, 291); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 400, 307); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 630, 379); // cl (w, cp)
+// Elapsed time: 32 seconds
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 185, 174); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 147, 163); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 230, 231); // cl (w, cp)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 17 seconds
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 272, 318); // cl (w, cp)
+// Elapsed time: 40 seconds
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 209, 248); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 209, 248, false, false, false, false, true); // cl (w, cp) - Double Click
+// Elapsed time: 10 seconds
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 283, 233); // cl (w, cp)
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 283, 233, false, false, false, false, true); // cl (w, cp) - Double Click
+// Elapsed time: 11 seconds
+selectCodeEditor("censor_ip_v1_0_S00_AXI.v", 495, 316); // cl (w, cp)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // k (j, cp)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - censor_ip", 1); // k (j, cp)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // ar (Q, cp)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "File Groups", 2); // ar (Q, cp)
+selectButton(PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, "Merge changes from File Groups Wizard"); // h (M, cp)
+// TclEventType: PACKAGER_COMPONENT_RESET
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1177 ms.
+// Tcl Message: ipx::merge_project_changes files [ipx::current_core] 
+// WARNING: HEventQueue.dispatchEvent() is taking  1120 ms.
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // ar (Q, cp)
+selectButton(PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, "Re-Package IP"); // a (c, cp)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 10 [ipx::current_core] 
+// bx (cp):  Package IP : addNotify
+// Tcl Message: ipx::update_source_project_archive -component [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: FILE_SET_CHANGE
+// bx (cp):  Package IP : addNotify
+selectButton("PAResourceQtoS.ReviewContentPanel_FINISHED_PACKAGING_SUCCESSFULLY_DO_Yes", "Yes"); // JButton (C, I)
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ipx::move_temp_component_back -component [ipx::current_core] 
+// TclEventType: PROJECT_CLOSE
+// Tcl Message: close_project -delete 
+dismissDialog("Package IP"); // bx (cp)
+// TclEventType: CREATE_IP_CATALOG
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 72 MB. Current time: 9/8/20, 6:31:21 PM CEST
+// TclEventType: IP_LOCK_CHANGE
+// Tcl Message: update_ip_catalog -rebuild -repo_path d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/ip_repo/censor_ip_1.0 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// WARNING: HEventQueue.dispatchEvent() is taking  1147 ms.
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository 'd:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/ip_repo/censor_ip_1.0' 
+selectButton(PAResourceQtoS.SystemTab_REPORT_IP_STATUS, "Report IP Status"); // h (cQ, cp)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_IP_STATUS
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a (g, cp)
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// bx (cp):  Upgrade IP : addNotify
+// Tcl Message: upgrade_ip -vlnv xilinx.com:user:censor_ip:1.0 [get_ips  mb_design_censor_ip_0_0] -log ip_upgrade.log 
+// Tcl Message: Upgrading 'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd' 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_DELETE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-3422] Upgraded mb_design_censor_ip_0_0 (censor_ip_v1.0 1.0) from revision 9 to revision 10 
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: Wrote  : <D:\Dokumenty\AGH\SDUP\Projekt\drugi_projekt\fpga_censor\censor_axi\censor_axi.srcs\sources_1\bd\mb_design\mb_design.bd>  Wrote  : <D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ui/bd_db273ea8.ui>  
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/ip_upgrade.log'. 
+// Tcl Message: export_ip_user_files -of_objects [get_ips mb_design_censor_ip_0_0] -no_script -sync -force -quiet 
+// aI (cp): Generate Output Products: addNotify
+// Elapsed time: 16 seconds
+selectButton("PAResourceTtoZ.UpgradeIP_IP_UPGRADE_COMPLETED_OK", "OK"); // JButton (C, I)
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// bx (cp):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// Tcl Message: generate_target all [get_files  D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd] 
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: Wrote  : <D:\Dokumenty\AGH\SDUP\Projekt\drugi_projekt\fpga_censor\censor_axi\censor_axi.srcs\sources_1\bd\mb_design\mb_design.bd>  
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: VHDL Output written to : D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/synth/mb_design.v VHDL Output written to : D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/sim/mb_design.v VHDL Output written to : D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.v 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block censor_ip_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_50M . INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar . 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc . 
+// Tcl Message: Exporting to file D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/hw_handoff/mb_design.hwh Generated Block Design Tcl file D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/hw_handoff/mb_design_bd.tcl Generated Hardware Definition File D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/synth/mb_design.hwdef 
+// Tcl Message: generate_target: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1252.816 ; gain = 0.000 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all mb_design_censor_ip_0_0] } 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: catch { config_ip_cache -export [get_ips -all mb_design_auto_pc_0] } 
+// TclEventType: OOC_IP_CACHE_USED
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP mb_design_auto_pc_0, cache-ID = cc42f6d4ec47da59; cache size = 19.283 MB. 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// WARNING: HEventQueue.dispatchEvent() is taking  1054 ms.
+// Tcl Message: export_ip_user_files -of_objects [get_files D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs -jobs 4 mb_design_censor_ip_0_0_synth_1 
+// Tcl Message: [Tue Sep  8 18:32:02 2020] Launched mb_design_censor_ip_0_0_synth_1... Run output will be captured here: D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/mb_design_censor_ip_0_0_synth_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 994 MB. GUI used memory: 73 MB. Current time: 9/8/20, 6:32:05 PM CEST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1245 ms. Increasing delay to 3000 ms.
+// [Engine Memory]: 1,025 MB (+10091kb) [07:14:31]
+// Elapsed time: 35 seconds
+selectButton("PAResourceQtoS.SimpleOutputProductDialog_OUT_OF_CONTEXT_MODULE_RUNS_WERE_LAUNCHED_OK", "OK"); // JButton (C, I)
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,040 MB. GUI used memory: 73 MB. Current time: 9/8/20, 6:32:29 PM CEST
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // h (cQ, cp)
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// bx (cp):  Report IP Status : addNotify
+// Tcl Message: report_ip_status -name ip_status  
+dismissDialog("Report IP Status"); // bx (cp)
+// TclEventType: RUN_COMPLETED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 136 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// X (cp): Export Hardware: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (X)
+selectButton("PAResourceItoN.NewExportHardwareDialog_EXPORTED_FILE_FOR_THIS_MODULE_WAS_Yes", "Yes"); // JButton (C, J)
+dismissDialog("Export Hardware"); // X (cp)
+// Tcl Message: write_hwdef -force  -file D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sdk/mb_design_wrapper.hdf 
+// Elapsed time: 39 seconds
+selectButton(PAResourceQtoS.StaleMoreAction_OUT_OF_DATE_DETAILS, "details"); // h (cQ, cp)
+// Elapsed time: 95 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (Q, cp)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation]", 5); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (cp):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+dismissDialog("Resetting Runs"); // bx (cp)
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// bx (cp):  Generate Bitstream : addNotify
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Tue Sep  8 18:37:09 2020] Launched synth_1... Run output will be captured here: D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/synth_1/runme.log [Tue Sep  8 18:37:09 2020] Launched impl_1... Run output will be captured here: D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bx (cp)
+// WARNING: HEventQueue.dispatchEvent() is taking  1700 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 6828 ms. Increasing delay to 20484 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 31 ms. Decreasing delay to 2031 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 2665 ms. Increasing delay to 4000 ms.
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// [GUI Memory]: 143 MB (+115kb) [07:21:38]
+// TclEventType: RUN_COMPLETED
+// ah (cp): Bitstream Generation Completed: addNotify
+// Elapsed time: 222 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a (Q, ah)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Bitstream Generation Completed"); // ah (cp)
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 2969 ms. Increasing delay to 5000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 4407 ms. Increasing delay to 6000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1182 ms. Increasing delay to 3546 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,040 MB. GUI used memory: 83 MB. Current time: 9/8/20, 7:02:30 PM CEST
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 2326 ms. Increasing delay to 6978 ms.
+// Elapsed time: 1663 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (aA, cp)
+closeTask("IP Integrator", "Block Design", "DesignTask.IP_INTEGRATOR");
+// bx (cp):  Close Block Designs : addNotify
+// TclEventType: RSB_CLOSE_DIAGRAM
+// WARNING: HEventQueue.dispatchEvent() is taking  1246 ms.
+// Tcl Message: close_bd_design [get_bd_designs mb_design] 
+dismissDialog("Close Block Designs"); // bx (cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper (mb_design_wrapper.v)]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 9); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 10); // B (D, cp)
+// PAPropertyPanels.initPanels (mb_design_tb.v) elapsed time: 0.3s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, mb_design_tb (mb_design_tb.v)]", 11, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, mb_design_tb (mb_design_tb.v)]", 11, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, mb_design_tb (mb_design_tb.v), mb_design_inst : mb_design_wrapper (mb_design_wrapper.v)]", 12, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, mb_design_tb (mb_design_tb.v), mb_design_inst : mb_design_wrapper (mb_design_wrapper.v)]", 12, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+// Elapsed time: 42 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_design_tb.v", 2); // k (j, cp)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_design_wrapper.v", 3); // k (j, cp)
+selectMenuItem((HResource) null, "New Vertical Group"); // JMenuItem (JidePopupMenu)
+// Elapsed time: 11 seconds
+selectCodeEditor("mb_design_tb.v", 273, 348); // cl (w, cp)
+// Elapsed time: 74 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, mb_design_tb (mb_design_tb.v), mb_design_inst : mb_design_wrapper (mb_design_wrapper.v)]", 12); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, mb_design_tb (mb_design_tb.v), mb_design_inst : mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v)]", 14); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, mb_design_tb (mb_design_tb.v), mb_design_inst : mb_design_wrapper (mb_design_wrapper.v), mb_design_i : mb_design (mb_design.bd), mb_design (mb_design.v), censor_ip_0 : mb_design_censor_ip_0_0 (mb_design_censor_ip_0_0.xci)]", 15, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_EDIT_IN_IP_PACKAGER, "Edit in IP Packager"); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_EDIT_IN_IP_PACKAGER
+// k (cp): Edit in IP Packager: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (k)
+// bx (cp):  Edit in IP Packager : addNotify
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: ipx::edit_ip_in_project -upgrade true -name censor_ip_v1_0_project -directory D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.tmp/censor_ip_v1_0_project d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/ip_repo/censor_ip_1.0/component.xml 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'd:/dokumenty/agh/sdup/projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.tmp/censor_ip_v1_0_project' 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'. 
+// TclEventType: PROJECT_NEW
+// WARNING: HEventQueue.dispatchEvent() is taking  3387 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1252.816 ; gain = 0.000 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/ip_repo/censor_ip_1.0'. 
+// Tcl Message: INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/ip_repo/censor_ip_1.0'. INFO: [IP_Flow 19-795] Syncing license key meta-data 
+// TclEventType: PACKAGER_CURRENT_CORE
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+// [GUI Memory]: 159 MB (+9318kb) [07:53:36]
+// WARNING: HEventQueue.dispatchEvent() is taking  1191 ms.
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: ipx::edit_ip_in_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 1252.816 ; gain = 0.000 
+// 'i' command handler elapsed time: 13 seconds
+// Elapsed time: 11 seconds
+dismissDialog("Edit in IP Packager"); // bx (cp)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 10 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v)]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v), censor_main_inst : censor_main (censor_main.v)]", 3); // B (D, cp)
+// Elapsed time: 15 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v), censor_main_inst : censor_main (censor_main.v)]", 3, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v), censor_main_inst : censor_main (censor_main.v)]", 3, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+selectCodeEditor("censor_main.v", 144, 471); // cl (w, cp)
+selectCodeEditor("censor_main.v", 144, 471, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("censor_main.v", 124, 450); // cl (w, cp)
+selectCodeEditor("censor_main.v", 124, 450, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("censor_main.v", 118, 351); // cl (w, cp)
+selectCodeEditor("censor_main.v", 100, 345); // cl (w, cp)
+selectCodeEditor("censor_main.v", 100, 345, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("censor_main.v", 100, 345, false, false, false, true, false); // cl (w, cp) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // af (al, Popup.HeavyWeightWindow)
+selectCodeEditor("out_char_select.v", 145, 114); // cl (w, cp)
+selectCodeEditor("out_char_select.v", 145, 114, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("out_char_select.v", 206, 428); // cl (w, cp)
+selectCodeEditor("out_char_select.v", 206, 428, false, false, false, false, true); // cl (w, cp) - Double Click
+// Elapsed time: 13 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "censor_main.v", 2); // k (j, cp)
+// Elapsed time: 13 seconds
+selectCodeEditor("censor_main.v", 166, 467); // cl (w, cp)
+selectCodeEditor("censor_main.v", 166, 467, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("censor_main.v", 91, 350); // cl (w, cp)
+selectCodeEditor("censor_main.v", 91, 350, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("censor_main.v", 93, 347, false, false, false, true, false); // cl (w, cp) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // af (al, Popup.HeavyWeightWindow)
+// [GUI Memory]: 169 MB (+2133kb) [07:58:53]
+// Elapsed time: 299 seconds
+selectCodeEditor("out_char_select.v", 85, 490); // cl (w, cp)
+selectCodeEditor("out_char_select.v", 85, 490, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("out_char_select.v", 177, 485); // cl (w, cp)
+selectCodeEditor("out_char_select.v", 177, 485, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("out_char_select.v", 116, 325); // cl (w, cp)
+selectCodeEditor("out_char_select.v", 117, 325, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("out_char_select.v", 120, 249); // cl (w, cp)
+selectCodeEditor("out_char_select.v", 120, 249, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("out_char_select.v", 133, 281); // cl (w, cp)
+selectCodeEditor("out_char_select.v", 133, 281, false, false, false, false, true); // cl (w, cp) - Double Click
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 5542 ms. Increasing delay to 16626 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 14 ms. Decreasing delay to 2014 ms.
+// Elapsed time: 746 seconds
+selectCodeEditor("out_char_select.v", 430, 220); // cl (w, cp)
+// Elapsed time: 50 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "censor_main.v", 2); // k (j, cp)
+// Elapsed time: 16 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - censor_ip", 1); // k (j, cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,040 MB. GUI used memory: 105 MB. Current time: 9/8/20, 7:32:31 PM CEST
+// Elapsed time: 497 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v), censor_main_inst : censor_main (censor_main.v)]", 3); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v), censor_main_inst : censor_main (censor_main.v), mask_controller : mask_controller (mask_controller.v)]", 8, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, censor_ip_v1_0 (censor_ip_v1_0.v), censor_ip_v1_0_S00_AXI_inst : censor_ip_v1_0_S00_AXI (censor_ip_v1_0_S00_AXI.v), censor_main_inst : censor_main (censor_main.v), mask_controller : mask_controller (mask_controller.v)]", 8, false, false, false, false, false, true); // B (D, cp) - Double Click
+// Elapsed time: 46 seconds
+selectCodeEditor("mask_controller.v", 472, 262); // cl (w, cp)
+selectCodeEditor("mask_controller.v", 447, 285); // cl (w, cp)
+selectCodeEditor("mask_controller.v", 458, 249); // cl (w, cp)
+// Elapsed time: 26 seconds
+selectCodeEditor("mask_controller.v", 109, 370); // cl (w, cp)
+selectCodeEditor("mask_controller.v", 109, 370, false, false, false, false, true); // cl (w, cp) - Double Click
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("mask_controller.v", 365, 370); // cl (w, cp)
+selectCodeEditor("mask_controller.v", 343, 368); // cl (w, cp)
+selectCodeEditor("mask_controller.v", 229, 430); // cl (w, cp)
+selectCodeEditor("mask_controller.v", 274, 395); // cl (w, cp)
+selectCodeEditor("mask_controller.v", 279, 387); // cl (w, cp)
+selectCodeEditor("mask_controller.v", 269, 409); // cl (w, cp)
+selectCodeEditor("mask_controller.v", 267, 427); // cl (w, cp)
+selectCodeEditor("mask_controller.v", 151, 382); // cl (w, cp)
+selectCodeEditor("mask_controller.v", 151, 382, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("mask_controller.v", 130, 187); // cl (w, cp)
+selectCodeEditor("mask_controller.v", 298, 221); // cl (w, cp)
+selectCodeEditor("mask_controller.v", 206, 351); // cl (w, cp)
+selectCodeEditor("mask_controller.v", 206, 390); // cl (w, cp)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectCodeEditor("mask_controller.v", 478, 269); // cl (w, cp)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - censor_ip", 1); // k (j, cp)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "File Groups", 2); // ar (Q, cp)
+selectButton(PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, "Merge changes from File Groups Wizard"); // h (M, cp)
+// TclEventType: PACKAGER_COMPONENT_RESET
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: ipx::merge_project_changes files [ipx::current_core] 
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Elapsed time: 53 seconds
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // ar (Q, cp)
+selectButton(PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, "Re-Package IP"); // a (c, cp)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// bx (cp):  Package IP : addNotify
+// Tcl Message: set_property core_revision 11 [ipx::current_core] 
+// Tcl Message: ipx::update_source_project_archive -component [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: FILE_SET_CHANGE
+// bx (cp):  Package IP : addNotify
+selectButton("PAResourceQtoS.ReviewContentPanel_FINISHED_PACKAGING_SUCCESSFULLY_DO_Yes", "Yes"); // JButton (C, I)
+// Tcl Message: ipx::move_temp_component_back -component [ipx::current_core] 
+// TclEventType: PROJECT_CLOSE
+// Tcl Message: close_project -delete 
+dismissDialog("Package IP"); // bx (cp)
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: IP_LOCK_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,040 MB. GUI used memory: 102 MB. Current time: 9/8/20, 7:43:08 PM CEST
+// TclEventType: IP_LOCK_CHANGE
+// Tcl Message: update_ip_catalog -rebuild -repo_path d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/ip_repo/censor_ip_1.0 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository 'd:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/ip_repo/censor_ip_1.0' 
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // h (cQ, cp)
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a (g, cp)
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// WARNING: HEventQueue.dispatchEvent() is taking  2111 ms.
+// TclEventType: RSB_CONNECTION_CHANGE
+// Tcl Message: upgrade_ip -vlnv xilinx.com:user:censor_ip:1.0 [get_ips  mb_design_censor_ip_0_0] -log ip_upgrade.log 
+// Tcl Message: Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0 Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_50M Adding cell -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc Adding cell -- xilinx.com:user:censor_ip:1.0 - censor_ip_0 Successfully read diagram <mb_design> from BD file <D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd> 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// bx (cp):  Upgrade IP : addNotify
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_DELETE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// Tcl Message: Upgrading 'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd' 
+// TclEventType: FILE_SET_DELETE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: INFO: [IP_Flow 19-3422] Upgraded mb_design_censor_ip_0_0 (censor_ip_v1.0 1.0) from revision 10 to revision 11 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: Wrote  : <D:\Dokumenty\AGH\SDUP\Projekt\drugi_projekt\fpga_censor\censor_axi\censor_axi.srcs\sources_1\bd\mb_design\mb_design.bd>  
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/ip_upgrade.log'. 
+// Tcl Message: export_ip_user_files -of_objects [get_ips mb_design_censor_ip_0_0] -no_script -sync -force -quiet 
+// aI (cp): Generate Output Products: addNotify
+selectButton("PAResourceTtoZ.UpgradeIP_IP_UPGRADE_COMPLETED_OK", "OK"); // JButton (C, I)
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// bx (cp):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: generate_target all [get_files  D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: Wrote  : <D:\Dokumenty\AGH\SDUP\Projekt\drugi_projekt\fpga_censor\censor_axi\censor_axi.srcs\sources_1\bd\mb_design\mb_design.bd>  VHDL Output written to : D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/synth/mb_design.v VHDL Output written to : D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/sim/mb_design.v VHDL Output written to : D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.v 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block censor_ip_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_50M . INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar . 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc . 
+// Tcl Message: Exporting to file D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/hw_handoff/mb_design.hwh Generated Block Design Tcl file D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/hw_handoff/mb_design_bd.tcl Generated Hardware Definition File D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/synth/mb_design.hwdef 
+// Tcl Message: generate_target: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1313.016 ; gain = 35.340 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all mb_design_censor_ip_0_0] } 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: catch { config_ip_cache -export [get_ips -all mb_design_auto_pc_0] } 
+// TclEventType: OOC_IP_CACHE_USED
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP mb_design_auto_pc_0, cache-ID = cc42f6d4ec47da59; cache size = 19.448 MB. 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: export_ip_user_files -of_objects [get_files D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs -jobs 4 mb_design_censor_ip_0_0_synth_1 
+// Tcl Message: [Tue Sep  8 19:43:38 2020] Launched mb_design_censor_ip_0_0_synth_1... Run output will be captured here: D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/mb_design_censor_ip_0_0_synth_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 41 seconds
+selectButton("PAResourceQtoS.SimpleOutputProductDialog_OUT_OF_CONTEXT_MODULE_RUNS_WERE_LAUNCHED_OK", "OK"); // JButton (C, I)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // af (cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// X (cp): Export Hardware: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (X)
+selectButton("PAResourceItoN.NewExportHardwareDialog_EXPORTED_FILE_FOR_THIS_MODULE_WAS_Yes", "Yes"); // JButton (C, J)
+dismissDialog("Export Hardware"); // X (cp)
+// Tcl Message: write_hwdef -force  -file D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sdk/mb_design_wrapper.hdf 
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (cp):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+dismissDialog("Resetting Runs"); // bx (cp)
+// bx (cp):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Sep  8 19:44:31 2020] Launched mb_design_censor_ip_0_0_synth_1, synth_1... Run output will be captured here: mb_design_censor_ip_0_0_synth_1: D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/mb_design_censor_ip_0_0_synth_1/runme.log synth_1: D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/synth_1/runme.log [Tue Sep  8 19:44:32 2020] Launched impl_1... Run output will be captured here: D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bx (cp)
+// TclEventType: RUN_COMPLETED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 182 MB (+5054kb) [08:27:46]
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// ah (cp): Bitstream Generation Completed: addNotify
+// Elapsed time: 258 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Bitstream Generation Completed"); // ah (cp)
+// Elapsed time: 20 seconds
+selectTab((HResource) null, (HResource) null, "Sources", 0); // aI (aF, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, mb_design_tb (mb_design_tb.v)]", 18, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, mb_design_tb (mb_design_tb.v)]", 18, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, mb_design_tb (mb_design_tb.v)]", 18); // B (D, cp)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_design_wrapper.v", 4); // k (j, cp)
+selectMenuItem((HResource) null, "New Vertical Group"); // JMenuItem (JidePopupMenu)
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h (cQ, cp)
+// Elapsed time: 157 seconds
+selectCodeEditor("mb_design_tb.v", 208, 237); // cl (w, cp)
+selectCodeEditor("mb_design_tb.v", 335, 355); // cl (w, cp)
+// Elapsed time: 48 seconds
+selectCodeEditor("mb_design_wrapper.v", 59, 417); // cl (w, cp)
+selectCodeEditor("mb_design_wrapper.v", 59, 417, false, false, false, false, true); // cl (w, cp) - Double Click
+typeControlKey((HResource) null, "mb_design_wrapper.v", 'c'); // cl (w, cp)
+selectCodeEditor("mb_design_tb.v", 274, 352); // cl (w, cp)
+typeControlKey((HResource) null, "mb_design_tb.v", 'v'); // cl (w, cp)
+selectCodeEditor("mb_design_tb.v", 327, 467); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (Q, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// al (cp): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (al)
+// bx (cp):  Save Constraints : addNotify
+// e (cp):  Run Simulation : addNotify
+dismissDialog("Save Project"); // al (cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator... 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sim/sim_1/behav/xsim' INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-7] Finding pre-compiled libraries... INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sim/sim_1/behav/xsim' INFO: [SIM-utils-50] Design contains embedded sources, generating MEM files for simulation... INFO: [SIM-utils-54] Inspecting design source files for 'mb_design_tb' in fileset 'sim_1'... 
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Tcl Message: INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... 
+// Tcl Message: INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvlog --incr --relax -L axi_vip_v1_1_4 -L processing_system7_vip_v1_0_6 -L xilinx_vip -prj mb_design_tb_vlog.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [VRFC 10-163] Analyzing VHDL file "D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.ip_user_files/bd/mb_design/ip/mb_design_rst_ps7_0_50M_0/sim/mb_design_rst_ps7_0_50M_0.vhd" into library xil_defaultlib INFO: [VRFC 10-3107] analyzing entity 'mb_design_rst_ps7_0_50M_0' 
+// Tcl Message: run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1329.922 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '6' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1329.922 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds INFO: [USF-XSim-99] Step results log file:'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sim/sim_1/behav/xsim/elaborate.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sim/sim_1/behav/xsim/elaborate.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:22 . Memory (MB): peak = 1329.922 ; gain = 0.000 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  
+// HOptionPane Error: 'ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  (Run Simulation)'
+// 'd' command handler elapsed time: 27 seconds
+// Elapsed time: 25 seconds
+selectButton("RDIResource.ProgressDialog_ERROR_ENCOUNTERED_PLEASE_SEE_TCL_OK", "OK"); // JButton (C, I)
+// a (cp): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cp)
+// Elapsed time: 79 seconds
+selectCodeEditor("mb_design_wrapper.v", 65, 109); // cl (w, cp)
+selectCodeEditor("mb_design_wrapper.v", 65, 109, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("mb_design_wrapper.v", 65, 109, false, false, false, true, false); // cl (w, cp) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // af (al, cp)
+// Elapsed time: 98 seconds
+selectCodeEditor("mb_design_wrapper.v", 223, 343); // cl (w, cp)
+selectCodeEditor("mb_design_tb.v", 381, 440); // cl (w, cp)
+// Elapsed time: 118 seconds
+closeView(PAResourceOtoP.PAViews_ADDRESS_EDITOR, "Address Editor"); // c
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // k (j, cp)
+// Elapsed time: 93 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_design_tb.v", 2); // k (j, cp)
+selectCodeEditor("mb_design_tb.v", 268, 471); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (Q, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cp):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// Tcl Message: launch_simulation 
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Tcl Message: INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... 
+// Tcl Message: INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvlog --incr --relax -L axi_vip_v1_1_4 -L processing_system7_vip_v1_0_6 -L xilinx_vip -prj mb_design_tb_vlog.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '5' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sim/sim_1/behav/xsim' 
+// Tcl Message: Completed simulation data flow analysis Time Resolution for simulation is 1ps Compiling package std.standard Compiling package std.textio Compiling package ieee.std_logic_1164 Compiling package ieee.numeric_std Compiling package unisim.vcomponents Compiling package ieee.vital_timing Compiling package ieee.vital_primitives Compiling package unisim.vpkg Compiling package ieee.std_logic_arith Compiling package synopsys.attributes Compiling package ieee.std_logic_misc Compiling package xilinx_vip.axi_vip_pkg 
+// Tcl Message: Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_re... Compiling module xilinx_vip.axi_vip_axi4pc(WDATA_WIDTH=32,RD... 
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1381 ms. Increasing delay to 3000 ms.
+// Tcl Message: Built simulation snapshot mb_design_tb_behav 
+// Tcl Message:  ****** Webtalk v2018.3 (64-bit)   **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018   **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.  source D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sim/sim_1/behav/xsim/xsim.dir/mb_design_tb_behav/webtalk/xsim_webtalk.tcl -notrace 
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// Tcl Message: INFO: [Common 17-206] Exiting Webtalk at Tue Sep  8 20:01:32 2020... 
+// Tcl Message: run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:50 . Memory (MB): peak = 1364.645 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '50' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "mb_design_tb_behav -key {Behavioral:sim_1:Functional:mb_design_tb} -tclbatch {mb_design_tb.tcl} -protoinst "protoinst_files/mb_design.protoinst" -view {D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/mb_design_tb_behav.wcfg} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2018.3 
+// Elapsed time: 67 seconds
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a (e)
+// Tcl Message: INFO: [Common 17-41] Interrupt caught. Command should exit soon. 
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a (e)
+// 'd' command handler elapsed time: 76 seconds
+selectCodeEditor("mb_design_tb.v", 382, 352); // cl (w, cp)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (Q, cp)
+closeMainWindow("censor_axi - [D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.xpr] - Vivado 2018.3"); // cp
+// HOptionPane Warning: 'A background task is running. Please wait until it completes to exit Vivado. If you choose to abort background task and exit immediately, you will lose all unsaved changes to project. (Background Task)'

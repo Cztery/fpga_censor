@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="mb_design_censor_ip_0_0_synth_1" LaunchDir="D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/mb_design_censor_ip_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="mb_design_censor_ip_0_0_synth_1"/>
+	</Run>
+	<Run Id="impl_1" LaunchDir="D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="synth_1"/>
+		<Parent Id="mb_design_censor_ip_0_0_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

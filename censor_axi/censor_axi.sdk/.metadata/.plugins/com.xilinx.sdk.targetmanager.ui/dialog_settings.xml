@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="Auto Detect" key="mb_design_wrapper_hw_platform_0-device"/>
+	<item value="false" key="mb_design_wrapper_hw_platform_0-partial_bit"/>
+	<item value="false" key="mb_design_wrapper_hw_platform_1-partial_bit"/>
+	<item value="Auto Detect" key="mb_design_wrapper_hw_platform_1-device"/>
+	<item value="" key="mb_design_wrapper_hw_platform_0-bmmFile"/>
+	<item value="mb_design_wrapper_hw_platform_0" key="programfpga.hwplatform"/>
+	<item value="D:\Dokumenty\AGH\SDUP\Projekt\drugi_projekt\fpga_censor\censor_axi\censor_axi.runs\impl_1\mb_design_wrapper.bit" key="mb_design_wrapper_hw_platform_1-bitFile"/>
+	<item value="Local" key="mb_design_wrapper_hw_platform_0-target"/>
+	<item value="" key="mb_design_wrapper_hw_platform_1-bmmFile"/>
+	<item value="Local" key="mb_design_wrapper_hw_platform_1-target"/>
+	<item value="D:\Dokumenty\AGH\SDUP\Projekt\drugi_projekt\fpga_censor\censor_axi\censor_axi.runs\impl_1\mb_design_wrapper.bit" key="mb_design_wrapper_hw_platform_0-bitFile"/>
+</section>

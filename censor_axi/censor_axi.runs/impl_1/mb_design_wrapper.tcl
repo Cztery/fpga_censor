@@ -65,26 +65,25 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7z010clg400-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir {D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.cache/wt} [current_project]
-  set_property parent.project_path {D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.xpr} [current_project]
+  set_property webtalk.parent_dir D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.cache/wt [current_project]
+  set_property parent.project_path D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.xpr [current_project]
   set_property ip_repo_paths {
-  {D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/ip_repo/censor_ip_1.0}
-  {D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/ip_repo/censor_ip_1.0}
+  D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/ip_repo/censor_ip_1.0
+  D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/ip_repo/censor_ip_1.0
 } [current_project]
   update_ip_catalog
-  set_property ip_output_repo {{D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.cache/ip}} [current_project]
+  set_property ip_output_repo D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet {{D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.runs/synth_1/mb_design_wrapper.dcp}}
+  add_files -quiet D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/synth_1/mb_design_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files {{D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd}}
+  add_files D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/mb_design.bd
   set_param project.isImplRun false
-  read_xdc {{D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.srcs/constrs_1/new/gpio_constraints.xdc}}
+  read_xdc D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/constrs_1/new/gpio_constraints.xdc
   set_param project.isImplRun true
   link_design -top mb_design_wrapper -part xc7z010clg400-1
   set_param project.isImplRun false

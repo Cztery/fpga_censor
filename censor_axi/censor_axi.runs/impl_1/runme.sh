@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Dokumenty/AGH/SDUP/Projekt/drugi projekt/fpga_censor/censor_axi/censor_axi.runs/impl_1'
+HD_PWD='D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

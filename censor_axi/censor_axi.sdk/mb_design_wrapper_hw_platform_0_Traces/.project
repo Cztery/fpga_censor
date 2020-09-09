@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>mb_design_wrapper_hw_platform_0_Traces</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.linuxtools.tmf.project.nature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Traces/Run_wrz-08_13-54/PS_Trace_wrz-08_13-54/PS_Trace_wrz-08_13-54_</name>
+			<type>1</type>
+			<location>D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sdk/mb_design_wrapper_hw_platform_0_Traces/Traces/.bookmarks</location>
+		</link>
+		<link>
+			<name>Traces/Run_wrz-08_14-04/PS_Trace_wrz-08_14-04/PS_Trace_wrz-08_14-04_</name>
+			<type>1</type>
+			<location>D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sdk/mb_design_wrapper_hw_platform_0_Traces/Traces/.bookmarks</location>
+		</link>
+		<link>
+			<name>Traces/Run_wrz-08_21-52/PS_Trace_wrz-08_21-52/PS_Trace_wrz-08_21-52_</name>
+			<type>1</type>
+			<location>D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.sdk/mb_design_wrapper_hw_platform_0_Traces/Traces/.bookmarks</location>
+		</link>
+	</linkedResources>
+</projectDescription>

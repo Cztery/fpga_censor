@@ -65,12 +65,5 @@ module mb_design_tb();
     end
     
     //Instantiate tested module
-    mb_design_wrapper mb_design_inst ( clk_n, 
-                                        clk_p,
-                                        char_in,
-                                        char_out,
-                                        in_ready,
-                                        out_ready,
-                                        reset, 
-                                        reset_n);
+    mb_design_wrapper mb_design_inst ();
 endmodule

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="mb_design_censor_ip_0_0_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1599674144">
+<GenRun Id="mb_design_censor_ip_0_0_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1599680976">
   <File Type="PA-TCL" Name="mb_design_censor_ip_0_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="mb_design_censor_ip_0_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="mb_design_censor_ip_0_0_reports.tcl"/>

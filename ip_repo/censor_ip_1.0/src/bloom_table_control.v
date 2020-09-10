@@ -35,6 +35,8 @@ module bloom_table_control(
     always @* begin
         if(hash_ready)
             is_bad_word = bloom_table[hash1] & bloom_table[hash2];
+        else
+            is_bad_word = 0;
     end
     
 endmodule

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Wed Sep  9 20:00:21 2020
+| Date         : Wed Sep  9 21:53:11 2020
 | Host         : Dell-Piotrek running 64-bit major release  (build 9200)
 | Command      : report_methodology -file mb_design_wrapper_methodology_drc_routed.rpt -pb mb_design_wrapper_methodology_drc_routed.pb -rpx mb_design_wrapper_methodology_drc_routed.rpx
 | Design       : mb_design_wrapper
@@ -23,12 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 93
+             Violations found: 92
 +-----------+----------+-----------------------------+------------+
 | Rule      | Severity | Description                 | Violations |
 +-----------+----------+-----------------------------+------------+
 | TIMING-17 | Warning  | Non-clocked sequential cell | 92         |
-| TIMING-20 | Warning  | Non-clocked latch           | 1          |
 +-----------+----------+-----------------------------+------------+
 
 2. REPORT DETAILS
@@ -491,11 +490,6 @@ Related violations: <none>
 TIMING-17#92 Warning
 Non-clocked sequential cell  
 The clock pin mb_design_i/censor_ip_0/inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/out_char_select/out_ready_reg/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#1 Warning
-Non-clocked latch  
-The latch mb_design_i/censor_ip_0/inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/bloom_table_control/is_bad_word_reg cannot be properly analyzed as its control pin mb_design_i/censor_ip_0/inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/bloom_table_control/is_bad_word_reg/G is not reached by a timing clock
 Related violations: <none>
 
 

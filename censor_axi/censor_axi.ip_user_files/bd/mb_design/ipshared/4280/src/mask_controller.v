@@ -48,7 +48,6 @@ module mask_controller
     
     always @(negedge clk) begin
     
-//        if(is_bad_word) begin
         if(flag_set ^ flag_used) begin
             mask_bits       = (mask_bits | new_mask);
             flag_used = !flag_used;

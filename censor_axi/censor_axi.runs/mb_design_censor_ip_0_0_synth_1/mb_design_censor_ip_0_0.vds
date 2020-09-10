@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Wed Sep  9 19:55:49 2020
-# Process ID: 10132
+# Start of session at: Wed Sep  9 21:49:40 2020
+# Process ID: 9820
 # Current directory: D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/mb_design_censor_ip_0_0_synth_1
 # Command line: vivado.exe -log mb_design_censor_ip_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mb_design_censor_ip_0_0.tcl
 # Log file: D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/mb_design_censor_ip_0_0_synth_1/mb_design_censor_ip_0_0.vds
@@ -22,46 +22,46 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 9892 
+INFO: Helper process launched with PID 6744 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 388.691 ; gain = 102.191
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 388.023 ; gain = 99.590
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'mb_design_censor_ip_0_0' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_censor_ip_0_0/synth/mb_design_censor_ip_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'censor_ip_v1_0' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/hdl/censor_ip_v1_0.v:4]
+INFO: [Synth 8-6157] synthesizing module 'censor_ip_v1_0' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/hdl/censor_ip_v1_0.v:4]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'censor_ip_v1_0_S00_AXI' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/hdl/censor_ip_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6157] synthesizing module 'censor_ip_v1_0_S00_AXI' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/hdl/censor_ip_v1_0_S00_AXI.v:4]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
 	Parameter ADDR_LSB bound to: 2 - type: integer 
 	Parameter OPT_MEM_ADDR_BITS bound to: 1 - type: integer 
-INFO: [Synth 8-226] default block is never used [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/hdl/censor_ip_v1_0_S00_AXI.v:372]
-INFO: [Synth 8-6157] synthesizing module 'censor_main' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/censor_main.v:23]
-INFO: [Synth 8-6157] synthesizing module 'input_char_shift_reg' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/input_char_shift_reg.v:23]
+INFO: [Synth 8-226] default block is never used [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/hdl/censor_ip_v1_0_S00_AXI.v:372]
+INFO: [Synth 8-6157] synthesizing module 'censor_main' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/censor_main.v:23]
+INFO: [Synth 8-6157] synthesizing module 'input_char_shift_reg' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/input_char_shift_reg.v:23]
 	Parameter REG_LEN bound to: 15 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'input_char_shift_reg' (1#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/input_char_shift_reg.v:23]
-INFO: [Synth 8-6157] synthesizing module 'hashing' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/hashing.v:23]
-INFO: [Synth 8-6157] synthesizing module 'is_alpha' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/is_alpha.v:28]
-INFO: [Synth 8-6155] done synthesizing module 'is_alpha' (2#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/is_alpha.v:28]
-INFO: [Synth 8-6157] synthesizing module 'character_to_lower' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/character_to_lower.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'character_to_lower' (3#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/character_to_lower.v:25]
-INFO: [Synth 8-6157] synthesizing module 'hash_bernstein' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/hash_bernstein.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'hash_bernstein' (4#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/hash_bernstein.v:23]
-INFO: [Synth 8-6157] synthesizing module 'hash_rotating' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/hash_rotating.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'hash_rotating' (5#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/hash_rotating.v:23]
-INFO: [Synth 8-6157] synthesizing module 'word_length_counter' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/word_length_counter.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'word_length_counter' (6#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/word_length_counter.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'hashing' (7#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/hashing.v:23]
-INFO: [Synth 8-6157] synthesizing module 'bloom_table_control' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/bloom_table_control.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'bloom_table_control' (8#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/bloom_table_control.v:23]
-INFO: [Synth 8-6157] synthesizing module 'mask_controller' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/mask_controller.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'input_char_shift_reg' (1#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/input_char_shift_reg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'hashing' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/hashing.v:23]
+INFO: [Synth 8-6157] synthesizing module 'is_alpha' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/is_alpha.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'is_alpha' (2#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/is_alpha.v:28]
+INFO: [Synth 8-6157] synthesizing module 'character_to_lower' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/character_to_lower.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'character_to_lower' (3#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/character_to_lower.v:25]
+INFO: [Synth 8-6157] synthesizing module 'hash_bernstein' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/hash_bernstein.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'hash_bernstein' (4#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/hash_bernstein.v:23]
+INFO: [Synth 8-6157] synthesizing module 'hash_rotating' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/hash_rotating.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'hash_rotating' (5#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/hash_rotating.v:23]
+INFO: [Synth 8-6157] synthesizing module 'word_length_counter' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/word_length_counter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'word_length_counter' (6#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/word_length_counter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'hashing' (7#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/hashing.v:23]
+INFO: [Synth 8-6157] synthesizing module 'bloom_table_control' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/bloom_table_control.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'bloom_table_control' (8#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/bloom_table_control.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mask_controller' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/mask_controller.v:23]
 	Parameter REG_LEN bound to: 15 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'mask_controller' (9#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/mask_controller.v:23]
-INFO: [Synth 8-6157] synthesizing module 'out_char_select' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/out_char_select.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'out_char_select' (10#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/out_char_select.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'censor_main' (11#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/censor_main.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'censor_ip_v1_0_S00_AXI' (12#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/hdl/censor_ip_v1_0_S00_AXI.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'censor_ip_v1_0' (13#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/hdl/censor_ip_v1_0.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'mask_controller' (9#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/mask_controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'out_char_select' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/out_char_select.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'out_char_select' (10#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/out_char_select.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'censor_main' (11#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/censor_main.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'censor_ip_v1_0_S00_AXI' (12#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/hdl/censor_ip_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'censor_ip_v1_0' (13#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/hdl/censor_ip_v1_0.v:4]
 INFO: [Synth 8-6155] done synthesizing module 'mb_design_censor_ip_0_0' (14#1) [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_censor_ip_0_0/synth/mb_design_censor_ip_0_0.v:57]
 WARNING: [Synth 8-3331] design censor_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
 WARNING: [Synth 8-3331] design censor_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
@@ -70,7 +70,7 @@ WARNING: [Synth 8-3331] design censor_ip_v1_0_S00_AXI has unconnected port S_AXI
 WARNING: [Synth 8-3331] design censor_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
 WARNING: [Synth 8-3331] design censor_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 444.727 ; gain = 158.227
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 444.414 ; gain = 155.980
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -83,10 +83,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 444.727 ; gain = 158.227
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 444.414 ; gain = 155.980
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 444.727 ; gain = 158.227
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 444.414 ; gain = 155.980
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -95,33 +95,32 @@ Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 748.363 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 747.746 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 748.363 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 747.746 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.101 . Memory (MB): peak = 750.395 ; gain = 2.031
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.080 . Memory (MB): peak = 750.480 ; gain = 2.734
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 750.395 ; gain = 463.895
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 750.480 ; gain = 462.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 750.395 ; gain = 463.895
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 750.480 ; gain = 462.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 750.395 ; gain = 463.895
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 750.480 ; gain = 462.047
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'is_bad_word_reg' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/bloom_table_control.v:37]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 750.395 ; gain = 463.895
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 750.480 ; gain = 462.047
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -248,8 +247,8 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-4471] merging register 'inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/hashing/hash_bernstein/hash_reg[9:0]' into 'inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/hashing/hash_bernstein/hash_reg[9:0]' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/hash_bernstein.v:56]
-INFO: [Synth 8-4471] merging register 'inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/hashing/hash_rotating/hash_ready_reg' into 'inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/hashing/hash_bernstein/hash_ready_reg' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/728a/src/hash_rotating.v:57]
+INFO: [Synth 8-4471] merging register 'inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/hashing/hash_bernstein/hash_reg[9:0]' into 'inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/hashing/hash_bernstein/hash_reg[9:0]' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/hash_bernstein.v:56]
+INFO: [Synth 8-4471] merging register 'inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/hashing/hash_rotating/hash_ready_reg' into 'inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/hashing/hash_bernstein/hash_ready_reg' [d:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ipshared/4280/src/hash_rotating.v:57]
 DSP Report: Generating DSP inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/hashing/hash_bernstein/hash_next0, operation Mode is: C+A2*B.
 DSP Report: register A is absorbed into DSP inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/hashing/hash_bernstein/hash_next0.
 DSP Report: operator inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/hashing/hash_bernstein/hash_next0 is absorbed into DSP inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/hashing/hash_bernstein/hash_next0.
@@ -269,7 +268,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/cen
 INFO: [Synth 8-3886] merging instance 'inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/mask_controller/mask_bits_reg[0]' (FD_1) to 'inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/mask_controller/mask_bits_reg[1]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/censor_ip_v1_0_S00_AXI_inst/censor_main_inst/mask_controller/mask_bits_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 750.395 ; gain = 463.895
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 750.480 ; gain = 462.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -296,13 +295,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:50 . Memory (MB): peak = 810.258 ; gain = 523.758
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 810.586 ; gain = 522.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:50 . Memory (MB): peak = 810.480 ; gain = 523.980
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 810.883 ; gain = 522.449
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -314,7 +313,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:50 . Memory (MB): peak = 830.070 ; gain = 543.570
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 830.910 ; gain = 542.477
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -338,7 +337,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 830.070 ; gain = 543.570
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 830.910 ; gain = 542.477
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -351,7 +350,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 830.070 ; gain = 543.570
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 830.910 ; gain = 542.477
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -363,25 +362,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 830.070 ; gain = 543.570
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 830.910 ; gain = 542.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 830.070 ; gain = 543.570
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 830.910 ; gain = 542.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 830.070 ; gain = 543.570
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 830.910 ; gain = 542.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 830.070 ; gain = 543.570
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 830.910 ; gain = 542.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -413,63 +412,60 @@ Report Cell Usage:
 +------+--------+------+
 |1     |DSP48E1 |     1|
 |2     |LUT1    |     5|
-|3     |LUT2    |    14|
-|4     |LUT3    |    16|
-|5     |LUT4    |    61|
-|6     |LUT5    |    27|
+|3     |LUT2    |    15|
+|4     |LUT3    |    17|
+|5     |LUT4    |    62|
+|6     |LUT5    |    22|
 |7     |LUT6    |    12|
 |8     |SRL16E  |     8|
 |9     |FDRE    |   196|
 |10    |FDSE    |     2|
-|11    |LD      |     1|
 +------+--------+------+
 
 Report Instance Areas: 
 +------+--------------------------------+-----------------------+------+
 |      |Instance                        |Module                 |Cells |
 +------+--------------------------------+-----------------------+------+
-|1     |top                             |                       |   343|
-|2     |  inst                          |censor_ip_v1_0         |   343|
-|3     |    censor_ip_v1_0_S00_AXI_inst |censor_ip_v1_0_S00_AXI |   343|
-|4     |      censor_main_inst          |censor_main            |   175|
-|5     |        bloom_table_control     |bloom_table_control    |     1|
-|6     |        hashing                 |hashing                |    90|
-|7     |          hash_bernstein        |hash_bernstein         |    42|
-|8     |          hash_rotating         |hash_rotating          |    18|
-|9     |          word_length_counter   |word_length_counter    |    30|
-|10    |        input_char_buffer       |input_char_shift_reg   |    30|
-|11    |        mask_controller         |mask_controller        |    45|
-|12    |        out_char_select         |out_char_select        |     9|
+|1     |top                             |                       |   340|
+|2     |  inst                          |censor_ip_v1_0         |   340|
+|3     |    censor_ip_v1_0_S00_AXI_inst |censor_ip_v1_0_S00_AXI |   340|
+|4     |      censor_main_inst          |censor_main            |   172|
+|5     |        hashing                 |hashing                |    88|
+|6     |          hash_bernstein        |hash_bernstein         |    40|
+|7     |          hash_rotating         |hash_rotating          |    18|
+|8     |          word_length_counter   |word_length_counter    |    30|
+|9     |        input_char_buffer       |input_char_shift_reg   |    30|
+|10    |        mask_controller         |mask_controller        |    45|
+|11    |        out_char_select         |out_char_select        |     9|
 +------+--------------------------------+-----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 830.070 ; gain = 543.570
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 830.910 ; gain = 542.477
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:41 . Memory (MB): peak = 830.070 ; gain = 237.902
-Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 830.070 ; gain = 543.570
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 830.910 ; gain = 236.410
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 830.910 ; gain = 542.477
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 830.070 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 830.910 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 1 instances were transformed.
-  LD => LDCE: 1 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-54 Infos, 16 Warnings, 0 Critical Warnings and 0 Errors encountered.
+54 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:56 . Memory (MB): peak = 830.070 ; gain = 550.133
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 830.070 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 830.910 ; gain = 550.910
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 830.910 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/mb_design_censor_ip_0_0_synth_1/mb_design_censor_ip_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mb_design_censor_ip_0_0, cache-ID = 0e4e48aea8b23f30
-INFO: [Coretcl 2-1174] Renamed 11 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 830.070 ; gain = 0.000
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mb_design_censor_ip_0_0, cache-ID = 21d1e755bcf26a0b
+INFO: [Coretcl 2-1174] Renamed 10 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 830.910 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.runs/mb_design_censor_ip_0_0_synth_1/mb_design_censor_ip_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file mb_design_censor_ip_0_0_utilization_synth.rpt -pb mb_design_censor_ip_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Sep  9 19:56:56 2020...
+INFO: [Common 17-206] Exiting Vivado at Wed Sep  9 21:50:34 2020...

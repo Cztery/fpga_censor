@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:censor_ip:1.0
-// IP Revision: 50
+// IP Revision: 51
 
 `timescale 1ns/1ps
 

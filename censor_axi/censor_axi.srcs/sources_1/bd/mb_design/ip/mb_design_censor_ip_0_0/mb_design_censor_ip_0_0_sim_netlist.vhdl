@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Wed Sep  9 19:56:56 2020
+-- Date        : Wed Sep  9 21:50:34 2020
 -- Host        : Dell-Piotrek running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_censor_ip_0_0/mb_design_censor_ip_0_0_sim_netlist.vhdl
@@ -14,48 +14,15 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity mb_design_censor_ip_0_0_bloom_table_control is
-  port (
-    is_bad_word : out STD_LOGIC;
-    flag_set_reg : in STD_LOGIC;
-    hash_ready_rotating : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of mb_design_censor_ip_0_0_bloom_table_control : entity is "bloom_table_control";
-end mb_design_censor_ip_0_0_bloom_table_control;
-
-architecture STRUCTURE of mb_design_censor_ip_0_0_bloom_table_control is
-  attribute XILINX_LEGACY_PRIM : string;
-  attribute XILINX_LEGACY_PRIM of is_bad_word_reg : label is "LD";
-begin
-is_bad_word_reg: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => flag_set_reg,
-      G => hash_ready_rotating,
-      GE => '1',
-      Q => is_bad_word
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
 entity mb_design_censor_ip_0_0_hash_bernstein is
   port (
     \slv_reg0_reg[0]\ : out STD_LOGIC;
-    hash_ready_reg_0 : out STD_LOGIC;
+    hash_ready_rotating : out STD_LOGIC;
+    D : out STD_LOGIC_VECTOR ( 7 downto 0 );
     \hash_reg[0]_0\ : out STD_LOGIC;
     \hash_reg[9]_0\ : out STD_LOGIC_VECTOR ( 4 downto 0 );
-    \hash_reg[0]_1\ : out STD_LOGIC;
-    \hash_reg[0]_2\ : out STD_LOGIC;
-    D : out STD_LOGIC_VECTOR ( 7 downto 0 );
     Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
     hash_next0_0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    is_bad_word_reg_i_1 : in STD_LOGIC;
     hash2 : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
@@ -64,6 +31,7 @@ end mb_design_censor_ip_0_0_hash_bernstein;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_hash_bernstein is
   signal character_lower : STD_LOGIC_VECTOR ( 7 downto 5 );
+  signal flag_set_i_9_n_0 : STD_LOGIC;
   signal hash1 : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal \hash[9]_i_1_n_0\ : STD_LOGIC;
   signal hash_next0_i_15_n_0 : STD_LOGIC;
@@ -80,9 +48,8 @@ architecture STRUCTURE of mb_design_censor_ip_0_0_hash_bernstein is
   signal hash_next0_n_98 : STD_LOGIC;
   signal hash_next0_n_99 : STD_LOGIC;
   signal hash_ready_i_1_n_0 : STD_LOGIC;
-  signal \^hash_ready_reg_0\ : STD_LOGIC;
+  signal \^hash_ready_rotating\ : STD_LOGIC;
   signal \^hash_reg[9]_0\ : STD_LOGIC_VECTOR ( 4 downto 0 );
-  signal is_bad_word_reg_i_10_n_0 : STD_LOGIC;
   signal \^slv_reg0_reg[0]\ : STD_LOGIC;
   signal NLW_hash_next0_CARRYCASCOUT_UNCONNECTED : STD_LOGIC;
   signal NLW_hash_next0_MULTSIGNOUT_UNCONNECTED : STD_LOGIC;
@@ -97,31 +64,51 @@ architecture STRUCTURE of mb_design_censor_ip_0_0_hash_bernstein is
   signal NLW_hash_next0_PCOUT_UNCONNECTED : STD_LOGIC_VECTOR ( 47 downto 0 );
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \hash[0]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \hash[1]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \hash[2]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \hash[3]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \hash[4]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \hash[5]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \hash[6]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \hash[7]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \hash[9]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \hash[1]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \hash[2]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \hash[3]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \hash[4]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \hash[5]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \hash[6]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \hash[7]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \hash[9]_i_1\ : label is "soft_lutpair1";
   attribute METHODOLOGY_DRC_VIOS : string;
   attribute METHODOLOGY_DRC_VIOS of hash_next0 : label is "{SYNTH-11 {cell *THIS*}}";
   attribute SOFT_HLUTNM of hash_next0_i_15 : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of hash_next0_i_16 : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of hash_ready_i_1 : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of is_bad_word_reg_i_10 : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of is_bad_word_reg_i_7 : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of hash_ready_i_1 : label is "soft_lutpair1";
 begin
-  hash_ready_reg_0 <= \^hash_ready_reg_0\;
+  hash_ready_rotating <= \^hash_ready_rotating\;
   \hash_reg[9]_0\(4 downto 0) <= \^hash_reg[9]_0\(4 downto 0);
   \slv_reg0_reg[0]\ <= \^slv_reg0_reg[0]\;
+flag_set_i_5: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFF7FFFEDFFFFF"
+    )
+        port map (
+      I0 => hash1(0),
+      I1 => hash1(8),
+      I2 => flag_set_i_9_n_0,
+      I3 => hash1(4),
+      I4 => hash1(5),
+      I5 => hash1(1),
+      O => \hash_reg[0]_0\
+    );
+flag_set_i_9: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => \^hash_reg[9]_0\(2),
+      I1 => \^hash_reg[9]_0\(3),
+      O => flag_set_i_9_n_0
+    );
 \hash[0]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B4"
     )
         port map (
-      I0 => \^hash_ready_reg_0\,
+      I0 => \^hash_ready_rotating\,
       I1 => hash2(4),
       I2 => hash_next0_0(0),
       O => D(0)
@@ -131,7 +118,7 @@ begin
       INIT => X"36"
     )
         port map (
-      I0 => \^hash_ready_reg_0\,
+      I0 => \^hash_ready_rotating\,
       I1 => hash_next0_0(1),
       I2 => hash2(5),
       O => D(1)
@@ -141,7 +128,7 @@ begin
       INIT => X"9C"
     )
         port map (
-      I0 => \^hash_ready_reg_0\,
+      I0 => \^hash_ready_rotating\,
       I1 => hash_next0_0(2),
       I2 => hash2(6),
       O => D(2)
@@ -151,7 +138,7 @@ begin
       INIT => X"9C"
     )
         port map (
-      I0 => \^hash_ready_reg_0\,
+      I0 => \^hash_ready_rotating\,
       I1 => hash_next0_0(3),
       I2 => hash2(7),
       O => D(3)
@@ -161,7 +148,7 @@ begin
       INIT => X"36"
     )
         port map (
-      I0 => \^hash_ready_reg_0\,
+      I0 => \^hash_ready_rotating\,
       I1 => hash_next0_0(4),
       I2 => hash2(0),
       O => D(4)
@@ -171,7 +158,7 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => \^hash_ready_reg_0\,
+      I0 => \^hash_ready_rotating\,
       I1 => hash2(1),
       O => D(5)
     );
@@ -180,7 +167,7 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => \^hash_ready_reg_0\,
+      I0 => \^hash_ready_rotating\,
       I1 => hash2(2),
       O => D(6)
     );
@@ -189,7 +176,7 @@ begin
       INIT => X"4"
     )
         port map (
-      I0 => \^hash_ready_reg_0\,
+      I0 => \^hash_ready_rotating\,
       I1 => hash2(3),
       O => D(7)
     );
@@ -201,7 +188,7 @@ begin
       I0 => \^hash_reg[9]_0\(4),
       I1 => hash_next0_n_96,
       I2 => \^slv_reg0_reg[0]\,
-      I3 => \^hash_ready_reg_0\,
+      I3 => \^hash_ready_rotating\,
       O => \hash[9]_i_1_n_0\
     );
 hash_next0: unisim.vcomponents.DSP48E1
@@ -316,7 +303,7 @@ hash_next0_i_10: unisim.vcomponents.LUT3
     )
         port map (
       I0 => hash_next0_0(1),
-      I1 => \^hash_ready_reg_0\,
+      I1 => \^hash_ready_rotating\,
       I2 => hash_next0_n_104,
       O => hash_next0_in(1)
     );
@@ -326,7 +313,7 @@ hash_next0_i_11: unisim.vcomponents.LUT3
     )
         port map (
       I0 => hash_next0_0(0),
-      I1 => \^hash_ready_reg_0\,
+      I1 => \^hash_ready_rotating\,
       I2 => hash_next0_n_105,
       O => hash_next0_in(0)
     );
@@ -392,7 +379,7 @@ hash_next0_i_2: unisim.vcomponents.LUT2
       INIT => X"E"
     )
         port map (
-      I0 => \^hash_ready_reg_0\,
+      I0 => \^hash_ready_rotating\,
       I1 => hash_next0_n_96,
       O => hash_next0_in(9)
     );
@@ -405,7 +392,7 @@ hash_next0_i_3: unisim.vcomponents.LUT5
       I1 => hash_next0_0(6),
       I2 => hash_next0_0(7),
       I3 => hash_next0_0(5),
-      I4 => \^hash_ready_reg_0\,
+      I4 => \^hash_ready_rotating\,
       O => hash_next0_in(8)
     );
 hash_next0_i_4: unisim.vcomponents.LUT5
@@ -416,7 +403,7 @@ hash_next0_i_4: unisim.vcomponents.LUT5
       I0 => hash_next0_n_98,
       I1 => hash_next0_0(6),
       I2 => hash_next0_0(7),
-      I3 => \^hash_ready_reg_0\,
+      I3 => \^hash_ready_rotating\,
       I4 => hash_next0_0(5),
       O => hash_next0_in(7)
     );
@@ -428,7 +415,7 @@ hash_next0_i_5: unisim.vcomponents.LUT5
       I0 => hash_next0_0(6),
       I1 => hash_next0_0(5),
       I2 => hash_next0_0(7),
-      I3 => \^hash_ready_reg_0\,
+      I3 => \^hash_ready_rotating\,
       I4 => hash_next0_n_99,
       O => hash_next0_in(6)
     );
@@ -438,7 +425,7 @@ hash_next0_i_6: unisim.vcomponents.LUT6
     )
         port map (
       I0 => hash_next0_n_100,
-      I1 => \^hash_ready_reg_0\,
+      I1 => \^hash_ready_rotating\,
       I2 => hash_next0_0(5),
       I3 => hash_next0_0(7),
       I4 => hash_next0_0(6),
@@ -451,7 +438,7 @@ hash_next0_i_7: unisim.vcomponents.LUT3
     )
         port map (
       I0 => hash_next0_0(4),
-      I1 => \^hash_ready_reg_0\,
+      I1 => \^hash_ready_rotating\,
       I2 => hash_next0_n_101,
       O => hash_next0_in(4)
     );
@@ -461,7 +448,7 @@ hash_next0_i_8: unisim.vcomponents.LUT3
     )
         port map (
       I0 => hash_next0_0(3),
-      I1 => \^hash_ready_reg_0\,
+      I1 => \^hash_ready_rotating\,
       I2 => hash_next0_n_102,
       O => hash_next0_in(3)
     );
@@ -471,7 +458,7 @@ hash_next0_i_9: unisim.vcomponents.LUT3
     )
         port map (
       I0 => hash_next0_0(2),
-      I1 => \^hash_ready_reg_0\,
+      I1 => \^hash_ready_rotating\,
       I2 => hash_next0_n_103,
       O => hash_next0_in(2)
     );
@@ -488,7 +475,7 @@ hash_ready_reg: unisim.vcomponents.FDRE
       C => Q(1),
       CE => '1',
       D => hash_ready_i_1_n_0,
-      Q => \^hash_ready_reg_0\,
+      Q => \^hash_ready_rotating\,
       R => '0'
     );
 \hash_reg[0]\: unisim.vcomponents.FDRE
@@ -571,52 +558,6 @@ hash_ready_reg: unisim.vcomponents.FDRE
       Q => \^hash_reg[9]_0\(4),
       R => '0'
     );
-is_bad_word_reg_i_10: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^hash_reg[9]_0\(2),
-      I1 => \^hash_reg[9]_0\(3),
-      O => is_bad_word_reg_i_10_n_0
-    );
-is_bad_word_reg_i_3: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FFBFAAAA"
-    )
-        port map (
-      I0 => is_bad_word_reg_i_1,
-      I1 => hash1(0),
-      I2 => hash1(1),
-      I3 => hash1(5),
-      I4 => hash1(8),
-      O => \hash_reg[0]_2\
-    );
-is_bad_word_reg_i_5: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000FFA8FFFF"
-    )
-        port map (
-      I0 => hash1(0),
-      I1 => is_bad_word_reg_i_10_n_0,
-      I2 => hash1(4),
-      I3 => hash1(1),
-      I4 => hash1(5),
-      I5 => hash1(8),
-      O => \hash_reg[0]_1\
-    );
-is_bad_word_reg_i_7: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"0DDDDDDD"
-    )
-        port map (
-      I0 => hash1(0),
-      I1 => hash1(8),
-      I2 => \^hash_reg[9]_0\(2),
-      I3 => \^hash_reg[9]_0\(3),
-      I4 => hash1(4),
-      O => \hash_reg[0]_0\
-    );
 end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -624,14 +565,11 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity mb_design_censor_ip_0_0_hash_rotating is
   port (
-    \hash_reg[8]_0\ : out STD_LOGIC;
     \hash_reg[9]_0\ : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    \hash_reg[0]_0\ : out STD_LOGIC;
-    flag_set_reg : in STD_LOGIC;
-    flag_set_reg_0 : in STD_LOGIC;
-    is_bad_word_reg_i_1_0 : in STD_LOGIC;
-    is_bad_word_reg_i_1_1 : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    is_bad_word : out STD_LOGIC;
     hash_ready_rotating : in STD_LOGIC;
+    flag_set_reg : in STD_LOGIC;
+    flag_set_i_4_0 : in STD_LOGIC_VECTOR ( 4 downto 0 );
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     Q : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 7 downto 0 )
@@ -641,16 +579,89 @@ entity mb_design_censor_ip_0_0_hash_rotating is
 end mb_design_censor_ip_0_0_hash_rotating;
 
 architecture STRUCTURE of mb_design_censor_ip_0_0_hash_rotating is
+  signal flag_set_i_3_n_0 : STD_LOGIC;
+  signal flag_set_i_4_n_0 : STD_LOGIC;
+  signal flag_set_i_6_n_0 : STD_LOGIC;
+  signal flag_set_i_7_n_0 : STD_LOGIC;
+  signal flag_set_i_8_n_0 : STD_LOGIC;
   signal hash2 : STD_LOGIC_VECTOR ( 5 downto 4 );
   signal \hash[8]_i_1_n_0\ : STD_LOGIC;
   signal \hash[9]_i_1_n_0\ : STD_LOGIC;
   signal \^hash_reg[9]_0\ : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal is_bad_word_reg_i_2_n_0 : STD_LOGIC;
-  signal is_bad_word_reg_i_4_n_0 : STD_LOGIC;
-  signal is_bad_word_reg_i_6_n_0 : STD_LOGIC;
-  signal is_bad_word_reg_i_9_n_0 : STD_LOGIC;
+  attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of flag_set_i_6 : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of flag_set_i_7 : label is "soft_lutpair6";
 begin
   \hash_reg[9]_0\(7 downto 0) <= \^hash_reg[9]_0\(7 downto 0);
+flag_set_i_2: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"04"
+    )
+        port map (
+      I0 => flag_set_i_3_n_0,
+      I1 => flag_set_i_4_n_0,
+      I2 => flag_set_reg,
+      O => is_bad_word
+    );
+flag_set_i_3: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FEDFF6DFFEDFFEDF"
+    )
+        port map (
+      I0 => \^hash_reg[9]_0\(0),
+      I1 => \^hash_reg[9]_0\(6),
+      I2 => flag_set_i_6_n_0,
+      I3 => hash2(4),
+      I4 => hash2(5),
+      I5 => \^hash_reg[9]_0\(1),
+      O => flag_set_i_3_n_0
+    );
+flag_set_i_4: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000000000100"
+    )
+        port map (
+      I0 => flag_set_i_7_n_0,
+      I1 => flag_set_i_4_0(1),
+      I2 => \^hash_reg[9]_0\(7),
+      I3 => \^hash_reg[9]_0\(2),
+      I4 => \^hash_reg[9]_0\(3),
+      I5 => flag_set_i_8_n_0,
+      O => flag_set_i_4_n_0
+    );
+flag_set_i_6: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => \^hash_reg[9]_0\(4),
+      I1 => \^hash_reg[9]_0\(5),
+      O => flag_set_i_6_n_0
+    );
+flag_set_i_7: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"111F"
+    )
+        port map (
+      I0 => \^hash_reg[9]_0\(5),
+      I1 => \^hash_reg[9]_0\(4),
+      I2 => flag_set_i_4_0(3),
+      I3 => flag_set_i_4_0(2),
+      O => flag_set_i_7_n_0
+    );
+flag_set_i_8: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFF45FFFFFF"
+    )
+        port map (
+      I0 => \^hash_reg[9]_0\(6),
+      I1 => \^hash_reg[9]_0\(1),
+      I2 => hash2(5),
+      I3 => hash_ready_rotating,
+      I4 => flag_set_i_4_0(0),
+      I5 => flag_set_i_4_0(4),
+      O => flag_set_i_8_n_0
+    );
 \hash[8]_i_1\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"FACA"
@@ -750,81 +761,6 @@ begin
       D => \hash[9]_i_1_n_0\,
       Q => \^hash_reg[9]_0\(7),
       R => '0'
-    );
-is_bad_word_reg_i_1: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0010001000000010"
-    )
-        port map (
-      I0 => is_bad_word_reg_i_2_n_0,
-      I1 => flag_set_reg,
-      I2 => is_bad_word_reg_i_4_n_0,
-      I3 => flag_set_reg_0,
-      I4 => is_bad_word_reg_i_6_n_0,
-      I5 => \^hash_reg[9]_0\(6),
-      O => \hash_reg[8]_0\
-    );
-is_bad_word_reg_i_2: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FFBFAAAA"
-    )
-        port map (
-      I0 => is_bad_word_reg_i_1_0,
-      I1 => \^hash_reg[9]_0\(0),
-      I2 => \^hash_reg[9]_0\(1),
-      I3 => hash2(5),
-      I4 => \^hash_reg[9]_0\(6),
-      O => is_bad_word_reg_i_2_n_0
-    );
-is_bad_word_reg_i_4: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00000040"
-    )
-        port map (
-      I0 => is_bad_word_reg_i_1_1(4),
-      I1 => is_bad_word_reg_i_1_1(0),
-      I2 => \^hash_reg[9]_0\(2),
-      I3 => \^hash_reg[9]_0\(3),
-      I4 => is_bad_word_reg_i_9_n_0,
-      O => is_bad_word_reg_i_4_n_0
-    );
-is_bad_word_reg_i_6: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFDFDFDDDDDDDDD"
-    )
-        port map (
-      I0 => hash2(5),
-      I1 => \^hash_reg[9]_0\(1),
-      I2 => hash2(4),
-      I3 => \^hash_reg[9]_0\(5),
-      I4 => \^hash_reg[9]_0\(4),
-      I5 => \^hash_reg[9]_0\(0),
-      O => is_bad_word_reg_i_6_n_0
-    );
-is_bad_word_reg_i_8: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"0DDDDDDD"
-    )
-        port map (
-      I0 => \^hash_reg[9]_0\(0),
-      I1 => \^hash_reg[9]_0\(6),
-      I2 => \^hash_reg[9]_0\(4),
-      I3 => \^hash_reg[9]_0\(5),
-      I4 => hash2(4),
-      O => \hash_reg[0]_0\
-    );
-is_bad_word_reg_i_9: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFF1FFF1FFF1FFFF"
-    )
-        port map (
-      I0 => \^hash_reg[9]_0\(5),
-      I1 => \^hash_reg[9]_0\(4),
-      I2 => \^hash_reg[9]_0\(7),
-      I3 => is_bad_word_reg_i_1_1(1),
-      I4 => is_bad_word_reg_i_1_1(2),
-      I5 => is_bad_word_reg_i_1_1(3),
-      O => is_bad_word_reg_i_9_n_0
     );
 end STRUCTURE;
 library IEEE;
@@ -2206,7 +2142,6 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity mb_design_censor_ip_0_0_hashing is
   port (
-    hash_ready_rotating : out STD_LOGIC;
     \word_len_reg[3]\ : out STD_LOGIC;
     \word_len_reg[0]\ : out STD_LOGIC;
     \word_len_reg[3]_0\ : out STD_LOGIC;
@@ -2214,7 +2149,6 @@ entity mb_design_censor_ip_0_0_hashing is
     \word_len_reg[0]_0\ : out STD_LOGIC;
     \word_len_reg[3]_2\ : out STD_LOGIC;
     \word_len_reg[3]_3\ : out STD_LOGIC;
-    \hash_reg[8]\ : out STD_LOGIC;
     \word_len_reg[4]\ : out STD_LOGIC;
     \word_len_reg[1]\ : out STD_LOGIC;
     \word_len_reg[1]_0\ : out STD_LOGIC;
@@ -2222,6 +2156,7 @@ entity mb_design_censor_ip_0_0_hashing is
     \word_len_reg[4]_0\ : out STD_LOGIC;
     new_mask10_in : out STD_LOGIC;
     \word_len_reg[2]_0\ : out STD_LOGIC;
+    is_bad_word : out STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
     hash_next0 : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
@@ -2234,67 +2169,57 @@ architecture STRUCTURE of mb_design_censor_ip_0_0_hashing is
   signal hash2 : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal hash_bernstein_n_0 : STD_LOGIC;
   signal hash_bernstein_n_10 : STD_LOGIC;
-  signal hash_bernstein_n_11 : STD_LOGIC;
-  signal hash_bernstein_n_12 : STD_LOGIC;
-  signal hash_bernstein_n_13 : STD_LOGIC;
-  signal hash_bernstein_n_14 : STD_LOGIC;
-  signal hash_bernstein_n_15 : STD_LOGIC;
-  signal hash_bernstein_n_16 : STD_LOGIC;
-  signal hash_bernstein_n_17 : STD_LOGIC;
   signal hash_bernstein_n_2 : STD_LOGIC;
+  signal hash_bernstein_n_3 : STD_LOGIC;
+  signal hash_bernstein_n_4 : STD_LOGIC;
+  signal hash_bernstein_n_5 : STD_LOGIC;
+  signal hash_bernstein_n_6 : STD_LOGIC;
+  signal hash_bernstein_n_7 : STD_LOGIC;
   signal hash_bernstein_n_8 : STD_LOGIC;
   signal hash_bernstein_n_9 : STD_LOGIC;
-  signal \^hash_ready_rotating\ : STD_LOGIC;
-  signal hash_rotating_n_9 : STD_LOGIC;
+  signal hash_ready_rotating : STD_LOGIC;
 begin
-  hash_ready_rotating <= \^hash_ready_rotating\;
 hash_bernstein: entity work.mb_design_censor_ip_0_0_hash_bernstein
      port map (
-      D(7) => hash_bernstein_n_10,
-      D(6) => hash_bernstein_n_11,
-      D(5) => hash_bernstein_n_12,
-      D(4) => hash_bernstein_n_13,
-      D(3) => hash_bernstein_n_14,
-      D(2) => hash_bernstein_n_15,
-      D(1) => hash_bernstein_n_16,
-      D(0) => hash_bernstein_n_17,
+      D(7) => hash_bernstein_n_2,
+      D(6) => hash_bernstein_n_3,
+      D(5) => hash_bernstein_n_4,
+      D(4) => hash_bernstein_n_5,
+      D(3) => hash_bernstein_n_6,
+      D(2) => hash_bernstein_n_7,
+      D(1) => hash_bernstein_n_8,
+      D(0) => hash_bernstein_n_9,
       Q(1 downto 0) => Q(1 downto 0),
       hash2(7 downto 4) => hash2(9 downto 6),
       hash2(3 downto 0) => hash2(3 downto 0),
       hash_next0_0(7 downto 0) => hash_next0(7 downto 0),
-      hash_ready_reg_0 => \^hash_ready_rotating\,
-      \hash_reg[0]_0\ => hash_bernstein_n_2,
-      \hash_reg[0]_1\ => hash_bernstein_n_8,
-      \hash_reg[0]_2\ => hash_bernstein_n_9,
+      hash_ready_rotating => hash_ready_rotating,
+      \hash_reg[0]_0\ => hash_bernstein_n_10,
       \hash_reg[9]_0\(4) => hash1(9),
       \hash_reg[9]_0\(3 downto 2) => hash1(7 downto 6),
       \hash_reg[9]_0\(1 downto 0) => hash1(3 downto 2),
-      is_bad_word_reg_i_1 => hash_rotating_n_9,
       \slv_reg0_reg[0]\ => hash_bernstein_n_0
     );
 hash_rotating: entity work.mb_design_censor_ip_0_0_hash_rotating
      port map (
-      D(7) => hash_bernstein_n_10,
-      D(6) => hash_bernstein_n_11,
-      D(5) => hash_bernstein_n_12,
-      D(4) => hash_bernstein_n_13,
-      D(3) => hash_bernstein_n_14,
-      D(2) => hash_bernstein_n_15,
-      D(1) => hash_bernstein_n_16,
-      D(0) => hash_bernstein_n_17,
+      D(7) => hash_bernstein_n_2,
+      D(6) => hash_bernstein_n_3,
+      D(5) => hash_bernstein_n_4,
+      D(4) => hash_bernstein_n_5,
+      D(3) => hash_bernstein_n_6,
+      D(2) => hash_bernstein_n_7,
+      D(1) => hash_bernstein_n_8,
+      D(0) => hash_bernstein_n_9,
       E(0) => hash_bernstein_n_0,
       Q(0) => Q(1),
-      flag_set_reg => hash_bernstein_n_9,
-      flag_set_reg_0 => hash_bernstein_n_8,
-      hash_ready_rotating => \^hash_ready_rotating\,
-      \hash_reg[0]_0\ => hash_rotating_n_9,
-      \hash_reg[8]_0\ => \hash_reg[8]\,
+      flag_set_i_4_0(4) => hash1(9),
+      flag_set_i_4_0(3 downto 2) => hash1(7 downto 6),
+      flag_set_i_4_0(1 downto 0) => hash1(3 downto 2),
+      flag_set_reg => hash_bernstein_n_10,
+      hash_ready_rotating => hash_ready_rotating,
       \hash_reg[9]_0\(7 downto 4) => hash2(9 downto 6),
       \hash_reg[9]_0\(3 downto 0) => hash2(3 downto 0),
-      is_bad_word_reg_i_1_0 => hash_bernstein_n_2,
-      is_bad_word_reg_i_1_1(4) => hash1(9),
-      is_bad_word_reg_i_1_1(3 downto 2) => hash1(7 downto 6),
-      is_bad_word_reg_i_1_1(1 downto 0) => hash1(3 downto 2)
+      is_bad_word => is_bad_word
     );
 word_length_counter: entity work.mb_design_censor_ip_0_0_word_length_counter
      port map (
@@ -2335,13 +2260,11 @@ end mb_design_censor_ip_0_0_censor_main;
 architecture STRUCTURE of mb_design_censor_ip_0_0_censor_main is
   signal \char_buffer_reg[15]\ : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal char_out_next : STD_LOGIC_VECTOR ( 5 downto 1 );
-  signal hash_ready_rotating : STD_LOGIC;
+  signal hashing_n_0 : STD_LOGIC;
   signal hashing_n_1 : STD_LOGIC;
   signal hashing_n_10 : STD_LOGIC;
   signal hashing_n_11 : STD_LOGIC;
-  signal hashing_n_12 : STD_LOGIC;
   signal hashing_n_13 : STD_LOGIC;
-  signal hashing_n_15 : STD_LOGIC;
   signal hashing_n_2 : STD_LOGIC;
   signal hashing_n_3 : STD_LOGIC;
   signal hashing_n_4 : STD_LOGIC;
@@ -2355,32 +2278,25 @@ architecture STRUCTURE of mb_design_censor_ip_0_0_censor_main is
   signal new_mask10_in : STD_LOGIC;
   signal out_ready_next : STD_LOGIC;
 begin
-bloom_table_control: entity work.mb_design_censor_ip_0_0_bloom_table_control
-     port map (
-      flag_set_reg => hashing_n_8,
-      hash_ready_rotating => hash_ready_rotating,
-      is_bad_word => is_bad_word
-    );
 hashing: entity work.mb_design_censor_ip_0_0_hashing
      port map (
       Q(1 downto 0) => Q(1 downto 0),
       hash_next0(7 downto 0) => \char_buffer_reg[0][7]\(7 downto 0),
-      hash_ready_rotating => hash_ready_rotating,
-      \hash_reg[8]\ => hashing_n_8,
+      is_bad_word => is_bad_word,
       new_mask10_in => new_mask10_in,
-      \word_len_reg[0]\ => hashing_n_2,
-      \word_len_reg[0]_0\ => hashing_n_5,
-      \word_len_reg[1]\ => hashing_n_10,
-      \word_len_reg[1]_0\ => hashing_n_11,
-      \word_len_reg[2]\ => hashing_n_12,
-      \word_len_reg[2]_0\ => hashing_n_15,
-      \word_len_reg[3]\ => hashing_n_1,
-      \word_len_reg[3]_0\ => hashing_n_3,
-      \word_len_reg[3]_1\ => hashing_n_4,
-      \word_len_reg[3]_2\ => hashing_n_6,
-      \word_len_reg[3]_3\ => hashing_n_7,
-      \word_len_reg[4]\ => hashing_n_9,
-      \word_len_reg[4]_0\ => hashing_n_13
+      \word_len_reg[0]\ => hashing_n_1,
+      \word_len_reg[0]_0\ => hashing_n_4,
+      \word_len_reg[1]\ => hashing_n_8,
+      \word_len_reg[1]_0\ => hashing_n_9,
+      \word_len_reg[2]\ => hashing_n_10,
+      \word_len_reg[2]_0\ => hashing_n_13,
+      \word_len_reg[3]\ => hashing_n_0,
+      \word_len_reg[3]_0\ => hashing_n_2,
+      \word_len_reg[3]_1\ => hashing_n_3,
+      \word_len_reg[3]_2\ => hashing_n_5,
+      \word_len_reg[3]_3\ => hashing_n_6,
+      \word_len_reg[4]\ => hashing_n_7,
+      \word_len_reg[4]_0\ => hashing_n_11
     );
 input_char_buffer: entity work.mb_design_censor_ip_0_0_input_char_shift_reg
      port map (
@@ -2402,19 +2318,19 @@ mask_controller: entity work.mb_design_censor_ip_0_0_mask_controller
       is_bad_word => is_bad_word,
       mask_out => mask_out,
       new_mask10_in => new_mask10_in,
-      \new_mask_reg[10]_0\ => hashing_n_3,
-      \new_mask_reg[11]_0\ => hashing_n_1,
-      \new_mask_reg[12]_0\ => hashing_n_12,
-      \new_mask_reg[13]_0\ => hashing_n_11,
-      \new_mask_reg[14]_0\ => hashing_n_10,
-      \new_mask_reg[1]_0\ => hashing_n_7,
-      \new_mask_reg[3]_0\ => hashing_n_2,
-      \new_mask_reg[4]_0\ => hashing_n_6,
-      \new_mask_reg[5]_0\ => hashing_n_5,
-      \new_mask_reg[6]_0\ => hashing_n_15,
-      \new_mask_reg[7]_0\ => hashing_n_9,
-      \new_mask_reg[8]_0\ => hashing_n_13,
-      \new_mask_reg[9]_0\ => hashing_n_4
+      \new_mask_reg[10]_0\ => hashing_n_2,
+      \new_mask_reg[11]_0\ => hashing_n_0,
+      \new_mask_reg[12]_0\ => hashing_n_10,
+      \new_mask_reg[13]_0\ => hashing_n_9,
+      \new_mask_reg[14]_0\ => hashing_n_8,
+      \new_mask_reg[1]_0\ => hashing_n_6,
+      \new_mask_reg[3]_0\ => hashing_n_1,
+      \new_mask_reg[4]_0\ => hashing_n_5,
+      \new_mask_reg[5]_0\ => hashing_n_4,
+      \new_mask_reg[6]_0\ => hashing_n_13,
+      \new_mask_reg[7]_0\ => hashing_n_7,
+      \new_mask_reg[8]_0\ => hashing_n_11,
+      \new_mask_reg[9]_0\ => hashing_n_3
     );
 out_char_select: entity work.mb_design_censor_ip_0_0_out_char_select
      port map (

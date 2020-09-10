@@ -100,22 +100,22 @@ int main()
 
 	CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_READY_REG_OFFSET, 1);
 
-	print("Type the sentence (0 finishes): \n\r");
+	print("Start typing, 'the' and 'dont' will be censored: \n\r");
 	input_char = ' ';
 	while(1){
 
 		CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_READY_REG_OFFSET, 0b00 | input_ready); //clock down
 
+//		if (i < 19 )
+//			i++;
+//		else
+//			input_ready = 0;
 //		input_char = input_string[i];
-		if(input_char != '0'){
-			input_char = inbyte();
 
-//			if (i < 19 )
-//				i++;
-//			else
-//				input_ready = 0;
-			CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_CHAR_REG_OFFSET, input_char);
-		}
+		input_char = inbyte();
+
+		CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_CHAR_REG_OFFSET, input_char);
+
 
 		CENSOR_IP_mWriteReg(CENSOR_BASE_ADDR, INPUT_READY_REG_OFFSET, 0b10 | input_ready); //clock up
 
@@ -124,7 +124,7 @@ int main()
 		result = CENSOR_IP_mReadReg(CENSOR_BASE_ADDR, OUTPUT_READY_REG_OFFSET);
 
 		if(result == 1)
-			xil_printf("char_in: %c     char_out: %c\n\r", input_char, char_out);
+			xil_printf("char_in:  %c        char_out:  %c\n\r", input_char, char_out);
 	}
 
     cleanup_platform();

@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Wed Sep  9 19:56:56 2020
+// Date        : Wed Sep  9 21:50:34 2020
 // Host        : Dell-Piotrek running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               D:/Dokumenty/AGH/SDUP/Projekt/drugi_projekt/fpga_censor/censor_axi/censor_axi.srcs/sources_1/bd/mb_design/ip/mb_design_censor_ip_0_0/mb_design_censor_ip_0_0_sim_netlist.v
@@ -101,30 +101,6 @@ module mb_design_censor_ip_0_0
         .s00_axi_wdata(s00_axi_wdata),
         .s00_axi_wstrb(s00_axi_wstrb),
         .s00_axi_wvalid(s00_axi_wvalid));
-endmodule
-
-(* ORIG_REF_NAME = "bloom_table_control" *) 
-module mb_design_censor_ip_0_0_bloom_table_control
-   (is_bad_word,
-    flag_set_reg,
-    hash_ready_rotating);
-  output is_bad_word;
-  input flag_set_reg;
-  input hash_ready_rotating;
-
-  wire flag_set_reg;
-  wire hash_ready_rotating;
-  wire is_bad_word;
-
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    is_bad_word_reg
-       (.CLR(1'b0),
-        .D(flag_set_reg),
-        .G(hash_ready_rotating),
-        .GE(1'b1),
-        .Q(is_bad_word));
 endmodule
 
 (* ORIG_REF_NAME = "censor_ip_v1_0" *) 
@@ -1495,13 +1471,11 @@ module mb_design_censor_ip_0_0_censor_main
   wire [7:0]\char_buffer_reg[0][7] ;
   wire [7:0]\char_buffer_reg[15] ;
   wire [5:1]char_out_next;
-  wire hash_ready_rotating;
+  wire hashing_n_0;
   wire hashing_n_1;
   wire hashing_n_10;
   wire hashing_n_11;
-  wire hashing_n_12;
   wire hashing_n_13;
-  wire hashing_n_15;
   wire hashing_n_2;
   wire hashing_n_3;
   wire hashing_n_4;
@@ -1516,29 +1490,24 @@ module mb_design_censor_ip_0_0_censor_main
   wire out_ready;
   wire out_ready_next;
 
-  mb_design_censor_ip_0_0_bloom_table_control bloom_table_control
-       (.flag_set_reg(hashing_n_8),
-        .hash_ready_rotating(hash_ready_rotating),
-        .is_bad_word(is_bad_word));
   mb_design_censor_ip_0_0_hashing hashing
        (.Q(Q),
         .hash_next0(\char_buffer_reg[0][7] ),
-        .hash_ready_rotating(hash_ready_rotating),
-        .\hash_reg[8] (hashing_n_8),
+        .is_bad_word(is_bad_word),
         .new_mask10_in(new_mask10_in),
-        .\word_len_reg[0] (hashing_n_2),
-        .\word_len_reg[0]_0 (hashing_n_5),
-        .\word_len_reg[1] (hashing_n_10),
-        .\word_len_reg[1]_0 (hashing_n_11),
-        .\word_len_reg[2] (hashing_n_12),
-        .\word_len_reg[2]_0 (hashing_n_15),
-        .\word_len_reg[3] (hashing_n_1),
-        .\word_len_reg[3]_0 (hashing_n_3),
-        .\word_len_reg[3]_1 (hashing_n_4),
-        .\word_len_reg[3]_2 (hashing_n_6),
-        .\word_len_reg[3]_3 (hashing_n_7),
-        .\word_len_reg[4] (hashing_n_9),
-        .\word_len_reg[4]_0 (hashing_n_13));
+        .\word_len_reg[0] (hashing_n_1),
+        .\word_len_reg[0]_0 (hashing_n_4),
+        .\word_len_reg[1] (hashing_n_8),
+        .\word_len_reg[1]_0 (hashing_n_9),
+        .\word_len_reg[2] (hashing_n_10),
+        .\word_len_reg[2]_0 (hashing_n_13),
+        .\word_len_reg[3] (hashing_n_0),
+        .\word_len_reg[3]_0 (hashing_n_2),
+        .\word_len_reg[3]_1 (hashing_n_3),
+        .\word_len_reg[3]_2 (hashing_n_5),
+        .\word_len_reg[3]_3 (hashing_n_6),
+        .\word_len_reg[4] (hashing_n_7),
+        .\word_len_reg[4]_0 (hashing_n_11));
   mb_design_censor_ip_0_0_input_char_shift_reg input_char_buffer
        (.D({char_out_next[5],char_out_next[3],char_out_next[1]}),
         .Q(Q),
@@ -1551,19 +1520,19 @@ module mb_design_censor_ip_0_0_censor_main
         .is_bad_word(is_bad_word),
         .mask_out(mask_out),
         .new_mask10_in(new_mask10_in),
-        .\new_mask_reg[10]_0 (hashing_n_3),
-        .\new_mask_reg[11]_0 (hashing_n_1),
-        .\new_mask_reg[12]_0 (hashing_n_12),
-        .\new_mask_reg[13]_0 (hashing_n_11),
-        .\new_mask_reg[14]_0 (hashing_n_10),
-        .\new_mask_reg[1]_0 (hashing_n_7),
-        .\new_mask_reg[3]_0 (hashing_n_2),
-        .\new_mask_reg[4]_0 (hashing_n_6),
-        .\new_mask_reg[5]_0 (hashing_n_5),
-        .\new_mask_reg[6]_0 (hashing_n_15),
-        .\new_mask_reg[7]_0 (hashing_n_9),
-        .\new_mask_reg[8]_0 (hashing_n_13),
-        .\new_mask_reg[9]_0 (hashing_n_4));
+        .\new_mask_reg[10]_0 (hashing_n_2),
+        .\new_mask_reg[11]_0 (hashing_n_0),
+        .\new_mask_reg[12]_0 (hashing_n_10),
+        .\new_mask_reg[13]_0 (hashing_n_9),
+        .\new_mask_reg[14]_0 (hashing_n_8),
+        .\new_mask_reg[1]_0 (hashing_n_6),
+        .\new_mask_reg[3]_0 (hashing_n_1),
+        .\new_mask_reg[4]_0 (hashing_n_5),
+        .\new_mask_reg[5]_0 (hashing_n_4),
+        .\new_mask_reg[6]_0 (hashing_n_13),
+        .\new_mask_reg[7]_0 (hashing_n_7),
+        .\new_mask_reg[8]_0 (hashing_n_11),
+        .\new_mask_reg[9]_0 (hashing_n_3));
   mb_design_censor_ip_0_0_out_char_select out_char_select
        (.D(D),
         .Q(Q[1]),
@@ -1577,31 +1546,26 @@ endmodule
 (* ORIG_REF_NAME = "hash_bernstein" *) 
 module mb_design_censor_ip_0_0_hash_bernstein
    (\slv_reg0_reg[0] ,
-    hash_ready_reg_0,
+    hash_ready_rotating,
+    D,
     \hash_reg[0]_0 ,
     \hash_reg[9]_0 ,
-    \hash_reg[0]_1 ,
-    \hash_reg[0]_2 ,
-    D,
     Q,
     hash_next0_0,
-    is_bad_word_reg_i_1,
     hash2);
   output \slv_reg0_reg[0] ;
-  output hash_ready_reg_0;
+  output hash_ready_rotating;
+  output [7:0]D;
   output \hash_reg[0]_0 ;
   output [4:0]\hash_reg[9]_0 ;
-  output \hash_reg[0]_1 ;
-  output \hash_reg[0]_2 ;
-  output [7:0]D;
   input [1:0]Q;
   input [7:0]hash_next0_0;
-  input is_bad_word_reg_i_1;
   input [7:0]hash2;
 
   wire [7:0]D;
   wire [1:0]Q;
   wire [7:5]character_lower;
+  wire flag_set_i_9_n_0;
   wire [8:0]hash1;
   wire [7:0]hash2;
   wire \hash[9]_i_1_n_0 ;
@@ -1620,13 +1584,9 @@ module mb_design_censor_ip_0_0_hash_bernstein
   wire hash_next0_n_98;
   wire hash_next0_n_99;
   wire hash_ready_i_1_n_0;
-  wire hash_ready_reg_0;
+  wire hash_ready_rotating;
   wire \hash_reg[0]_0 ;
-  wire \hash_reg[0]_1 ;
-  wire \hash_reg[0]_2 ;
   wire [4:0]\hash_reg[9]_0 ;
-  wire is_bad_word_reg_i_1;
-  wire is_bad_word_reg_i_10_n_0;
   wire \slv_reg0_reg[0] ;
   wire NLW_hash_next0_CARRYCASCOUT_UNCONNECTED;
   wire NLW_hash_next0_MULTSIGNOUT_UNCONNECTED;
@@ -1640,75 +1600,91 @@ module mb_design_censor_ip_0_0_hash_bernstein
   wire [47:10]NLW_hash_next0_P_UNCONNECTED;
   wire [47:0]NLW_hash_next0_PCOUT_UNCONNECTED;
 
+  LUT6 #(
+    .INIT(64'hFFFFF7FFFEDFFFFF)) 
+    flag_set_i_5
+       (.I0(hash1[0]),
+        .I1(hash1[8]),
+        .I2(flag_set_i_9_n_0),
+        .I3(hash1[4]),
+        .I4(hash1[5]),
+        .I5(hash1[1]),
+        .O(\hash_reg[0]_0 ));
+  LUT2 #(
+    .INIT(4'h7)) 
+    flag_set_i_9
+       (.I0(\hash_reg[9]_0 [2]),
+        .I1(\hash_reg[9]_0 [3]),
+        .O(flag_set_i_9_n_0));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hB4)) 
     \hash[0]_i_1 
-       (.I0(hash_ready_reg_0),
+       (.I0(hash_ready_rotating),
         .I1(hash2[4]),
         .I2(hash_next0_0[0]),
         .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'h36)) 
     \hash[1]_i_1 
-       (.I0(hash_ready_reg_0),
+       (.I0(hash_ready_rotating),
         .I1(hash_next0_0[1]),
         .I2(hash2[5]),
         .O(D[1]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'h9C)) 
     \hash[2]_i_1 
-       (.I0(hash_ready_reg_0),
+       (.I0(hash_ready_rotating),
         .I1(hash_next0_0[2]),
         .I2(hash2[6]),
         .O(D[2]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'h9C)) 
     \hash[3]_i_1 
-       (.I0(hash_ready_reg_0),
+       (.I0(hash_ready_rotating),
         .I1(hash_next0_0[3]),
         .I2(hash2[7]),
         .O(D[3]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'h36)) 
     \hash[4]_i_1 
-       (.I0(hash_ready_reg_0),
+       (.I0(hash_ready_rotating),
         .I1(hash_next0_0[4]),
         .I2(hash2[0]),
         .O(D[4]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \hash[5]_i_1 
-       (.I0(hash_ready_reg_0),
+       (.I0(hash_ready_rotating),
         .I1(hash2[1]),
         .O(D[5]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \hash[6]_i_1 
-       (.I0(hash_ready_reg_0),
+       (.I0(hash_ready_rotating),
         .I1(hash2[2]),
         .O(D[6]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'h4)) 
     \hash[7]_i_1 
-       (.I0(hash_ready_reg_0),
+       (.I0(hash_ready_rotating),
         .I1(hash2[3]),
         .O(D[7]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'hFACA)) 
     \hash[9]_i_1 
        (.I0(\hash_reg[9]_0 [4]),
         .I1(hash_next0_n_96),
         .I2(\slv_reg0_reg[0] ),
-        .I3(hash_ready_reg_0),
+        .I3(hash_ready_rotating),
         .O(\hash[9]_i_1_n_0 ));
   (* METHODOLOGY_DRC_VIOS = "{SYNTH-11 {cell *THIS*}}" *) 
   DSP48E1 #(
@@ -1800,14 +1776,14 @@ module mb_design_censor_ip_0_0_hash_bernstein
     .INIT(8'hB8)) 
     hash_next0_i_10
        (.I0(hash_next0_0[1]),
-        .I1(hash_ready_reg_0),
+        .I1(hash_ready_rotating),
         .I2(hash_next0_n_104),
         .O(hash_next0_in[1]));
   LUT3 #(
     .INIT(8'hB8)) 
     hash_next0_i_11
        (.I0(hash_next0_0[0]),
-        .I1(hash_ready_reg_0),
+        .I1(hash_ready_rotating),
         .I2(hash_next0_n_105),
         .O(hash_next0_in[0]));
   LUT4 #(
@@ -1857,7 +1833,7 @@ module mb_design_censor_ip_0_0_hash_bernstein
   LUT2 #(
     .INIT(4'hE)) 
     hash_next0_i_2
-       (.I0(hash_ready_reg_0),
+       (.I0(hash_ready_rotating),
         .I1(hash_next0_n_96),
         .O(hash_next0_in[9]));
   LUT5 #(
@@ -1867,7 +1843,7 @@ module mb_design_censor_ip_0_0_hash_bernstein
         .I1(hash_next0_0[6]),
         .I2(hash_next0_0[7]),
         .I3(hash_next0_0[5]),
-        .I4(hash_ready_reg_0),
+        .I4(hash_ready_rotating),
         .O(hash_next0_in[8]));
   LUT5 #(
     .INIT(32'h3CAAFCAA)) 
@@ -1875,7 +1851,7 @@ module mb_design_censor_ip_0_0_hash_bernstein
        (.I0(hash_next0_n_98),
         .I1(hash_next0_0[6]),
         .I2(hash_next0_0[7]),
-        .I3(hash_ready_reg_0),
+        .I3(hash_ready_rotating),
         .I4(hash_next0_0[5]),
         .O(hash_next0_in[7]));
   LUT5 #(
@@ -1884,14 +1860,14 @@ module mb_design_censor_ip_0_0_hash_bernstein
        (.I0(hash_next0_0[6]),
         .I1(hash_next0_0[5]),
         .I2(hash_next0_0[7]),
-        .I3(hash_ready_reg_0),
+        .I3(hash_ready_rotating),
         .I4(hash_next0_n_99),
         .O(hash_next0_in[6]));
   LUT6 #(
     .INIT(64'h2EE22EE22E222EE2)) 
     hash_next0_i_6
        (.I0(hash_next0_n_100),
-        .I1(hash_ready_reg_0),
+        .I1(hash_ready_rotating),
         .I2(hash_next0_0[5]),
         .I3(hash_next0_0[7]),
         .I4(hash_next0_0[6]),
@@ -1901,24 +1877,24 @@ module mb_design_censor_ip_0_0_hash_bernstein
     .INIT(8'hB8)) 
     hash_next0_i_7
        (.I0(hash_next0_0[4]),
-        .I1(hash_ready_reg_0),
+        .I1(hash_ready_rotating),
         .I2(hash_next0_n_101),
         .O(hash_next0_in[4]));
   LUT3 #(
     .INIT(8'hB8)) 
     hash_next0_i_8
        (.I0(hash_next0_0[3]),
-        .I1(hash_ready_reg_0),
+        .I1(hash_ready_rotating),
         .I2(hash_next0_n_102),
         .O(hash_next0_in[3]));
   LUT3 #(
     .INIT(8'hB8)) 
     hash_next0_i_9
        (.I0(hash_next0_0[2]),
-        .I1(hash_ready_reg_0),
+        .I1(hash_ready_rotating),
         .I2(hash_next0_n_103),
         .O(hash_next0_in[2]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT1 #(
     .INIT(2'h1)) 
     hash_ready_i_1
@@ -1928,7 +1904,7 @@ module mb_design_censor_ip_0_0_hash_bernstein
        (.C(Q[1]),
         .CE(1'b1),
         .D(hash_ready_i_1_n_0),
-        .Q(hash_ready_reg_0),
+        .Q(hash_ready_rotating),
         .R(1'b0));
   FDRE \hash_reg[0] 
        (.C(Q[1]),
@@ -1990,65 +1966,23 @@ module mb_design_censor_ip_0_0_hash_bernstein
         .D(\hash[9]_i_1_n_0 ),
         .Q(\hash_reg[9]_0 [4]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    is_bad_word_reg_i_10
-       (.I0(\hash_reg[9]_0 [2]),
-        .I1(\hash_reg[9]_0 [3]),
-        .O(is_bad_word_reg_i_10_n_0));
-  LUT5 #(
-    .INIT(32'hFFBFAAAA)) 
-    is_bad_word_reg_i_3
-       (.I0(is_bad_word_reg_i_1),
-        .I1(hash1[0]),
-        .I2(hash1[1]),
-        .I3(hash1[5]),
-        .I4(hash1[8]),
-        .O(\hash_reg[0]_2 ));
-  LUT6 #(
-    .INIT(64'h00000000FFA8FFFF)) 
-    is_bad_word_reg_i_5
-       (.I0(hash1[0]),
-        .I1(is_bad_word_reg_i_10_n_0),
-        .I2(hash1[4]),
-        .I3(hash1[1]),
-        .I4(hash1[5]),
-        .I5(hash1[8]),
-        .O(\hash_reg[0]_1 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'h0DDDDDDD)) 
-    is_bad_word_reg_i_7
-       (.I0(hash1[0]),
-        .I1(hash1[8]),
-        .I2(\hash_reg[9]_0 [2]),
-        .I3(\hash_reg[9]_0 [3]),
-        .I4(hash1[4]),
-        .O(\hash_reg[0]_0 ));
 endmodule
 
 (* ORIG_REF_NAME = "hash_rotating" *) 
 module mb_design_censor_ip_0_0_hash_rotating
-   (\hash_reg[8]_0 ,
-    \hash_reg[9]_0 ,
-    \hash_reg[0]_0 ,
-    flag_set_reg,
-    flag_set_reg_0,
-    is_bad_word_reg_i_1_0,
-    is_bad_word_reg_i_1_1,
+   (\hash_reg[9]_0 ,
+    is_bad_word,
     hash_ready_rotating,
+    flag_set_reg,
+    flag_set_i_4_0,
     E,
     Q,
     D);
-  output \hash_reg[8]_0 ;
   output [7:0]\hash_reg[9]_0 ;
-  output \hash_reg[0]_0 ;
-  input flag_set_reg;
-  input flag_set_reg_0;
-  input is_bad_word_reg_i_1_0;
-  input [4:0]is_bad_word_reg_i_1_1;
+  output is_bad_word;
   input hash_ready_rotating;
+  input flag_set_reg;
+  input [4:0]flag_set_i_4_0;
   input [0:0]E;
   input [0:0]Q;
   input [7:0]D;
@@ -2056,22 +1990,73 @@ module mb_design_censor_ip_0_0_hash_rotating
   wire [7:0]D;
   wire [0:0]E;
   wire [0:0]Q;
+  wire flag_set_i_3_n_0;
+  wire [4:0]flag_set_i_4_0;
+  wire flag_set_i_4_n_0;
+  wire flag_set_i_6_n_0;
+  wire flag_set_i_7_n_0;
+  wire flag_set_i_8_n_0;
   wire flag_set_reg;
-  wire flag_set_reg_0;
   wire [5:4]hash2;
   wire \hash[8]_i_1_n_0 ;
   wire \hash[9]_i_1_n_0 ;
   wire hash_ready_rotating;
-  wire \hash_reg[0]_0 ;
-  wire \hash_reg[8]_0 ;
   wire [7:0]\hash_reg[9]_0 ;
-  wire is_bad_word_reg_i_1_0;
-  wire [4:0]is_bad_word_reg_i_1_1;
-  wire is_bad_word_reg_i_2_n_0;
-  wire is_bad_word_reg_i_4_n_0;
-  wire is_bad_word_reg_i_6_n_0;
-  wire is_bad_word_reg_i_9_n_0;
+  wire is_bad_word;
 
+  LUT3 #(
+    .INIT(8'h04)) 
+    flag_set_i_2
+       (.I0(flag_set_i_3_n_0),
+        .I1(flag_set_i_4_n_0),
+        .I2(flag_set_reg),
+        .O(is_bad_word));
+  LUT6 #(
+    .INIT(64'hFEDFF6DFFEDFFEDF)) 
+    flag_set_i_3
+       (.I0(\hash_reg[9]_0 [0]),
+        .I1(\hash_reg[9]_0 [6]),
+        .I2(flag_set_i_6_n_0),
+        .I3(hash2[4]),
+        .I4(hash2[5]),
+        .I5(\hash_reg[9]_0 [1]),
+        .O(flag_set_i_3_n_0));
+  LUT6 #(
+    .INIT(64'h0000000000000100)) 
+    flag_set_i_4
+       (.I0(flag_set_i_7_n_0),
+        .I1(flag_set_i_4_0[1]),
+        .I2(\hash_reg[9]_0 [7]),
+        .I3(\hash_reg[9]_0 [2]),
+        .I4(\hash_reg[9]_0 [3]),
+        .I5(flag_set_i_8_n_0),
+        .O(flag_set_i_4_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT2 #(
+    .INIT(4'h7)) 
+    flag_set_i_6
+       (.I0(\hash_reg[9]_0 [4]),
+        .I1(\hash_reg[9]_0 [5]),
+        .O(flag_set_i_6_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT4 #(
+    .INIT(16'h111F)) 
+    flag_set_i_7
+       (.I0(\hash_reg[9]_0 [5]),
+        .I1(\hash_reg[9]_0 [4]),
+        .I2(flag_set_i_4_0[3]),
+        .I3(flag_set_i_4_0[2]),
+        .O(flag_set_i_7_n_0));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF45FFFFFF)) 
+    flag_set_i_8
+       (.I0(\hash_reg[9]_0 [6]),
+        .I1(\hash_reg[9]_0 [1]),
+        .I2(hash2[5]),
+        .I3(hash_ready_rotating),
+        .I4(flag_set_i_4_0[0]),
+        .I5(flag_set_i_4_0[4]),
+        .O(flag_set_i_8_n_0));
   LUT4 #(
     .INIT(16'hFACA)) 
     \hash[8]_i_1 
@@ -2146,76 +2131,17 @@ module mb_design_censor_ip_0_0_hash_rotating
         .D(\hash[9]_i_1_n_0 ),
         .Q(\hash_reg[9]_0 [7]),
         .R(1'b0));
-  LUT6 #(
-    .INIT(64'h0010001000000010)) 
-    is_bad_word_reg_i_1
-       (.I0(is_bad_word_reg_i_2_n_0),
-        .I1(flag_set_reg),
-        .I2(is_bad_word_reg_i_4_n_0),
-        .I3(flag_set_reg_0),
-        .I4(is_bad_word_reg_i_6_n_0),
-        .I5(\hash_reg[9]_0 [6]),
-        .O(\hash_reg[8]_0 ));
-  LUT5 #(
-    .INIT(32'hFFBFAAAA)) 
-    is_bad_word_reg_i_2
-       (.I0(is_bad_word_reg_i_1_0),
-        .I1(\hash_reg[9]_0 [0]),
-        .I2(\hash_reg[9]_0 [1]),
-        .I3(hash2[5]),
-        .I4(\hash_reg[9]_0 [6]),
-        .O(is_bad_word_reg_i_2_n_0));
-  LUT5 #(
-    .INIT(32'h00000040)) 
-    is_bad_word_reg_i_4
-       (.I0(is_bad_word_reg_i_1_1[4]),
-        .I1(is_bad_word_reg_i_1_1[0]),
-        .I2(\hash_reg[9]_0 [2]),
-        .I3(\hash_reg[9]_0 [3]),
-        .I4(is_bad_word_reg_i_9_n_0),
-        .O(is_bad_word_reg_i_4_n_0));
-  LUT6 #(
-    .INIT(64'hFFFDFDFDDDDDDDDD)) 
-    is_bad_word_reg_i_6
-       (.I0(hash2[5]),
-        .I1(\hash_reg[9]_0 [1]),
-        .I2(hash2[4]),
-        .I3(\hash_reg[9]_0 [5]),
-        .I4(\hash_reg[9]_0 [4]),
-        .I5(\hash_reg[9]_0 [0]),
-        .O(is_bad_word_reg_i_6_n_0));
-  LUT5 #(
-    .INIT(32'h0DDDDDDD)) 
-    is_bad_word_reg_i_8
-       (.I0(\hash_reg[9]_0 [0]),
-        .I1(\hash_reg[9]_0 [6]),
-        .I2(\hash_reg[9]_0 [4]),
-        .I3(\hash_reg[9]_0 [5]),
-        .I4(hash2[4]),
-        .O(\hash_reg[0]_0 ));
-  LUT6 #(
-    .INIT(64'hFFF1FFF1FFF1FFFF)) 
-    is_bad_word_reg_i_9
-       (.I0(\hash_reg[9]_0 [5]),
-        .I1(\hash_reg[9]_0 [4]),
-        .I2(\hash_reg[9]_0 [7]),
-        .I3(is_bad_word_reg_i_1_1[1]),
-        .I4(is_bad_word_reg_i_1_1[2]),
-        .I5(is_bad_word_reg_i_1_1[3]),
-        .O(is_bad_word_reg_i_9_n_0));
 endmodule
 
 (* ORIG_REF_NAME = "hashing" *) 
 module mb_design_censor_ip_0_0_hashing
-   (hash_ready_rotating,
-    \word_len_reg[3] ,
+   (\word_len_reg[3] ,
     \word_len_reg[0] ,
     \word_len_reg[3]_0 ,
     \word_len_reg[3]_1 ,
     \word_len_reg[0]_0 ,
     \word_len_reg[3]_2 ,
     \word_len_reg[3]_3 ,
-    \hash_reg[8] ,
     \word_len_reg[4] ,
     \word_len_reg[1] ,
     \word_len_reg[1]_0 ,
@@ -2223,9 +2149,9 @@ module mb_design_censor_ip_0_0_hashing
     \word_len_reg[4]_0 ,
     new_mask10_in,
     \word_len_reg[2]_0 ,
+    is_bad_word,
     Q,
     hash_next0);
-  output hash_ready_rotating;
   output \word_len_reg[3] ;
   output \word_len_reg[0] ;
   output \word_len_reg[3]_0 ;
@@ -2233,7 +2159,6 @@ module mb_design_censor_ip_0_0_hashing
   output \word_len_reg[0]_0 ;
   output \word_len_reg[3]_2 ;
   output \word_len_reg[3]_3 ;
-  output \hash_reg[8] ;
   output \word_len_reg[4] ;
   output \word_len_reg[1] ;
   output \word_len_reg[1]_0 ;
@@ -2241,6 +2166,7 @@ module mb_design_censor_ip_0_0_hashing
   output \word_len_reg[4]_0 ;
   output new_mask10_in;
   output \word_len_reg[2]_0 ;
+  output is_bad_word;
   input [1:0]Q;
   input [7:0]hash_next0;
 
@@ -2249,20 +2175,17 @@ module mb_design_censor_ip_0_0_hashing
   wire [9:0]hash2;
   wire hash_bernstein_n_0;
   wire hash_bernstein_n_10;
-  wire hash_bernstein_n_11;
-  wire hash_bernstein_n_12;
-  wire hash_bernstein_n_13;
-  wire hash_bernstein_n_14;
-  wire hash_bernstein_n_15;
-  wire hash_bernstein_n_16;
-  wire hash_bernstein_n_17;
   wire hash_bernstein_n_2;
+  wire hash_bernstein_n_3;
+  wire hash_bernstein_n_4;
+  wire hash_bernstein_n_5;
+  wire hash_bernstein_n_6;
+  wire hash_bernstein_n_7;
   wire hash_bernstein_n_8;
   wire hash_bernstein_n_9;
   wire [7:0]hash_next0;
   wire hash_ready_rotating;
-  wire \hash_reg[8] ;
-  wire hash_rotating_n_9;
+  wire is_bad_word;
   wire new_mask10_in;
   wire \word_len_reg[0] ;
   wire \word_len_reg[0]_0 ;
@@ -2279,29 +2202,23 @@ module mb_design_censor_ip_0_0_hashing
   wire \word_len_reg[4]_0 ;
 
   mb_design_censor_ip_0_0_hash_bernstein hash_bernstein
-       (.D({hash_bernstein_n_10,hash_bernstein_n_11,hash_bernstein_n_12,hash_bernstein_n_13,hash_bernstein_n_14,hash_bernstein_n_15,hash_bernstein_n_16,hash_bernstein_n_17}),
+       (.D({hash_bernstein_n_2,hash_bernstein_n_3,hash_bernstein_n_4,hash_bernstein_n_5,hash_bernstein_n_6,hash_bernstein_n_7,hash_bernstein_n_8,hash_bernstein_n_9}),
         .Q(Q),
         .hash2({hash2[9:6],hash2[3:0]}),
         .hash_next0_0(hash_next0),
-        .hash_ready_reg_0(hash_ready_rotating),
-        .\hash_reg[0]_0 (hash_bernstein_n_2),
-        .\hash_reg[0]_1 (hash_bernstein_n_8),
-        .\hash_reg[0]_2 (hash_bernstein_n_9),
+        .hash_ready_rotating(hash_ready_rotating),
+        .\hash_reg[0]_0 (hash_bernstein_n_10),
         .\hash_reg[9]_0 ({hash1[9],hash1[7:6],hash1[3:2]}),
-        .is_bad_word_reg_i_1(hash_rotating_n_9),
         .\slv_reg0_reg[0] (hash_bernstein_n_0));
   mb_design_censor_ip_0_0_hash_rotating hash_rotating
-       (.D({hash_bernstein_n_10,hash_bernstein_n_11,hash_bernstein_n_12,hash_bernstein_n_13,hash_bernstein_n_14,hash_bernstein_n_15,hash_bernstein_n_16,hash_bernstein_n_17}),
+       (.D({hash_bernstein_n_2,hash_bernstein_n_3,hash_bernstein_n_4,hash_bernstein_n_5,hash_bernstein_n_6,hash_bernstein_n_7,hash_bernstein_n_8,hash_bernstein_n_9}),
         .E(hash_bernstein_n_0),
         .Q(Q[1]),
-        .flag_set_reg(hash_bernstein_n_9),
-        .flag_set_reg_0(hash_bernstein_n_8),
+        .flag_set_i_4_0({hash1[9],hash1[7:6],hash1[3:2]}),
+        .flag_set_reg(hash_bernstein_n_10),
         .hash_ready_rotating(hash_ready_rotating),
-        .\hash_reg[0]_0 (hash_rotating_n_9),
-        .\hash_reg[8]_0 (\hash_reg[8] ),
         .\hash_reg[9]_0 ({hash2[9:6],hash2[3:0]}),
-        .is_bad_word_reg_i_1_0(hash_bernstein_n_2),
-        .is_bad_word_reg_i_1_1({hash1[9],hash1[7:6],hash1[3:2]}));
+        .is_bad_word(is_bad_word));
   mb_design_censor_ip_0_0_word_length_counter word_length_counter
        (.Q(Q),
         .new_mask10_in(new_mask10_in),
